@@ -1,0 +1,8 @@
+LIST OF REQUIREMENTS:
+
+User Stories: 
+As a user, I want to be able to select from a list of preset game modes so that I can start playing immediately
+As a user, I want to be able to have options to modify existing gamemodes so that I can create games I think are fun
+As a user, I want to be able to save my gamemode so that I can use it again later
+As a user, I want the game to save my progress so that I can leave and come back later to resume my progress
+As a user, I want the game to be runnable on linux machines so that I can use it on all my pc's
