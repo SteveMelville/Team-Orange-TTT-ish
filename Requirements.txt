@@ -10,8 +10,11 @@ As a user, I want to be able to modify the dictionary for the game so that i can
 As a user, I want to be able to remove an item from the dictionary so that a word added accidentally can be removed
 As a user, I want to be able to modify the gameboard size(possibly while playing) so that the game can go on for a longer amount of time
 As a user, I want to be able to modify the gameboard size so that the game can accomadate more players
-As a user i want to be able to play with an AI opponent so that i can play the game without anyone else
-As the owner, i want to limit the maximum amount of players to 15 so that the system does not slow down or crash
-As the owner, i want to limit the maximum gameboard size to 100x100 so that it cannot get too big
+As a user, I want to be able to play with an AI opponent so that i can play the game without anyone else
+As the owner, I want to limit the maximum amount of players to 15 so that the system does not slow down or crash
+As the owner, I want to limit the maximum gameboard size to 100x100 so that it cannot get too big
 As the owner, I want my clients to feel safe while playing online so that my product does not gain bad reputation
 As the owner, I want my GUI to be user friendly, so that even users who have never used this program know what to do and how to play.
+As a user, I want to see the current score so that I know who is winning
+As a user, I want to be able to modify the scoring rules in my new gamemodes so that my gamemodes are more complete
+As a user, I want to be able to modify the list of existing words so that my game can be more unique
