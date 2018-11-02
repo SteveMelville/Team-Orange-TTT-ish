@@ -20,3 +20,4 @@ As a user, I want to be able to modify the scoring rules in my new gamemodes so 
 As a user, I want to be able to modify the list of existing words so that my game can be more unique
 As a user, I want the turn system to be relatively flawless so that I can have an enjoyable experiance
 As a user, I want to be able to have scoring that is both word based and letter based so that I have more customization with my gamemodes
+As a user, I want to have the game network compatible so that me and all my friends can play on our own pc's
