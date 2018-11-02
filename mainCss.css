@@ -1,3 +1,15 @@
 body {
-	background-color: #27bdf4;
+	background-color: #f4af26;
+}
+
+#header {
+	
+}
+
+#footer {
+	bottom: 0px;
+	height: 30px;
+	width: 100%;
+	position: fixed;
+	color: black;
 }
