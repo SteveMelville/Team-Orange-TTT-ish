@@ -18,3 +18,5 @@ As the owner, I want my GUI to be user friendly, so that even users who have nev
 As a user, I want to see the current score so that I know who is winning
 As a user, I want to be able to modify the scoring rules in my new gamemodes so that my gamemodes are more complete
 As a user, I want to be able to modify the list of existing words so that my game can be more unique
+As a user, I want the turn system to be relatively flawless so that I can have an enjoyable experiance
+As a user, I want to be able to have scoring that is both word based and letter based so that I have more customization with my gamemodes
