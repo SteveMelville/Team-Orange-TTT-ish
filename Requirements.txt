@@ -12,4 +12,4 @@ As a user, I want to be able to modify the gameboard size(possibly while playing
 As a user, I want to be able to modify the gameboard size so that the game can accomadate more players
 As the owner, i want to limit the maximum amount of players so that the system does not slow down or crash
 As the owner, i want to limit the maximum gameboard size to 100x100 so that it cannot get too big
-As a user i want to be able to play with an AI opponent so that i can play the game without anyone elseMore 
+As a user i want to be able to play with an AI opponent so that i can play the game without anyone else
