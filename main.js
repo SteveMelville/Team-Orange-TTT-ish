@@ -3,12 +3,19 @@
 
 
 class board{
+    
+    var width;
+    var height;
+    var boardArray;
+    var boardHTML;
+    var boardAddress;
+    
     constructor(){
-        var width = 10;
-        var height = 10;
-        var boardArray = [];
-        var boardHTML = "";
-        var boardAddress = document.getElementById("board");
+        width = 10;
+        height = 10;
+        boardArray = [];
+        boardHTML = "";
+        boardAddress = document.getElementById("board");
     }
 
    
