@@ -1,5 +1,5 @@
-var width;
-var height;
+var width = 10;
+var height = 10;
 
 var board = [];
 
