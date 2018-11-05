@@ -10,9 +10,9 @@ class board{
     //var boardHTML;
    // var boardAddress;
     
-    constructor(){
-        this.width = 10;
-        this.height = 10;
+    constructor(w, h){
+        this.width = w;
+        this.height = h;
         this.boardArray = [];
         this.boardHTML = "";
         this.boardAddress = document.getElementById("board");
@@ -33,7 +33,7 @@ class board{
     }
 }
 
-const newBoard = new board();
+const newBoard = new board(3,3);
 newBoard.printBoard();
 
 
