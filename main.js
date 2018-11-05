@@ -4,18 +4,18 @@
 
 class board{
     
-    var width;
-    var height;
-    var boardArray;
-    var boardHTML;
-    var boardAddress;
+    //var width;
+    //var height;
+    //var boardArray;
+    //var boardHTML;
+   // var boardAddress;
     
     constructor(){
-        width = 10;
-        height = 10;
-        boardArray = [];
-        boardHTML = "";
-        boardAddress = document.getElementById("board");
+        this.width = 10;
+        this.height = 10;
+        this.boardArray = [];
+        this.boardHTML = "";
+        this.boardAddress = document.getElementById("board");
     }
 
    
