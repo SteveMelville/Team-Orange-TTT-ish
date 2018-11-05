@@ -13,7 +13,7 @@ class board{
     }
 
    
-    function printBoard(){
+    printBoard(){
         for(var i = 0; i < height; i++){
             boardHTML += "<tr>\n";
 
