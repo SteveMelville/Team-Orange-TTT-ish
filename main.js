@@ -18,6 +18,7 @@ function printBoard(){
         
         boardHTML += "</tr>";
     }
+    test(boardHTML);
     boardAddress.innerHTML = boardHTML;
 }
 
