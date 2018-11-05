@@ -5,9 +5,9 @@ body {
 #boardDiv {
 	top: 30%;
 	left: 40%;
-	position = fixed;
+	position: fixed;
 	background-color: white;
-	z-index = 10;
+	z-index: 10;
 }
 
 #header {
