@@ -5,6 +5,7 @@ body {
 #board {
 	top: 500px;
 	left: 500px;
+	background-color: white;
 }
 
 #header {
