@@ -1,6 +1,5 @@
 
-const newBoard = new board();
-newBoard.printBoard();
+
 
 
 class board{
@@ -27,7 +26,8 @@ class board{
     }
 }
 
-
+const newBoard = new board();
+newBoard.printBoard();
 
 
 function test(message){
