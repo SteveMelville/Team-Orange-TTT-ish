@@ -18,7 +18,7 @@ body {
 	position: fixed;
 	background-color: white;
 	color: black;
-	z-index = 3;
+	z-index: 3;
 }
 
 #footer {
