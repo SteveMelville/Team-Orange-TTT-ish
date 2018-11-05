@@ -3,7 +3,7 @@ const newBoard = new board();
 newBoard.printBoard();
 
 
-class board(){
+class board{
     constructor(){
         var width = 10;
         var height = 10;
