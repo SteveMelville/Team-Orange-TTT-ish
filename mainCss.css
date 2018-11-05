@@ -3,8 +3,8 @@ body {
 }
 
 #board {
-	top: 500px;
-	left: 500px;
+	top: 30%;
+	left: 40%;
 	position = fixed;
 	background-color: white;
 }
