@@ -2,6 +2,10 @@ body {
 	background-color: #f4af26;
 }
 
+table {
+	border: 1;
+}
+
 #boardDiv {
 	top: 30%;
 	left: 40%;
