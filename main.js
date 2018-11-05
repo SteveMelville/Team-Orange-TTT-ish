@@ -11,12 +11,14 @@ printBoard();
 function printBoard(){
     for(var i = 0; i < height; i++){
         boardHTML += "<tr>";
+        
         for(var j = 0; j < width; j++){
-            boardHTML += "<td id = " + (i * width + j) + ">hello</td>";
+            boardHTML += "<td id = '" + (i * width + j) + "'>hello</td>";
         }
+        
         boardHTML += "</tr>";
     }
-    boardAddress.innerHTML += boardHTML;
+    boardAddress.innerHTML = boardHTML;
 }
 
 
