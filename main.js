@@ -33,7 +33,7 @@ class board{
     }
 }
 
-const newBoard = new board(3,3);
+const newBoard = new board(9,6);
 newBoard.printBoard();
 
 
