@@ -1,24 +1,30 @@
-var width = 10;
-var height = 10;
 
-var board = [];
+const newBoard = new board();
+newBoard.printBoard();
 
-var boardHTML = "";
-var boardAddress = document.getElementById("board");
 
-printBoard();
-
-function printBoard(){
-    for(var i = 0; i < height; i++){
-        boardHTML += "<tr>\n";
-        
-        for(var j = 0; j < width; j++){
-            boardHTML += "<td id = '" + (i * width + j) + "'>hello</td>\n";
-        }
-        
-        boardHTML += "</tr>\n";
+class board(){
+    constructor(){
+        var width = 10;
+        var height = 10;
+        var boardArray = [];
+        var boardHTML = "";
+        var boardAddress = document.getElementById("board");
     }
-    boardAddress.innerHTML = boardHTML;
+
+   
+    function printBoard(){
+        for(var i = 0; i < height; i++){
+            boardHTML += "<tr>\n";
+
+            for(var j = 0; j < width; j++){
+                boardHTML += "<td id = '" + (i * width + j) + "'>hello</td>\n";
+            }
+
+            boardHTML += "</tr>\n";
+        }
+        boardAddress.innerHTML = boardHTML;
+    }
 }
 
 
