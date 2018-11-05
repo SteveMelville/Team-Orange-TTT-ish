@@ -2,6 +2,11 @@ body {
 	background-color: #f4af26;
 }
 
+#board {
+	top: 500px;
+	left: 500px;
+}
+
 #header {
 	top: 0px;
 	left: 0px;
