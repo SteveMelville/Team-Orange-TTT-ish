@@ -24,7 +24,7 @@ class board{
             this.boardHTML += "<tr>\n";
 
             for(var j = 0; j < this.width; j++){
-                this.boardHTML += "<td id = '" + (i * this.width + j) + "'>(i * this.width + j)</td>\n";
+                this.boardHTML += "<td id = '" + (i * this.width + j) + "'>'(i * this.width + j)'</td>\n";
             }
 
             this.boardHTML += "</tr>\n";
