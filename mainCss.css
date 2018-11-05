@@ -2,7 +2,7 @@ body {
 	background-color: #f4af26;
 }
 
-#board {
+#boardDiv {
 	top: 30%;
 	left: 40%;
 	position = fixed;
