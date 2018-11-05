@@ -5,7 +5,7 @@ body {
 #board {
 	top: 30%;
 	left: 40%;
-	position = fixed;
+	position = absolute;
 	background-color: white;
 }
 
