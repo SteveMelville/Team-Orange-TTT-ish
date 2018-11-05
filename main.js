@@ -29,7 +29,7 @@ class board{
 
             this.boardHTML += "</tr>\n";
         }
-        this.boardAddress.innerHTML = boardHTML;
+        this.boardAddress.innerHTML = this.boardHTML;
     }
 }
 
