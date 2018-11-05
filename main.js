@@ -10,13 +10,13 @@ printBoard();
 
 function printBoard(){
     for(var i = 0; i < height; i++){
-        boardHTML += "<tr>";
+        boardHTML += "<tr>\n";
         
         for(var j = 0; j < width; j++){
-            boardHTML += "<td id = '" + (i * width + j) + "'>hello</td>";
+            boardHTML += "<td id = '" + (i * width + j) + "'>hello</td>\n";
         }
         
-        boardHTML += "</tr>";
+        boardHTML += "</tr>\n";
     }
     test(boardHTML);
     boardAddress.innerHTML = boardHTML;
