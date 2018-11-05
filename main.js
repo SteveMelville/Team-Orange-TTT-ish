@@ -20,16 +20,16 @@ class board{
 
    
     printBoard(){
-        for(var i = 0; i < height; i++){
-            boardHTML += "<tr>\n";
+        for(var i = 0; i < this.height; i++){
+            this.boardHTML += "<tr>\n";
 
-            for(var j = 0; j < width; j++){
-                boardHTML += "<td id = '" + (i * width + j) + "'>hello</td>\n";
+            for(var j = 0; j < this.width; j++){
+                this.boardHTML += "<td id = '" + (i * this.width + j) + "'>hello</td>\n";
             }
 
-            boardHTML += "</tr>\n";
+            this.boardHTML += "</tr>\n";
         }
-        boardAddress.innerHTML = boardHTML;
+        this.boardAddress.innerHTML = boardHTML;
     }
 }
 
