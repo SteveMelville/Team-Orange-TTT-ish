@@ -29,7 +29,7 @@ class board{
             this.boardHTML += "<tr>\n";
             for(var j = 0; j < this.width; j++){
                 id = i * this.width + j;
-                this.boardHTML += "<td id = '" + id + "'><input type='button' onclick='push(" + id + ")' value = '<img src='assets/testBlank.png'>'></td>\n";
+                this.boardHTML += "<td id = '" + id + "'><button type='button' onclick='push(" + id + ")'><img src='assets/testBlank.png'></button></td>\n";
             }
 
             this.boardHTML += "</tr>\n";
