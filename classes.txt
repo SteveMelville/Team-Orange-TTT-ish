@@ -1,0 +1,23 @@
+game class:
+-game type
+-dictionary	dictionary
+-		board
+-player[]	players
+-		win-condition
+-		curent-state
++
++
+
+
+board class:
+
+
+player class:
+
+
+dictionary class:
+-word[] 	words
+
+word:
+-string 	word
+-int 		score
