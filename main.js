@@ -16,20 +16,32 @@ class board{
         this.boardArray = [];
         this.boardHTML = "";
         this.boardAddress = document.getElementById("board");
+        
+        for(var i = 0; i < (w * h); i++){
+            this.boardArray.push(0);
+        }
     }
 
    
     printBoard(){
+        var id = 0;
         for(var i = 0; i < this.height; i++){
             this.boardHTML += "<tr>\n";
-
             for(var j = 0; j < this.width; j++){
-                this.boardHTML += "<td id = '" + (i * this.width + j) + "'>hello</td>\n";
+                id = i * this.width + j;
+                this.boardHTML += "<td id = '" + id + "'><button type='button'><img src='assets/testBlank.png'></button></td>\n";
             }
 
             this.boardHTML += "</tr>\n";
         }
         this.boardAddress.innerHTML = this.boardHTML;
+    }
+    
+    get(x, y){
+        if(x > this.width || y > this.height){
+            return null;
+        }
+        return this.boardArray[(this.width * y) + x];
     }
 }
 
