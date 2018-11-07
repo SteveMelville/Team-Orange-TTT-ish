@@ -47,7 +47,6 @@ class board{
 const newBoard = new board(3,3);
 newBoard.printBoard();
 
-test(newBoard.get(2,5));
 
 
 function test(message){
