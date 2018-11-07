@@ -16,6 +16,10 @@ class board{
         this.boardArray = [];
         this.boardHTML = "";
         this.boardAddress = document.getElementById("board");
+        
+        for(var i = 0; i < (w * h); i++){
+            this.boardArray.push(0);
+        }
     }
 
    
@@ -31,10 +35,16 @@ class board{
         }
         this.boardAddress.innerHTML = this.boardHTML;
     }
+    
+    get(x, y){
+        return this.boardArray[(this.width * y) + x];
+    }
 }
 
 const newBoard = new board(3,3);
 newBoard.printBoard();
+
+test(newBoard.get(2,1));
 
 
 function test(message){
