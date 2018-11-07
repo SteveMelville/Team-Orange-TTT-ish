@@ -24,11 +24,12 @@ class board{
 
    
     printBoard(){
+        var id = 0;
         for(var i = 0; i < this.height; i++){
             this.boardHTML += "<tr>\n";
-
             for(var j = 0; j < this.width; j++){
-                this.boardHTML += "<td id = '" + (i * this.width + j) + "'>hello</td>\n";
+                id = i * this.width + j;
+                this.boardHTML += "<td id = '" + id + "'><input type='button' onclick='push(" + id + ")' value = '<img src='assets/testBlank.png'>'></td>\n";
             }
 
             this.boardHTML += "</tr>\n";
