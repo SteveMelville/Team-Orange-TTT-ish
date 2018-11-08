@@ -1,7 +1,7 @@
 i,Date Identififed,Risk Description,Probability,Potential Costs,Avoidance Strategy,Minimizaion Strategy,Contingency Plans,Who
 1,Nov. 11 2018,run out of time,medium,bad grade,don't overcomplicate it,finish important details,cut features,whole class
 2,Nov. 7 2018,code overwritten,medium,lost time,when committing create a branch instead of overwriting master,keep backups,use backups,Steven 	
-3,Brandon,,,,,,,
+3,Nov. 8 2018,classes don't work together,low,lost time,keep things loosly coupled,keep a minimum working product,Look over our documentation,Brandon
 4,Ammon,,,,,,,				
 5,Marcelo,,,,,,,					
 6,Matthew,,,,,,,					
