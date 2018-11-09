@@ -11,8 +11,8 @@ class board{
    // var boardAddress;
     
     constructor(w, h){
-        this.width = w;
-        this.height = h;
+        this.width = w + 2;
+        this.height = h + 2;
         this.boardArray = [];
         this.boardHTML = "";
         this.boardAddress = document.getElementById("board");
@@ -20,7 +20,7 @@ class board{
         this.blank = "<img src='assets/testBlank.png'>";
         this.player1 = "<img src='assets/testX.png'>";
         
-        for(var i = 0; i < ((w + 2) * (h + 2)); i++){
+        for(var i = 0; i < (w * h); i++){
             if(i < this.width){
                 this.boardArray.push(null);
             }
