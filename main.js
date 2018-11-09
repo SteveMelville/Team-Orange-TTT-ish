@@ -35,7 +35,7 @@ class board{
             this.boardHTML += "<tr>\n";
             for(var j = 0; j < this.width; j++){
                 id = i * this.width + j;
-                this.boardHTML += "<td id = '" + id + "'>;
+                this.boardHTML += "<td id = '" + id + "'>";
                 
                 switch(boardArray[id]){
                     case 0: this.boardHTML += "<button type='button'>" + this.blank + "</button>";
