@@ -37,7 +37,7 @@ class board{
                 id = i * this.width + j;
                 this.boardHTML += "<td id = '" + id + "'>";
                 
-                switch(boardArray[id]){
+                switch(this.boardArray[id]){
                     case 0: this.boardHTML += "<button type='button'>" + this.blank + "</button>";
                             break;
                     case 1: this.boardHTML += this.player1;
