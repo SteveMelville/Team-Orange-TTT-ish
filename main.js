@@ -21,7 +21,7 @@ class board{
         this.player1 = "<img src='assets/testX.png'>";
         
         for(var i = 0; i < ((w + 2) * (h + 2)); i++){
-            if(i < width){
+            if(i < this.width){
                 this.boardArray.push(null);
             }
             this.boardArray.push(0);
