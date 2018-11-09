@@ -2,7 +2,7 @@ i,Date Identififed,Risk Description,Probability,Potential Costs,Avoidance Strate
 1,Nov. 11 2018,run out of time,medium,bad grade,don't overcomplicate it,finish important details,cut features,whole class
 2,Nov. 7 2018,code overwritten,medium,lost time,when committing create a branch instead of overwriting master,keep backups,use backups,Steven 	
 3,Nov. 8 2018,classes don't work together,low,lost time,keep things loosly coupled,keep a minimum working product,Look over our documentation,Brandon
-4,Ammon,,,,,,,				
+4,Nov. 9 2018,One part takes too much time,medium,run out of time, map out the time needed before started, Keep things small in the beginning,Create small program first,Ammon				
 5,Nov. 11 2018,super programmer illness,medium,delay in the software process,,,,					
 6,nov. 9 2018,a class/method is harder to implement than originaly expected,high,the program will take longer than intended to code,,keep the methods small/ get others help on the method,drop a feture,	Matthew				
 7,Nov. 7 2018,product not working on all computers,low,unsatisfied customers,test on many computers before releasing,keep program simple and modular,easy to reach tech support,Steven			
