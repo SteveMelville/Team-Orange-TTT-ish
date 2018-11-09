@@ -3,7 +3,7 @@ i,Date Identififed,Risk Description,Probability,Potential Costs,Avoidance Strate
 2,Nov. 7 2018,code overwritten,medium,lost time,when committing create a branch instead of overwriting master,keep backups,use backups,Steven 	
 3,Nov. 8 2018,classes don't work together,low,lost time,keep things loosly coupled,keep a minimum working product,Look over our documentation,Brandon
 4,Ammon,,,,,,,				
-5,Marcelo,,,,,,,					
+5,Nov. 11 2018,super programmer illness,medium,delay in the software process,,,,					
 6,Matthew,,,,,,,					
 7,Nov. 7 2018,product not working on all computers,low,unsatisfied customers,test on many computers before releasing,keep program simple and modular,easy to reach tech support,Steven			
 8,Nov. 8 2018,Too much overall homework,medium,less time devoted to project,Stay caught up,create a schedule,Do most important things first,Brandon						
