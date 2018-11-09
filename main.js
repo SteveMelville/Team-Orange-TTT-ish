@@ -24,7 +24,9 @@ class board{
             if(i < this.width){
                 this.boardArray.push(null);
             }
-            this.boardArray.push(0);
+            else{
+                this.boardArray.push(0);
+            }
         }
     }
 
