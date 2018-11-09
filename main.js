@@ -17,7 +17,13 @@ class board{
         this.boardHTML = "";
         this.boardAddress = document.getElementById("board");
         
-        for(var i = 0; i < (w * h); i++){
+        this.blank = "<img src='assets/testBlank.png'>";
+        this.player1 = "<img src='assets/testX.png'>";
+        
+        for(var i = 0; i < ((w + 2) * (h + 2)); i++){
+            if(i < width){
+                this.boardArray.push(null);
+            }
             this.boardArray.push(0);
         }
     }
@@ -29,7 +35,17 @@ class board{
             this.boardHTML += "<tr>\n";
             for(var j = 0; j < this.width; j++){
                 id = i * this.width + j;
-                this.boardHTML += "<td id = '" + id + "'><button type='button'><img src='assets/testBlank.png'></button></td>\n";
+                this.boardHTML += "<td id = '" + id + "'>;
+                
+                switch(boardArray[id]){
+                    case 0: this.boardHTML += "<button type='button'>" + this.blank + "</button>";
+                            break;
+                    case 1: this.boardHTML += this.player1;
+                            break;
+                    default: break;
+                }
+                
+                this.boardHTML += "</td>\n";
             }
 
             this.boardHTML += "</tr>\n";
