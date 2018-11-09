@@ -20,7 +20,7 @@ class board{
         this.blank = "<img src='assets/testBlank.png'>";
         this.player1 = "<img src='assets/testX.png'>";
         
-        for(var i = 0; i < (w * h); i++){
+        for(var i = 0; i < (this.width * this.height); i++){
             if(i < this.width){
                 this.boardArray.push(null);
             }
