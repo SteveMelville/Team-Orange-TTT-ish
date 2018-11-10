@@ -8,7 +8,7 @@ i,Date Identififed,Risk Description,Probability,Potential Costs,Avoidance Strate
 7,Nov. 7 2018,product not working on all computers,low,unsatisfied customers,test on many computers before releasing,keep program simple and modular,easy to reach tech support,Steven			
 8,Nov. 8 2018,Too much overall homework,medium,less time devoted to project,Stay caught up,create a schedule,Do most important things first,Brandon						
 9,Nov. 9 2018, Cannot have 15 players in the constraints we have given ourself,low, not having as much players as required, Minimize the amount of space a player takes, Make sure what we are using works with more players,work with just 5 players in the beggining, Ammon						
-10Nov. 9 2018,conflict among teammates due to different ideas, high, halt in development process due to inner conflicts, set up coexistence rules, be courteous to one another, focus on the sprint's objective,Marcelo,								
+10,Nov. 9 2018,conflict among teammates due to different ideas, high, halt in development process due to inner conflicts, set up coexistence rules, be courteous to one another, focus on the sprint's objective,Marcelo,								
 11,nov.9.2018,code still has unfound bugs when it's time to present,medium,a docked grade,testing/debugging,,use known working inputs for the presentation,matthew								
 12,,,,,,,,								
 13,,,,,,,,								
