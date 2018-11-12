@@ -30,6 +30,7 @@ class board{
                 }
             }
         }
+        test(this.boardArray);
     }
 
    
