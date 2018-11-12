@@ -80,7 +80,7 @@ function pushButton(id){
                 break;
         
     }
-    if(turn < numPlayers){
+    if(turn < numPlayers - 1){
         turn++;
     }
     else{
