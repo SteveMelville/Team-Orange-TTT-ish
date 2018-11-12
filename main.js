@@ -69,7 +69,7 @@ class board{
     }
 }
 
-pushButton(id){
+function pushButton(id){
     var item = document.getElementById(id);
     item.innerHTML = player1;
 }
