@@ -42,7 +42,7 @@ class board{
                 this.boardHTML += "<td id = '" + id + "'>";
                 
                 switch(this.boardArray[id]){
-                    case 0: this.boardHTML += "<button type='button'>" + this.blank + "</button>";
+                    case 0: this.boardHTML += "<button type='button' onclick='this.pushButton(" + id + ")'>" + this.blank + "</button>";
                             break;
                     case 1: this.boardHTML += this.player1;
                             break;
@@ -55,6 +55,15 @@ class board{
             this.boardHTML += "</tr>\n";
         }
         this.boardAddress.innerHTML = this.boardHTML;
+    }
+    
+    pushButton(){
+        
+    }
+    
+    set(id){
+        var item = document.getElementById(id);
+        item.innerHTML = this.player1;
     }
     
     get(x, y){
