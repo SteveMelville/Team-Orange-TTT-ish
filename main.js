@@ -20,8 +20,8 @@ class board{
         this.blank = "<img src='assets/testBlank.png'>";
         this.player1 = "<img src='assets/testX.png'>";
         
-        for(var j = 0; i < this.height; i++){
-            for(var i = 0; j < this.width; j++){
+        for(var j = 0; j < this.height; j++){
+            for(var i = 0; i < this.width; i++){
                 if(j == 0 || j == this.height - 1 || i == 0 || i == this.width - 1){
                     this.boardArray.push(null);
                 }
@@ -30,7 +30,6 @@ class board{
                 }
             }
         }
-        test(this.boardArray);
     }
 
    
