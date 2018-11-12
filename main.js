@@ -1,8 +1,9 @@
 const player1 = "<img src='assets/testX.png'>";
 const player2 = "<img src='assets/testO.png'>";
 const blank = "<img src='assets/testBlank.png'>";
+const numPlayers = 2;
 
-var turn = false;
+var turn = 0;
 
 class board{
     
@@ -72,13 +73,18 @@ class board{
 function pushButton(id){
     var item = document.getElementById(id);
     
-    if(turn){
-        item.innerHTML = player1;
-        turn = false;
+    switch(turn){
+        case 0: item.innerHTML = player1;
+                break;
+        case 1: item.innerHTML = player2;
+                break;
+        
+    }
+    if(turn < numPlayers){
+        turn++;
     }
     else{
-        item.innerHTML = player2;
-        turn = true;
+        turn = 0;
     }
 }
 
