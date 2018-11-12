@@ -57,8 +57,8 @@ class board{
         this.boardAddress.innerHTML = this.boardHTML;
     }
     
-    pushButton(){
-        
+    pushButton(id){
+        set(id);
     }
     
     set(id){
