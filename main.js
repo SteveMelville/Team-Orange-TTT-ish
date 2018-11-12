@@ -1,6 +1,8 @@
 const player1 = "<img src='assets/testX.png'>";
+const player2 = "<img src='assets/testO/png'>";
+const blank = "<img src='assets/testBlank.png'>";
 
-
+var turn = false;
 
 class board{
     
@@ -16,8 +18,6 @@ class board{
         this.boardArray = [];
         this.boardHTML = "";
         this.boardAddress = document.getElementById("board");
-        
-        this.blank = "<img src='assets/testBlank.png'>";
         
         for(var j = 0; j < this.height; j++){
             for(var i = 0; i < this.width; i++){
@@ -41,7 +41,7 @@ class board{
                 this.boardHTML += "<td id = '" + id + "'>";
                 
                 switch(this.boardArray[id]){
-                    case 0: this.boardHTML += "<button type='button' onclick='pushButton(" + id + ")'>" + this.blank + "</button>";
+                    case 0: this.boardHTML += "<button type='button' onclick='pushButton(" + id + ")'>" + blank + "</button>";
                             break;
                     case 1: this.boardHTML += player1;
                             break;
@@ -71,7 +71,15 @@ class board{
 
 function pushButton(id){
     var item = document.getElementById(id);
-    item.innerHTML = player1;
+    
+    if(turn){
+        item.innerHTML = player1;
+        turn = true;
+    }
+    else{
+        item.innerHTML = player2;
+        turn = false;
+    }
 }
 
 const newBoard = new board(3,3);
