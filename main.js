@@ -88,7 +88,7 @@ function pushButton(id){
     }
 }
 
-const newBoard = new board(3,3);
+const newBoard = new board(100,100);
 newBoard.printBoard();
 
 
