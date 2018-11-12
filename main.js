@@ -42,7 +42,7 @@ class board{
                 this.boardHTML += "<td id = '" + id + "'>";
                 
                 switch(this.boardArray[id]){
-                    case 0: this.boardHTML += "<button type='button' onclick='this.pushButton(" + id + ")'>" + this.blank + "</button>";
+                    case 0: this.boardHTML += "<button type='button' onclick='board.pushButton(" + id + ")'>" + this.blank + "</button>";
                             break;
                     case 1: this.boardHTML += this.player1;
                             break;
