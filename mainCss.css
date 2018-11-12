@@ -3,6 +3,7 @@ body {
 }
 
 #boardDiv {
+	top: 120px;
 	margin: auto;
 	position: fixed;
 	background-color: white;
