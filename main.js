@@ -1,4 +1,4 @@
-
+const player1 = "<img src='assets/testX.png'>";
 
 
 
@@ -18,7 +18,6 @@ class board{
         this.boardAddress = document.getElementById("board");
         
         this.blank = "<img src='assets/testBlank.png'>";
-        this.player1 = "<img src='assets/testX.png'>";
         
         for(var j = 0; j < this.height; j++){
             for(var i = 0; i < this.width; i++){
@@ -42,9 +41,9 @@ class board{
                 this.boardHTML += "<td id = '" + id + "'>";
                 
                 switch(this.boardArray[id]){
-                    case 0: this.boardHTML += "<button type='button' onclick='board.pushButton(" + id + ")'>" + this.blank + "</button>";
+                    case 0: this.boardHTML += "<button type='button' onclick='pushButton(" + id + ")'>" + this.blank + "</button>";
                             break;
-                    case 1: this.boardHTML += this.player1;
+                    case 1: this.boardHTML += player1;
                             break;
                     default: break;
                 }
@@ -57,13 +56,9 @@ class board{
         this.boardAddress.innerHTML = this.boardHTML;
     }
     
-    pushButton(id){
-        set(id);
-    }
-    
     set(id){
         var item = document.getElementById(id);
-        item.innerHTML = this.player1;
+        item.innerHTML = player1;
     }
     
     get(x, y){
@@ -72,6 +67,11 @@ class board{
         }
         return this.boardArray[(this.width * y) + x];
     }
+}
+
+pushButton(id){
+    var item = document.getElementById(id);
+    item.innerHTML = player1;
 }
 
 const newBoard = new board(3,3);
