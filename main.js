@@ -1,5 +1,5 @@
 const player1 = "<img src='assets/testX.png'>";
-const player2 = "<img src='assets/testO/png'>";
+const player2 = "<img src='assets/testO.png'>";
 const blank = "<img src='assets/testBlank.png'>";
 
 var turn = false;
@@ -74,11 +74,11 @@ function pushButton(id){
     
     if(turn){
         item.innerHTML = player1;
-        turn = true;
+        turn = false;
     }
     else{
         item.innerHTML = player2;
-        turn = false;
+        turn = true;
     }
 }
 
