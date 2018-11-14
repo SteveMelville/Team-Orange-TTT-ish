@@ -2,13 +2,6 @@ body {
 	background-color: #f4af26;
 }
 
-#boardDiv {
-	top: 120px;
-	background-color: white;
-	z-index: 10;
-	width: auto;
-}
-
 #header {
 	top: 0px;
 	left: 0px;
@@ -32,6 +25,12 @@ body {
 	padding: 4px;
 }
 
+#boardDiv {
+	background-color: white;
+	z-index: 10;
+}
+
+
 .center{
 	text-align: center;
 	margin: auto;
@@ -39,9 +38,9 @@ body {
 }
 
 .article{
+	width: auto;
     	top: 150px;
 	position: relative;
-	width: 80%;
     	background-color: white;
     	padding-left: 20px;
     	padding: 20px;
