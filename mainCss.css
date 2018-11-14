@@ -38,7 +38,19 @@ body {
 	text-align: center;
 	margin: auto;
 	display: inline-block;
-	float: left;
-	clear: left;
 }
 
+.article{
+    top: 150px;
+	position: relative;
+	width: 80%;
+    background-color: #669999;
+    padding-left: 20px;
+    padding: 20px;
+    z-index: 0;
+    color: #003333;
+	clear: left;
+	padding-bottom: 100px;
+	margin: auto;
+	float: left;
+}
