@@ -3,9 +3,8 @@ body {
 }
 
 #boardDiv {
-	top: 30%;
-	left: 40%;
-	position: fixed;
+	top: 120px;
+	margin: auto;
 	background-color: white;
 	z-index: 10;
 }

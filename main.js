@@ -1,6 +1,9 @@
+const player1 = "<img src='assets/testX.png'>";
+const player2 = "<img src='assets/testO.png'>";
+const blank = "<img src='assets/testBlank.png'>";
+const numPlayers = 2;
 
-
-
+var turn = 0;
 
 class board{
     
@@ -17,15 +20,14 @@ class board{
         this.boardHTML = "";
         this.boardAddress = document.getElementById("board");
         
-        this.blank = "<img src='assets/testBlank.png'>";
-        this.player1 = "<img src='assets/testX.png'>";
-        
-        for(var i = 0; i < (this.width * this.height); i++){
-            if(i < this.width){
-                this.boardArray.push(null);
-            }
-            else{
-                this.boardArray.push(0);
+        for(var j = 0; j < this.height; j++){
+            for(var i = 0; i < this.width; i++){
+                if(j == 0 || j == this.height - 1 || i == 0 || i == this.width - 1){
+                    this.boardArray.push(null);
+                }
+                else{
+                    this.boardArray.push(0);
+                }
             }
         }
     }
@@ -40,9 +42,9 @@ class board{
                 this.boardHTML += "<td id = '" + id + "'>";
                 
                 switch(this.boardArray[id]){
-                    case 0: this.boardHTML += "<button type='button'>" + this.blank + "</button>";
+                    case 0: this.boardHTML += "<button type='button' onclick='pushButton(" + id + ")'>" + blank + "</button>";
                             break;
-                    case 1: this.boardHTML += this.player1;
+                    case 1: this.boardHTML += player1;
                             break;
                     default: break;
                 }
@@ -55,6 +57,11 @@ class board{
         this.boardAddress.innerHTML = this.boardHTML;
     }
     
+    set(id){
+        var item = document.getElementById(id);
+        item.innerHTML = player1;
+    }
+    
     get(x, y){
         if(x > this.width || y > this.height){
             return null;
@@ -63,7 +70,25 @@ class board{
     }
 }
 
-const newBoard = new board(3,3);
+function pushButton(id){
+    var item = document.getElementById(id);
+    
+    switch(turn){
+        case 0: item.innerHTML = player1;
+                break;
+        case 1: item.innerHTML = player2;
+                break;
+        
+    }
+    if(turn < numPlayers - 1){
+        turn++;
+    }
+    else{
+        turn = 0;
+    }
+}
+
+const newBoard = new board(11,11);
 newBoard.printBoard();
 
 
