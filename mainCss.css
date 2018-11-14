@@ -4,9 +4,11 @@ body {
 
 #boardDiv {
 	top: 120px;
+	position: relative;
 	margin: auto;
 	background-color: white;
 	z-index: 10;
+	display: inline-block;
 }
 
 #header {
