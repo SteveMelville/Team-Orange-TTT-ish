@@ -33,3 +33,10 @@ body {
 	text-align: center;
 	padding: 4px;
 }
+
+.center{
+	text-align: center;
+	margin: auto;
+	display: inline-block;
+}
+
