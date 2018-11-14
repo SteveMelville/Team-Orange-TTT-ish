@@ -37,6 +37,10 @@ body {
 	display: inline-block;
 }
 
+#board {
+	margin: auto;
+}
+
 .article{
 	width: auto;
     	top: 150px;
