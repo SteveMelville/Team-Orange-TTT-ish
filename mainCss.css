@@ -4,9 +4,9 @@ body {
 
 #boardDiv {
 	top: 120px;
-	position: relative;
 	background-color: white;
 	z-index: 10;
+	width: auto;
 }
 
 #header {
@@ -39,14 +39,14 @@ body {
 }
 
 .article{
-    top: 150px;
+    	top: 150px;
 	position: relative;
 	width: 80%;
-    background-color: #669999;
-    padding-left: 20px;
-    padding: 20px;
-    z-index: 0;
-    color: #003333;
+    	background-color: white;
+    	padding-left: 20px;
+    	padding: 20px;
+    	z-index: 0;
+   	color: #003333;
 	clear: left;
 	padding-bottom: 100px;
 	margin: auto;
