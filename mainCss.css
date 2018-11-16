@@ -34,14 +34,7 @@ body {
 .center{
 	text-align: center;
 	margin: auto;
-	display: inline-block;
-}
-
-#board {
-	margin: auto;
-}
-
-.article{
+	
 	width: auto;
     	top: 150px;
 	position: relative;
@@ -52,6 +45,13 @@ body {
    	color: #003333;
 	clear: left;
 	padding-bottom: 100px;
-	margin: auto;
 	float: left;
+}
+
+#board {
+	margin: auto;
+}
+
+.article{
+
 }
