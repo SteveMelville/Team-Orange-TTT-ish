@@ -130,7 +130,7 @@ function pushButton(id){
     test(newBoard.get(1,1));
 }
 
-const newBoard = new board(11,11);
+const newBoard = new board(3,3);
 newBoard.printBoard();
 
 
