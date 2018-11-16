@@ -38,6 +38,8 @@ body {
     	background-color: white;
     	z-index: 0;
    	color: #003333;
+	display: table;
+	/*width: fit-content;*/
 }
 
 #board {
