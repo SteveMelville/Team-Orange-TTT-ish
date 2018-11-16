@@ -42,6 +42,7 @@ body {
 
 #board {
 	margin: auto;
+	display: inline-block;
 }
 
 .article{
