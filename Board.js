@@ -118,9 +118,9 @@ function pushButton(id){
         case 14:  item.innerHTML = player14;
                 break;
         case 15:  item.innerHTML = player15;
-                break; 
-        newBoard.set(id, turn);
+                break;
     }
+    newBoard.set(id, turn);
     if(turn < numPlayers){
         turn++;
     }
