@@ -119,7 +119,7 @@ function pushButton(id){
                 break;
         case 15:  item.innerHTML = player15;
                 break; 
-        board.set(id, turn);
+        newBoard.set(id, turn);
     }
     if(turn < numPlayers){
         turn++;
@@ -127,7 +127,7 @@ function pushButton(id){
     else{
         turn = 1;
     }
-    test(board.get(1,1));
+    test(newBoard.get(1,1));
 }
 
 const newBoard = new board(11,11);
