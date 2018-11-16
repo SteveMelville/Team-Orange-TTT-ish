@@ -72,7 +72,7 @@ class board{
     }
     
     set(id, player){
-        boardArray[id] = player;
+        this.boardArray[id] = player;
     }
     
     get(x, y){
