@@ -13,7 +13,7 @@ const player12 = "<img src='assets/'>";
 const player13 = "<img src='assets/'>";
 const player14 = "<img src='assets/'>";
 const player15 = "<img src='assets/'>";
-const blank = "<img src='assets/testBlank.png'>";
+const blank = ""; //"<img src='assets/testBlank.png'>";
 
 
 var numPlayers = 2;
