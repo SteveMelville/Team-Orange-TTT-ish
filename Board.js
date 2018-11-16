@@ -71,9 +71,8 @@ class board{
         this.boardAddress.innerHTML = this.boardHTML;
     }
     
-    set(id){
-        var item = document.getElementById(id);
-        item.innerHTML = player1;
+    set(id, player){
+        boardArray[id] = player;
     }
     
     get(x, y){
@@ -120,6 +119,7 @@ function pushButton(id){
                 break;
         case 15:  item.innerHTML = player15;
                 break; 
+        board.set(id, turn);
     }
     if(turn < numPlayers){
         turn++;
