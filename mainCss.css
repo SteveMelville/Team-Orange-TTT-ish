@@ -2,15 +2,12 @@ body {
 	background-color: #f4af26;
 }
 
-img {
-	position: relative;
-	left: 0px;
-	top: 0px;
-}
+
 
 button {
 	width: 37px;
 	height: 37px;
+	background-image: url("assets/testBlank.png");
 }
 
 #header {
