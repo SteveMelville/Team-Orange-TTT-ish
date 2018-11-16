@@ -127,6 +127,7 @@ function pushButton(id){
     else{
         turn = 1;
     }
+    test(board.get(1,1));
 }
 
 const newBoard = new board(11,11);
