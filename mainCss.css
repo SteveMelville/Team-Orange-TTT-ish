@@ -33,16 +33,14 @@ body {
 
 .center{
 	text-align: center;
-	margin: auto;
 	width: auto;
     	top: 150px;
 	position: relative;
     	background-color: white;
-    	/*padding-left: 20px;
-    	padding: 20px;*/
+    	padding-left: 20px;
+    	padding: 20px;
     	z-index: 0;
    	color: #003333;
-	padding-bottom: 100px;
 }
 
 #board {
