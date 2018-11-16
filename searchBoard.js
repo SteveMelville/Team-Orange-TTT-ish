@@ -14,11 +14,12 @@ will also need to be modified to work regardless of how many elements are in eac
 --The scanBoard Function will need to either be part of the game class or be passed a game object. If it is not part of the game class some more
 code will need to be changed in this but It will be relatively minor.
 
---I also suggest that we should have a countedWords class to keep track of the words that have been counted in the game. It will contain an array
+--I also suggest that we should have a countedWords class(or just an array) to keep track of the words that have been counted in the game. It will contain an array
 with strings like "1-5-9", and "9-5-1" with this example board(starting with ID 1 in the top left):
 | x |   |   |
 |   | x |   |
 |   |   | x |
+Note: this will not neccessarily be sorted in numeric order but alphabetical order i.e ('2' > '100') but the process should still work
 These strings represent the ID of the tile the letter is contained within. I have both the forwards and backwards string included because each
 part of the scan board function looks for words both forwards and backwards. I haven't implemented the backwards part yet because I need to debug
 the basic stuff first. Once the left Diagonal is debugged and working everything else will be almost copy and paste.
