@@ -128,7 +128,6 @@ function pushButton(id){
     else{
         turn = 1;
     }
-    test(newBoard.get(1,1));
 }
 
 
