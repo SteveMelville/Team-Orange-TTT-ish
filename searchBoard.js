@@ -126,6 +126,26 @@ function addCountedWord(wordArr, startIndex, endIndex){
     countedWords.addWord(value)
 }
 
+//This function performs a binary search on an array of strings and returns the index of the string
+function binarySearch(array, value){
+    var maxIndex = array.length()-1;
+    var minIndex = 0;
+
+    while(minIndex<maxIndex){
+        var mid = (maxIndex + minIndex)/2;
+        if(array[mid] > value){
+            maxIndex = mid - 1;
+        }
+        else if(array[mid] < value){
+            minIndex = mid + 1;
+        }
+        else{
+            return mid;
+        }
+    }
+    return -1
+}
+
 //This function scans the right diagonal '/'
 function RightDiagonal(placedLetterPosition){
     
