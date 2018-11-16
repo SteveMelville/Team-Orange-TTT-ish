@@ -35,7 +35,7 @@ body {
 	text-align: center;
     	top: 150px;
 	position: relative;
-    	background-color: white;
+    	background-color: #f4af26;
     	z-index: 0;
    	color: #003333;
 }
@@ -43,6 +43,7 @@ body {
 #board {
 	margin: auto;
 	display: inline-block;
+	background-color: white;
 }
 
 .article{
