@@ -83,7 +83,8 @@ class board{
     }
 }
 
-
+const newBoard = new board(3,3);
+newBoard.printBoard();
 
 function pushButton(id){
     var item = document.getElementById(id);
@@ -130,8 +131,7 @@ function pushButton(id){
     test(newBoard.get(1,1));
 }
 
-const newBoard = new board(3,3);
-newBoard.printBoard();
+
 
 
 function test(message){
