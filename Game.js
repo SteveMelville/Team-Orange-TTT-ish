@@ -88,6 +88,7 @@ function pushButton(id){
         case 15:  item.innerHTML = player15;
                 break;
     }
+    //scanBoard(newBoard, id);
     newBoard.set(id, turn);
     if(turn < numPlayers){
         turn++;
