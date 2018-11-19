@@ -23,8 +23,6 @@ class Player{
   }
   
   setScore(score){
-    if(score > 0){
       score_ = score;
-    }
   }
 }
