@@ -1,6 +1,6 @@
 class game{
 	constructor(width, height){
-		this.dictionary = new Dictionary();
+		//this.dictionary = new Dictionary();
 		this.board = new Board(width, height);
 		this.players = [];
 		this.numPlayers = 0;		
