@@ -30,10 +30,10 @@ class game{
 	}
 	
 	addPlayer(nickname, image){
-		player.push(new Player(++numPlayers_, nickname, image);	
+		player.push(new Player(++numPlayers_, nickname, image));	
 	}
 			    
-	removePlayeR(id){
+	removePlayer(id){
 			
 	}
 		
