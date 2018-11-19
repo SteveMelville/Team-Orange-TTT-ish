@@ -2,6 +2,9 @@ class Dictionary{
 	//gets nothing, returns nothing
 	constructor(){
 		this.dict = [];
+		//for testing
+		this.addWord("XXX", 1);
+		this.addWord("OOO", 1);
 	}
 	//gets a string and an intiger returns nothing
 	addWord(name , points){
