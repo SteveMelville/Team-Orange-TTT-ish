@@ -56,7 +56,7 @@ newGame.board.printBoard();
 function pushButton(id){
     var item = document.getElementById(id);
     
-    switch(newBoard.getTurn()){
+    switch(newGame.getTurn()){
         case 1: item.innerHTML = player1;
                 break;
         case 2: item.innerHTML = player2;
