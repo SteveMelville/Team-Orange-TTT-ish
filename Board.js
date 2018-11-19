@@ -123,11 +123,6 @@ class board{
     }
 }
 
-const newBoard = new board(11,11);
-newBoard.printBoard();
-
-
-
 
 
 
