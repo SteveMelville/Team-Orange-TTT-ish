@@ -35,6 +35,7 @@ If you have any questions and/or suggestions please let me know
 */
 
 //This function scans the board for words made by placing a letter in a given position
+
 function scanBoard(placedLetterPosition){
     var points = 0
     points += leftDiagonal(placedLetterPosition);
@@ -42,7 +43,7 @@ function scanBoard(placedLetterPosition){
     points += Vertical(placedLetterPosition);
     points += Horizontal(placedLetterPosition);
     //give points to player that made the move
-    player[getCurrentPlayer()].setPoints((player[getCurrentPlayer()].getPoints() + points))
+    this.players[getTurn()].setScore((player[getTurn()].getScore() + points))
 }
 
 //This function scans the left diagonal '\'
@@ -52,30 +53,31 @@ function leftDiagonal(placedLetterPosition){
     //add letter at current position to wordStr
     var wordStr = document.getElementById(`${currentPosition}`).src.replace(".jpg","");
     //get letters left of initial
-    while(board.getBoardArray()[`${currentPosition - board.getWidth() - 1}`] != null || !(document.getElementById(`${currentPosition - board.getWidth() - 1}`).src.includes("blank"))){
+    while(board.getBoardArray()[`${currentPosition - this.board.getWidth() - 1}`] != null && !(document.getElementById(`${currentPosition - this.board.getWidth() - 1}`).src.includes("blank"))){
         //and new object to the beginning wordArr {char: 'character', position: boardposition}
         //unshift inserts an item to the front of an array
-        wordArr.unshift({char: document.getElementById(`${currentPosition - board.getWidth() - 1}`).src.replace(".jpg", ""), position: (currentPosition - board.getWidth() - 1)});
-        wordStr = document.getElementById(`${currentPosition - board.getWidth() - 1}`).src.replace(".jpg", "") + wordStr;
+        wordArr.unshift({char: document.getElementById(`${currentPosition - this.board.getWidth() - 1}`).src.replace(".jpg", ""), position: (currentPosition - this.board.getWidth() - 1)});
+        wordStr = document.getElementById(`${currentPosition - this.board.getWidth() - 1}`).src.replace(".jpg", "") + wordStr;
         //move current position
-        currentPosition = currentPosition - board.getWidth() - 1;
+        currentPosition = currentPosition - this.board.getWidth() - 1;
     }
     //reset currentPosition
     currentPosition = placedLetterPosition;
     //get letters right of initial
-    while(board.getBoardArray()[`${currentPosition + board.getWidth() + 1}`] != null || !(document.getElementById(`${currentPosition + board.getWidth() + 1}`).src.includes("blank"))){
+    while(board.getBoardArray()[`${currentPosition + this.board.getWidth() + 1}`] != null && !(document.getElementById(`${currentPosition + this.board.getWidth() + 1}`).src.includes("blank"))){
         //add new object to the end of wordArr
-        wordArr.push({char: document.getElementById(`${currentPosition + board.getWidth() + 1}`).src.replace(".jpg", ""), position: (currentPosition + board.getWidth() + 1)});
-        wordStr = wordStr + document.getElementById(`${currentPosition + board.getWidth() + 1}`).src.replace(".jpg", "");
-        currentPosition = currentPosition + board.getWidth() + 1;
+        wordArr.push({char: document.getElementById(`${currentPosition + this.board.getWidth() + 1}`).src.replace(".jpg", ""), position: (currentPosition + this.board.getWidth() + 1)});
+        wordStr = wordStr + document.getElementById(`${currentPosition + this.board.getWidth() + 1}`).src.replace(".jpg", "");
+        currentPosition = currentPosition + this.board.getWidth() + 1;
     }
 
     return checkWords(wordStr, wordArr);
 }
 
 //get points if needed
+//TODO AAAAA given AAA is a word gives three points
 function checkWords(wordStr, wordArr){
-    var words = dictionary.getWords();
+    var words = this.dictionary.getDictionary();
     var points = 0;
     for(word in words){
         var index = wordStr.indexOf(`${words[word].getName()}`);
@@ -83,7 +85,13 @@ function checkWords(wordStr, wordArr){
             points += words[word].getPoint();
             addCountedWord(wordArr, index, (index + wordStr.length() - 1));
         }
-        //TODO ADD check backwards capability
+        //TODO ADD check backwards capability (for words like tom)
+        wordStr = wordStr.split("").reverse().join("");
+        index = wordStr.indexOf(`${words[word].getName()}`);
+        if(index != -1 && !wordCounted(wordArr, index, (index + wordStr.length() - 1))){
+            points += words[word].getPoint();
+            addCountedWord(wordArr, index, (index + wordStr.length() - 1));
+        }
     }
     return points;
 }
@@ -96,7 +104,7 @@ function wordCounted(wordArr, startIndex, endIndex){
         value = value + '-' + `${wordArr[startIndex + i].position}`;
     }
     ///TODO implement binary search function (array to search, value to find)
-    if(binarySearch(countedWords.get(), value) != -1){
+    if(binarySearch(this.countedWords.get(), value) != -1){
         flag = true;
     }
     //search for backwards order
@@ -105,7 +113,7 @@ function wordCounted(wordArr, startIndex, endIndex){
         value = value + '-' + `${wordArr[i].position}`;
     }
 
-    if(binarySearch(countedWords.get(), value) != -1){
+    if(binarySearch(this.countedWords.get(), value) != -1){
         flag = true;
     }
 
@@ -118,33 +126,13 @@ function addCountedWord(wordArr, startIndex, endIndex){
     for (var i = 1; i <= endIndex; i++){
         value = value + '-' + `${wordArr[startIndex + i].position}`;
     }
-    countedWords.addWord(value)
+    this.countedWords.addWord(value)
     //add backwards order as well
     var value = `${wordArr[endIndex].position}`;
     for (var i = endIndex - 1; i >= startIndex; i--){
         value = value + '-' + `${wordArr[i].position}`;
     }
-    countedWords.addWord(value)
-}
-
-//This function performs a binary search on an array of strings and returns the index of the string
-function binarySearch(array, value){
-    var maxIndex = array.length()-1;
-    var minIndex = 0;
-
-    while(minIndex<maxIndex){
-        var mid = (maxIndex + minIndex)/2;
-        if(array[mid] > value){
-            maxIndex = mid - 1;
-        }
-        else if(array[mid] < value){
-            minIndex = mid + 1;
-        }
-        else{
-            return mid;
-        }
-    }
-    return -1
+    this.countedWords.addWord(value)
 }
 
 //This function scans the right diagonal '/'
@@ -161,3 +149,32 @@ function Vertical(placedLetterPosition){
 function Horizontal(placedLetterPosition){
     
 }
+
+//This function tests the wordCounted function
+(function(){
+    var wordArray = [{char: "a", position: "1"},{char: "b", position: "2"},{char: "c", position: "3"},{char: "d", position: "4"},{char: "e", position: "5"},{char: "f", position: "6"}];
+    var Start = 2;
+    var End = 4;
+    countedWords.addWord("2-3-4");
+    countedWords.addWord("4-3-2");
+    if(wordCounted(wordArray, Start, End) == false){
+        console.log("wordCounted produced an incorrect result")
+    }
+    if(wordCounted(wordArray, (Start + 1), End) == true){
+        console.log("wordCounted produced an incorrect result")
+    }
+})();
+
+//This function tests the addCountedWord function
+(function(){
+    var wordArray = [{char: "a", position: "1"},{char: "b", position: "2"},{char: "c", position: "3"},{char: "d", position: "4"},{char: "e", position: "5"},{char: "f", position: "6"}];
+    var Start = 2;
+    var End = 4;
+    addCountedWord(wordArray, Start, End);
+    if(binarySearch(countedWords.get(), "2-3-4") != -1){
+        console.log("addCountedWord produced an incorrect result")
+    }
+    if(binarySearch(countedWords.get(), "4-3-2") != -1){
+        console.log("addCountedWord produced an incorrect result")
+    }
+})();
