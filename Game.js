@@ -89,6 +89,6 @@ function pushButton(id){
                 break;
     }
     //scanBoard(newBoard, id);
-    newGame.board.set(id, turn);
+    newGame.board.set(id, getTurn());
     newGame.updateTurn();
 }
