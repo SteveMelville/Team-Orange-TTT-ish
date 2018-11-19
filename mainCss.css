@@ -2,7 +2,10 @@ body {
 	background-color: #f4af26;
 }
 
-
+img {
+	width: 37px;
+	height: 37px;
+}
 
 button {
 	width: 37px;
