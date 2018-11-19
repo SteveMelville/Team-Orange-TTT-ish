@@ -113,6 +113,14 @@ class board{
         }
         return this.boardArray[(this.width * y) + x];
     }
+  
+    getWidth(){
+        return this.width; 
+    }
+  
+    getHeight(){
+        return this.height; 
+    }
 }
 
 const newBoard = new board(11,11);
