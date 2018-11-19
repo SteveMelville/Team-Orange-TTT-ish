@@ -1,22 +1,22 @@
 const player1 = "<img src='assets/testX.png'>";
 const player2 = "<img src='assets/testO.png'>";
-const player3 = "<img src='assets/'>";
-const player4 = "<img src='assets/'>";
-const player5 = "<img src='assets/'>";
-const player6 = "<img src='assets/'>";
-const player7 = "<img src='assets/'>";
-const player8 = "<img src='assets/'>";
-const player9 = "<img src='assets/'>";
-const player10 = "<img src='assets/'>";
-const player11 = "<img src='assets/'>";
-const player12 = "<img src='assets/'>";
-const player13 = "<img src='assets/'>";
-const player14 = "<img src='assets/'>";
-const player15 = "<img src='assets/'>";
+const player3 = "<img src='assets/A.png'>";
+const player4 = "<img src='assets/B.png'>";
+const player5 = "<img src='assets/C.png'>";
+const player6 = "<img src='assets/D.png'>";
+const player7 = "<img src='assets/E.png'>";
+const player8 = "<img src='assets/.png'>";
+const player9 = "<img src='assets/.png'>";
+const player10 = "<img src='assets/.png'>";
+const player11 = "<img src='assets/.png'>";
+const player12 = "<img src='assets/.png'>";
+const player13 = "<img src='assets/.png'>";
+const player14 = "<img src='assets/.png'>";
+const player15 = "<img src='assets/.png'>";
 const blank = ""; //"<img src='assets/testBlank.png'>";
 
 
-var numPlayers = 2;
+var numPlayers = 7;
 var turn = 1;
 
 class board{
