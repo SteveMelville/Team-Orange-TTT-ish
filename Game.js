@@ -7,14 +7,14 @@ class game{
 		this.PointsToWin = 1;
 		this.turn = 1;
 		
-		addPlayer("bob", testX);
-		addPlayer("bob", testO);
-		addPlayer("bob", letterA);
-		addPlayer("bob", letterB);
-		addPlayer("bob", letterC);
-		addPlayer("bob", letterD);
-		addPlayer("bob", letterE);
-		addPlayer("bob", letterF);
+		this.addPlayer("bob", testX);
+		this.addPlayer("bob", testO);
+		this.addPlayer("bob", letterA);
+		this.addPlayer("bob", letterB);
+		this.addPlayer("bob", letterC);
+		this.addPlayer("bob", letterD);
+		this.addPlayer("bob", letterE);
+		this.addPlayer("bob", letterF);
 	}
 	getDictionary(){}//returns a dictionary	
 	getBoard(){}//returns a board
@@ -65,7 +65,7 @@ newGame.board.printBoard();
 function pushButton(id){
     var item = document.getElementById(id);
     
-    item = newGame.players[newGame.getTurn()].getImage();
+    item = newGame.players[newGame.getTurn() - 1].getImage();
     //scanBoard(newBoard, id);
     newGame.board.set(id, newGame.getTurn());
     newGame.updateTurn();
