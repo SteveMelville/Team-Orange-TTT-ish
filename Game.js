@@ -1,4 +1,4 @@
-class game(){
+class game{
 	constructor(width, height){
 		this.dictionary = new Dictionary();
 		this.board = new Board(width, height);
