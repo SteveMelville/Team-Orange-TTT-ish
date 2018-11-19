@@ -3,7 +3,7 @@ class game{
 		//this.dictionary = new Dictionary();
 		this.board = new Board(width, height);
 		this.players = [];
-		this.numPlayers = 0;		
+		this.numPlayers = 7;		
 		this.PointsToWin = 1;
 		this.turn = 1;
 	}
@@ -20,7 +20,7 @@ class game{
 		}
 	}
 	getFirstPlacePlayer(){
-		winner=this.players[0]
+		winner = this.players[0]
 		for(i=1;i<this.players.length;i++){
 			if(this.players[i].getScore>winner.getScore){
 				winner=this.players[i];
@@ -30,7 +30,7 @@ class game{
 	}
 	
 	addPlayer(nickname, image){
-		player.push(new Player(++numPlayers_, nickname, image));	
+		this.player.push(new Player(++numPlayers_, nickname, image));	
 	}
 			    
 	removePlayer(id){
@@ -38,14 +38,14 @@ class game{
 	}
 		
 	getTurn(){
-		return turn;
+		return this.turn;
 	}
 	updateTurn(){
-		if(turn < numPlayers){
-			turn++;
+		if(this.turn < this.numPlayers){
+			this.turn++;
 		}
 		else{
-			turn = 1;
+			this.turn = 1;
 		}
 	}
 }
