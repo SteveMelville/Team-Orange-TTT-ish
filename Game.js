@@ -6,6 +6,7 @@ class game{
 		this.numPlayers = 0;		
 		this.PointsToWin = 1;
 		this.turn = 1;
+		this.countedWords = [];
 		
 		this.addPlayer("bob", testX);
 		this.addPlayer("bob", testO);
