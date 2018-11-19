@@ -39,7 +39,7 @@ class game{
 	}
 	
 	addPlayer(nickname, image){
-		this.players.push(new Player(++numPlayers, nickname, image));	
+		this.players.push(new Player(++this.numPlayers, nickname, image));	
 	}
 			    
 	removePlayer(id){
