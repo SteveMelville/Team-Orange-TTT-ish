@@ -1,9 +1,11 @@
 class game(){
-	constructor(){
-		this.dictionary=new Dictionary();
-		this.board=new Board();
-		this.players=new Player()[];
-		this.PointsToWin=1;
+	constructor(width, height){
+		this.dictionary = new Dictionary();
+		this.board = new Board(width, height);
+		this.players = [];
+		this.numPlayers = 0;		
+		this.PointsToWin = 1;
+		this.turn = 1;
 	}
 	getDictionary(){}//returns a dictionary	
 	getBoard(){}//returns a board
@@ -27,5 +29,67 @@ class game(){
 		return winner;
 	}
 	
+	addPlayer(nickname, image){
+		player.push(new Player(++numPlayers_, nickname, image);	
+	}
+			    
+	removePlayeR(id){
+			
+	}
+		
+	getTurn(){
+		return turn;
+	}
+	updateTurn(){
+		if(turn < numPlayers){
+			turn++;
+		}
+		else{
+			turn = 1;
+		}
+	}
+}
 	
+function pushButton(id){
+    var item = document.getElementById(id);
+    
+    switch(turn){
+        case 1: item.innerHTML = player1;
+                break;
+        case 2: item.innerHTML = player2;
+                break;
+        case 3:  item.innerHTML = player3;
+                break;
+        case 4:  item.innerHTML = player4;
+                break;
+        case 5:  item.innerHTML = player5;
+                break;
+        case 6:  item.innerHTML = player6;
+                break;
+        case 7:  item.innerHTML = player7;
+                break;
+        case 8:  item.innerHTML = player8;
+                break;
+        case 9:  item.innerHTML = player9;
+                break;
+        case 10:  item.innerHTML = player10;
+                break;
+        case 11:  item.innerHTML = player11;
+                break;
+        case 12:  item.innerHTML = player12;
+                break;
+        case 13:  item.innerHTML = player13;
+                break;
+        case 14:  item.innerHTML = player14;
+                break;
+        case 15:  item.innerHTML = player15;
+                break;
+    }
+    newBoard.set(id, turn);
+    if(turn < numPlayers){
+        turn++;
+    }
+    else{
+        turn = 1;
+    }
 }
