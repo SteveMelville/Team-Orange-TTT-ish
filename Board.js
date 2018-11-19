@@ -48,9 +48,6 @@ var player15 = letterM;
 
 
 
-var numPlayers = 7;
-var turn = 1;
-
 class Board{
     
     //var width;
