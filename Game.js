@@ -3,9 +3,18 @@ class game{
 		//this.dictionary = new Dictionary();
 		this.board = new Board(width, height);
 		this.players = [];
-		this.numPlayers = 7;		
+		this.numPlayers = 0;		
 		this.PointsToWin = 1;
 		this.turn = 1;
+		
+		addPlayer("bob", testX);
+		addPlayer("bob", testO);
+		addPlayer("bob", letterA);
+		addPlayer("bob", letterB);
+		addPlayer("bob", letterC);
+		addPlayer("bob", letterD);
+		addPlayer("bob", letterE);
+		addPlayer("bob", letterF);
 	}
 	getDictionary(){}//returns a dictionary	
 	getBoard(){}//returns a board
@@ -56,38 +65,7 @@ newGame.board.printBoard();
 function pushButton(id){
     var item = document.getElementById(id);
     
-    switch(newGame.getTurn()){
-        case 1: item.innerHTML = player1;
-                break;
-        case 2: item.innerHTML = player2;
-                break;
-        case 3:  item.innerHTML = player3;
-                break;
-        case 4:  item.innerHTML = player4;
-                break;
-        case 5:  item.innerHTML = player5;
-                break;
-        case 6:  item.innerHTML = player6;
-                break;
-        case 7:  item.innerHTML = player7;
-                break;
-        case 8:  item.innerHTML = player8;
-                break;
-        case 9:  item.innerHTML = player9;
-                break;
-        case 10:  item.innerHTML = player10;
-                break;
-        case 11:  item.innerHTML = player11;
-                break;
-        case 12:  item.innerHTML = player12;
-                break;
-        case 13:  item.innerHTML = player13;
-                break;
-        case 14:  item.innerHTML = player14;
-                break;
-        case 15:  item.innerHTML = player15;
-                break;
-    }
+    item = newGame.players[newGame.getTurn()].getImage();
     //scanBoard(newBoard, id);
     newGame.board.set(id, newGame.getTurn());
     newGame.updateTurn();
