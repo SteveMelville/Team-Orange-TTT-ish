@@ -49,6 +49,9 @@ class game{
 		}
 	}
 }
+
+var newGame = new game(15,15);
+newGame.board.printBoard();
 	
 function pushButton(id){
     var item = document.getElementById(id);
