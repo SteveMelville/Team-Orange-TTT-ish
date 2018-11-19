@@ -35,40 +35,39 @@ If you have any questions and/or suggestions please let me know
 */
 
 //This function scans the board for words made by placing a letter in a given position
-
-function scanBoard(placedLetterPosition){
+function scanBoard(newGame, placedLetterPosition){
     var points = 0
     points += leftDiagonal(placedLetterPosition);
     points += RightDiagonal(placedLetterPosition);
     points += Vertical(placedLetterPosition);
     points += Horizontal(placedLetterPosition);
     //give points to player that made the move
-    this.players[getTurn()].setScore((player[getTurn()].getScore() + points))
+    newGame.players[newGame.getTurn()].setScore((player[getTurn()].getScore() + points))
 }
 
 //This function scans the left diagonal '\'
 function leftDiagonal(placedLetterPosition){
     var currentPosition = placedLetterPosition;
-    var wordArr =[{char: document.getElementById(`${currentPosition}`).src.replace(".jpg",""), position: currentPosition}];
+    var wordArr =[{char: document.getElementById(`${currentPosition}`).firstChild.src.replace(".jpg","").replace("assets/", ""), position: currentPosition}];
     //add letter at current position to wordStr
-    var wordStr = document.getElementById(`${currentPosition}`).src.replace(".jpg","");
+    var wordStr = document.getElementById(`${currentPosition}`).firstChild.src.replace(".jpg","").replace("assets/", "");
     //get letters left of initial
-    while(board.getBoardArray()[`${currentPosition - this.board.getWidth() - 1}`] != null && !(document.getElementById(`${currentPosition - this.board.getWidth() - 1}`).src.includes("blank"))){
+    while(board.getBoardArray()[`${currentPosition - newGame.board.getWidth() - 1}`] != null && !(document.getElementById(`${currentPosition - newGame.board.getWidth() - 1}`).firstChild.src.includes("blank"))){
         //and new object to the beginning wordArr {char: 'character', position: boardposition}
         //unshift inserts an item to the front of an array
-        wordArr.unshift({char: document.getElementById(`${currentPosition - this.board.getWidth() - 1}`).src.replace(".jpg", ""), position: (currentPosition - this.board.getWidth() - 1)});
-        wordStr = document.getElementById(`${currentPosition - this.board.getWidth() - 1}`).src.replace(".jpg", "") + wordStr;
+        wordArr.unshift({char: document.getElementById(`${currentPosition - newGame.board.getWidth() - 1}`).firstChild.src.replace(".jpg", "").replace("assets/", ""), position: (currentPosition - newGame.board.getWidth() - 1)});
+        wordStr = document.getElementById(`${currentPosition - newGame.board.getWidth() - 1}`).firstChild.src.replace(".jpg", "").replace("assets/", "") + wordStr;
         //move current position
-        currentPosition = currentPosition - this.board.getWidth() - 1;
+        currentPosition = currentPosition - newGame.board.getWidth() - 1;
     }
     //reset currentPosition
     currentPosition = placedLetterPosition;
     //get letters right of initial
-    while(board.getBoardArray()[`${currentPosition + this.board.getWidth() + 1}`] != null && !(document.getElementById(`${currentPosition + this.board.getWidth() + 1}`).src.includes("blank"))){
+    while(board.getBoardArray()[`${currentPosition + newGame.board.getWidth() + 1}`] != null && !(document.getElementById(`${currentPosition + newGame.board.getWidth() + 1}`).firstChild.src.includes("blank"))){
         //add new object to the end of wordArr
-        wordArr.push({char: document.getElementById(`${currentPosition + this.board.getWidth() + 1}`).src.replace(".jpg", ""), position: (currentPosition + this.board.getWidth() + 1)});
-        wordStr = wordStr + document.getElementById(`${currentPosition + this.board.getWidth() + 1}`).src.replace(".jpg", "");
-        currentPosition = currentPosition + this.board.getWidth() + 1;
+        wordArr.push({char: document.getElementById(`${currentPosition + newGame.board.getWidth() + 1}`).firstChild.src.replace(".jpg", "").replace("assets/", ""), position: (currentPosition + newGame.board.getWidth() + 1)});
+        wordStr = wordStr + document.getElementById(`${currentPosition + newGame.board.getWidth() + 1}`).firstChild.src.replace(".jpg", "").replace("assets/", "");
+        currentPosition = currentPosition + newGame.board.getWidth() + 1;
     }
 
     return checkWords(wordStr, wordArr);
@@ -77,7 +76,7 @@ function leftDiagonal(placedLetterPosition){
 //get points if needed
 //TODO AAAAA given AAA is a word gives three points
 function checkWords(wordStr, wordArr){
-    var words = this.dictionary.getDictionary();
+    var words = newGame.dictionary.getDictionary();
     var points = 0;
     for(word in words){
         var index = wordStr.indexOf(`${words[word].getName()}`);
@@ -104,7 +103,7 @@ function wordCounted(wordArr, startIndex, endIndex){
         value = value + '-' + `${wordArr[startIndex + i].position}`;
     }
     ///TODO implement binary search function (array to search, value to find)
-    if(binarySearch(this.countedWords.get(), value) != -1){
+    if(binarySearch(newGame.countedWords, value) != -1){
         flag = true;
     }
     //search for backwards order
@@ -113,7 +112,7 @@ function wordCounted(wordArr, startIndex, endIndex){
         value = value + '-' + `${wordArr[i].position}`;
     }
 
-    if(binarySearch(this.countedWords.get(), value) != -1){
+    if(binarySearch(newGame.countedWords, value) != -1){
         flag = true;
     }
 
@@ -126,28 +125,28 @@ function addCountedWord(wordArr, startIndex, endIndex){
     for (var i = 1; i <= endIndex; i++){
         value = value + '-' + `${wordArr[startIndex + i].position}`;
     }
-    this.countedWords.addWord(value)
+    newGame.countedWords.push(value).sort()
     //add backwards order as well
     var value = `${wordArr[endIndex].position}`;
     for (var i = endIndex - 1; i >= startIndex; i--){
         value = value + '-' + `${wordArr[i].position}`;
     }
-    this.countedWords.addWord(value)
+    newGame.countedWords.push(value).sort()
 }
 
 //This function scans the right diagonal '/'
 function RightDiagonal(placedLetterPosition){
-    
+    return 0;
 }
 
 //This function scans the vertical '|'
 function Vertical(placedLetterPosition){
-
+    return 0;
 }
 
 //This function scans the horizontal '-'
 function Horizontal(placedLetterPosition){
-    
+    return 0;
 }
 
 //This function tests the wordCounted function
