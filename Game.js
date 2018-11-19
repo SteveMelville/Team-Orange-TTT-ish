@@ -89,11 +89,6 @@ function pushButton(id){
                 break;
     }
     //scanBoard(newBoard, id);
-    newBoard.set(id, turn);
-    if(turn < numPlayers){
-        turn++;
-    }
-    else{
-        turn = 1;
-    }
+    newGame.board.set(id, turn);
+    newGame.updateTurn();
 }
