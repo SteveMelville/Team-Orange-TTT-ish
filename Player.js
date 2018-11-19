@@ -8,21 +8,21 @@ class Player{
   }
   
   getId(){
-      return id_;
+      return this.id_;
     }
   
   getNickname(){
-      return nickname_;
+      return this.nickname_;
     }
   getImage(){
-      return image_;
+      return this.image_;
   }
   
   getScore(){
-      return score_;
+      return this.score_;
   }
   
   setScore(score){
-      score_ = score;
+      this.score_ = score;
   }
 }
