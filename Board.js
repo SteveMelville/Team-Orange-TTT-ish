@@ -30,7 +30,7 @@ const testO = "<img src='assets/testO.png'>";
 const blank = ""; //"<img src='assets/testBlank.png'>";
                                       
 
-var player1 = textX;
+var player1 = testX;
 var player2 = testO;
 var player3 = letterA;
 var player4 = letterB;
