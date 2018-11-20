@@ -42,7 +42,8 @@ function scanBoard(newGame, placedLetterPosition){
     points += Vertical(placedLetterPosition);
     points += Horizontal(placedLetterPosition);
     //give points to player that made the move
-    newGame.players[newGame.getTurn()].setScore((player[getTurn()].getScore() + points))
+    newGame.players[newGame.getTurn()].setScore((player[newGame.getTurn()].getScore() + points))
+    test(newGame.players[newGame.getTurn().getScore());
 }
 
 //This function scans the left diagonal '\'
