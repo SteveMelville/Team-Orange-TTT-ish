@@ -81,18 +81,18 @@ function checkWords(wordStr, wordArr){
     var points = 0;
     for(word in words){
         var index = wordStr.indexOf(`${words[word].getName()}`);
-        while(index != -1 && !wordCounted(wordArr, index, (index + wordStr.length() - 1))){
+        while(index != -1 && !wordCounted(wordArr, index, (index + wordStr.length - 1))){
             points += words[word].getPoint();
-            addCountedWord(wordArr, index, (index + wordStr.length() - 1));
+            addCountedWord(wordArr, index, (index + wordStr.length - 1));
             wordStr.substring((index + 1));
             index = wordStr.indexOf(`${words[word].getName()}`);
         }
         //check backwards
         wordStr = wordStr.split("").reverse().join("");
         index = wordStr.indexOf(`${words[word].getName()}`);
-        while(index != -1 && !wordCounted(wordArr, index, (index + wordStr.length() - 1))){
+        while(index != -1 && !wordCounted(wordArr, index, (index + wordStr.length - 1))){
             points += words[word].getPoint();
-            addCountedWord(wordArr, index, (index + wordStr.length() - 1));
+            addCountedWord(wordArr, index, (index + wordStr.length - 1));
             wordStr.substring((index + 1));
             index = wordStr.indexOf(`${words[word].getName()}`);
         }
