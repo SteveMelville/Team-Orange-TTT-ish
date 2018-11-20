@@ -63,7 +63,7 @@ function leftDiagonal(placedLetterPosition){
     //reset currentPosition
     currentPosition = placedLetterPosition;
     //get letters right of initial
-    while(board.getBoardArray()[`${currentPosition + newGame.board.getWidth() + 1}`] != null && !(document.getElementById(`${currentPosition + newGame.board.getWidth() + 1}`).firstChild.src.includes("blank"))){
+    while(newGame.board.get(`${currentPosition + newGame.board.getWidth() + 1}`) != null && !(document.getElementById(`${currentPosition + newGame.board.getWidth() + 1}`).firstChild.tagName === "BUTTON")){
         //add new object to the end of wordArr
         wordArr.push({char: document.getElementById(`${currentPosition + newGame.board.getWidth() + 1}`).firstChild.src.replace(".jpg", "").replace("assets/", ""), position: (currentPosition + newGame.board.getWidth() + 1)});
         wordStr = wordStr + document.getElementById(`${currentPosition + newGame.board.getWidth() + 1}`).firstChild.src.replace(".jpg", "").replace("assets/", "");
