@@ -18,7 +18,7 @@ class game{
 		alert(this.numPlayers);
 		var player = 1
 		for (player in this.players){
-			console.log(players[player]);	
+			console.log(this.players[player]);	
 		}
 	}
 	getDictionary(){}//returns a dictionary	
