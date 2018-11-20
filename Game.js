@@ -17,9 +17,6 @@ class game{
 		this.addPlayer("bob", letterE);*/
 		alert(this.numPlayers);
 		var player = 1
-		for (player in this.players){
-			console.log(this.players[player]);	
-		}
 	}
 	getDictionary(){}//returns a dictionary	
 	getBoard(){}//returns a board
@@ -52,7 +49,6 @@ class game{
 	}
 		
 	getTurn(){
-		console.log("getTurn" + this.turn);
 		return this.turn;
 	}
 	updateTurn(){
@@ -62,7 +58,6 @@ class game{
 		else{
 			this.turn = 1;
 		}
-		alert(this.turn);
 	}
 }
 
