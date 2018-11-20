@@ -104,11 +104,11 @@ class Board{
         this.boardArray[id] = player;
     }
     
-    get(x, y){
-        if(x > this.width - 1 || y > this.height - 1 || y < 0 || x < 0){
+    get(id){
+        /*if(x > this.width - 1 || y > this.height - 1 || y < 0 || x < 0){
             return null;
-        }
-        return this.boardArray[(this.width * y) + x];
+        }*/
+        return this.boardArray[id];
     }
   
     getWidth(){
