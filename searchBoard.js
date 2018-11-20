@@ -154,6 +154,26 @@ function Horizontal(placedLetterPosition){
     return 0;
 }
 
+//This function performs a binary search on an array of strings and returns the index of the string
+function binarySearch(array, value){
+    var maxIndex = array.length()-1;
+    var minIndex = 0;
+     while(minIndex<maxIndex){
+        var mid = (maxIndex + minIndex)/2;
+        if(array[mid] > value){
+            maxIndex = mid - 1;
+        }
+        else if(array[mid] < value){
+            minIndex = mid + 1;
+        }
+        else{
+            return mid;
+        }
+    }
+    return -1
+}
+
+
 //This function tests the wordCounted function
 /*(function(){
     var wordArray = [{char: "a", position: "1"},{char: "b", position: "2"},{char: "c", position: "3"},{char: "d", position: "4"},{char: "e", position: "5"},{char: "f", position: "6"}];
