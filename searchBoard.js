@@ -1,5 +1,5 @@
 //test - should output 3
-alert(`${1+2}`)
+/*alert(`${1+2}`)*/
 /*
 This assumes that a few functions/classes will be made in the future. It has not been debugged whatsoever.
 It is just a proof of concept for the search function.
