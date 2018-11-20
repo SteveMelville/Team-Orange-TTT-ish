@@ -4,7 +4,7 @@ class game{
 		this.board = new Board(width, height);
 		this.players = [];
 		this.numPlayers = 0;		
-		this.PointsToWin = 1;
+		this.PointsToWin = 10;
 		this.turn = 1;
 		this.countedWords = [];
 		
