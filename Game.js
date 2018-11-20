@@ -16,6 +16,9 @@ class game{
 		this.addPlayer("bob", letterD);
 		this.addPlayer("bob", letterE);*/
 		alert(this.numPlayers);
+		for (player in this.players){
+			console.log(players[player]);	
+		}
 	}
 	getDictionary(){}//returns a dictionary	
 	getBoard(){}//returns a board
