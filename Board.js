@@ -3,7 +3,7 @@ const letterB = "<img src='assets/B.png'>";
 const letterC = "<img src='assets/C.png'>";
 const letterD = "<img src='assets/D.png'>";
 const letterE = "<img src='assets/E.png'>";
-const letterF = "<img src='assets/.png'>";
+const letterF = "<img src='assets/F.png'>";
 const letterG = "<img src='assets/.png'>";
 const letterH = "<img src='assets/.png'>";
 const letterI = "<img src='assets/.png'>";
