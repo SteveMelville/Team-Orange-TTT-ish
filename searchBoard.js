@@ -154,7 +154,7 @@ function Horizontal(placedLetterPosition){
 }
 
 //This function tests the wordCounted function
-(function(){
+/*(function(){
     var wordArray = [{char: "a", position: "1"},{char: "b", position: "2"},{char: "c", position: "3"},{char: "d", position: "4"},{char: "e", position: "5"},{char: "f", position: "6"}];
     var Start = 2;
     var End = 4;
@@ -180,4 +180,4 @@ function Horizontal(placedLetterPosition){
     if(binarySearch(countedWords.get(), "4-3-2") != -1){
         console.log("addCountedWord produced an incorrect result")
     }
-})();
+})();*/
