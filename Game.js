@@ -8,14 +8,14 @@ class game{
 		this.turn = 1;
 		this.countedWords = [];
 		
-		this.addPlayer("bob", testX.png);
-		this.addPlayer("bob", testO.png);
-		this.addPlayer("bob", A.png);
-		this.addPlayer("bob", B.png);
-		this.addPlayer("bob", C.png);
-		this.addPlayer("bob", D.png);
-		this.addPlayer("bob", E.png);
-		this.addPlayer("bob", F.png);
+		this.addPlayer("bob", testX);
+		this.addPlayer("bob", testO);
+		this.addPlayer("bob", letterA);
+		this.addPlayer("bob", letterB);
+		this.addPlayer("bob", letterC);
+		this.addPlayer("bob", letterD);
+		this.addPlayer("bob", letterE);
+		this.addPlayer("bob", letterF);
 	}
 	getDictionary(){}//returns a dictionary	
 	getBoard(){}//returns a board
