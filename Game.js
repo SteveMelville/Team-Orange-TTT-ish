@@ -16,6 +16,7 @@ class game{
 		this.addPlayer("bob", letterD);
 		this.addPlayer("bob", letterE);*/
 		alert(this.numPlayers);
+		var player = 1
 		for (player in this.players){
 			console.log(players[player]);	
 		}
