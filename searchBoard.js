@@ -133,13 +133,15 @@ function addCountedWord(wordArr, startIndex, endIndex){
     for (var i = 1; i <= endIndex; i++){
         value = value + '-' + [startIndex + i];
     }
-    newGame.countedWords.push(value).sort()
+    newGame.countedWords.push(value);
+    newGame.countedWords.sort();
     //add backwards order as well
     var value = wordArr[endIndex];
     for (var i = endIndex - 1; i >= startIndex; i--){
         value = value + '-' + wordArr[i];
     }
-    newGame.countedWords.push(value).sort()
+    newGame.countedWords.push(value);
+    newGame.countedWords.sort();
 }
 
 //This function scans the right diagonal '/'
