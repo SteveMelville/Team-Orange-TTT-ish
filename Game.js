@@ -48,6 +48,7 @@ class game{
 	}
 		
 	getTurn(){
+		console.log("getTurn" + this.turn);
 		return this.turn;
 	}
 	updateTurn(){
