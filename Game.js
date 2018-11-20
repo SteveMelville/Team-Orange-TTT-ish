@@ -57,6 +57,7 @@ class game{
 		else{
 			this.turn = 1;
 		}
+		alert(this.turn);
 	}
 }
 
