@@ -66,7 +66,7 @@ newGame.board.printBoard();
 function pushButton(id){
     var item = document.getElementById(id);
     
-    item = newGame.players[newGame.getTurn() - 1].getImage();
+    item.innerHTML = newGame.players[newGame.getTurn() - 1].getImage();
     //scanBoard(newBoard, id);
     newGame.board.set(id, newGame.getTurn());
     newGame.updateTurn();
