@@ -85,7 +85,7 @@ function checkWords(wordStr, wordArr){
         while(index > -1 && wordCounted(wordArr, index, (index + wordStr.length - 1)) == false){
             points += words[word].getPoint();
             addCountedWord(wordArr, index, (index + wordStr.length - 1));
-            wordStr.substring((index + 1));
+            wordStr = wordStr.substring((index + 1));
             index = wordStr.indexOf(`${words[word].getName()}`);
         }
         //check backwards
@@ -95,7 +95,7 @@ function checkWords(wordStr, wordArr){
         while(index > -1 && wordCounted(wordArr, index, (index + wordStr.length - 1)) == false){
             points += words[word].getPoint();
             addCountedWord(wordArr, index, (index + wordStr.length - 1));
-            wordStr.substring((index + 1));
+            wordStr = wordStr.substring((index + 1));
             index = wordStr.indexOf(`${words[word].getName()}`);
         }
     }
