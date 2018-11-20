@@ -49,15 +49,15 @@ function scanBoard(newGame, placedLetterPosition){
 //This function scans the left diagonal '\'
 function leftDiagonal(placedLetterPosition){
     var currentPosition = placedLetterPosition;
-    var wordArr =[{char: document.getElementById(`${currentPosition}`).firstChild.src.replace(".jpg","").replace("assets/", ""), position: currentPosition}];
+    var wordArr =[{char: document.getElementById(`${currentPosition}`).firstChild.src.slice(-5).replace(".png", ""), position: currentPosition}];
     //add letter at current position to wordStr
-    var wordStr = document.getElementById(`${currentPosition}`).firstChild.src.replace(".jpg","").replace("assets/", "");
+    var wordStr = document.getElementById(`${currentPosition}`).firstChild.src.slice(-5).replace(".png", "");
     //get letters left of initial
     while(newGame.board.get(`${currentPosition - newGame.board.getWidth() - 1}`) != null && !(document.getElementById(`${currentPosition - newGame.board.getWidth() - 1}`).firstChild.tagName === "BUTTON")){
         //and new object to the beginning wordArr {char: 'character', position: boardposition}
         //unshift inserts an item to the front of an array
-        wordArr.unshift({char: document.getElementById(`${currentPosition - newGame.board.getWidth() - 1}`).firstChild.src.replace(".jpg", "").replace("assets/", ""), position: (currentPosition - newGame.board.getWidth() - 1)});
-        wordStr = document.getElementById(`${currentPosition - newGame.board.getWidth() - 1}`).firstChild.src.replace(".jpg", "").replace("assets/", "") + wordStr;
+        wordArr.unshift({char: document.getElementById(`${currentPosition - newGame.board.getWidth() - 1}`).firstChild.src.slice(-5).replace(".png", ""), position: (currentPosition - newGame.board.getWidth() - 1)});
+        wordStr = document.getElementById(`${currentPosition - newGame.board.getWidth() - 1}`).firstChild.src.slice(-5).replace(".png", "") + wordStr;
         //move current position
         currentPosition = currentPosition - newGame.board.getWidth() - 1;
     }
@@ -66,8 +66,8 @@ function leftDiagonal(placedLetterPosition){
     //get letters right of initial
     while(newGame.board.get(`${currentPosition + newGame.board.getWidth() + 1}`) != null && !(document.getElementById(`${currentPosition + newGame.board.getWidth() + 1}`).firstChild.tagName === "BUTTON")){
         //add new object to the end of wordArr
-        wordArr.push({char: document.getElementById(`${currentPosition + newGame.board.getWidth() + 1}`).firstChild.src.replace(".jpg", "").replace("assets/", ""), position: (currentPosition + newGame.board.getWidth() + 1)});
-        wordStr = wordStr + document.getElementById(`${currentPosition + newGame.board.getWidth() + 1}`).firstChild.src.replace(".jpg", "").replace("assets/", "");
+        wordArr.push({char: document.getElementById(`${currentPosition + newGame.board.getWidth() + 1}`).firstChild.src.slice(-5).replace(".png", ""), position: (currentPosition + newGame.board.getWidth() + 1)});
+        wordStr = wordStr + document.getElementById(`${currentPosition + newGame.board.getWidth() + 1}`).firstChild.src.slice(-5).replace(".png", "");
         currentPosition = currentPosition + newGame.board.getWidth() + 1;
     }
 
