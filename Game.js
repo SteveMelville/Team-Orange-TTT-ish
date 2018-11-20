@@ -16,6 +16,7 @@ class game{
 		this.addPlayer("bob", letterD);
 		this.addPlayer("bob", letterE);
 		this.addPlayer("bob", letterF);
+		test(this.turn);
 	}
 	getDictionary(){}//returns a dictionary	
 	getBoard(){}//returns a board
