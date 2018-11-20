@@ -156,7 +156,7 @@ function Horizontal(placedLetterPosition){
 
 //This function performs a binary search on an array of strings and returns the index of the string
 function binarySearch(array, value){
-    var maxIndex = array.length()-1;
+    var maxIndex = array.length-1;
     var minIndex = 0;
      while(minIndex<maxIndex){
         var mid = (maxIndex + minIndex)/2;
