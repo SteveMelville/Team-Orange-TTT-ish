@@ -10,11 +10,11 @@ class game{
 		
 		this.addPlayer("bob", testX);
 		this.addPlayer("bob", testO);
-		this.addPlayer("bob", letterA);
+		/*this.addPlayer("bob", letterA);
 		this.addPlayer("bob", letterB);
 		this.addPlayer("bob", letterC);
 		this.addPlayer("bob", letterD);
-		this.addPlayer("bob", letterE);
+		this.addPlayer("bob", letterE);*/
 	}
 	getDictionary(){}//returns a dictionary	
 	getBoard(){}//returns a board
