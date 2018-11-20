@@ -52,7 +52,7 @@ function leftDiagonal(placedLetterPosition){
     //add letter at current position to wordStr
     var wordStr = document.getElementById(`${currentPosition}`).firstChild.src.replace(".jpg","").replace("assets/", "");
     //get letters left of initial
-    while(board.getBoardArray()[`${currentPosition - newGame.board.getWidth() - 1}`] != null && !(document.getElementById(`${currentPosition - newGame.board.getWidth() - 1}`).firstChild.src.includes("blank"))){
+    while(board.get(`${currentPosition - newGame.board.getWidth() - 1}`) != null && !(document.getElementById(`${currentPosition - newGame.board.getWidth() - 1}`).firstChild.src.includes("blank"))){
         //and new object to the beginning wordArr {char: 'character', position: boardposition}
         //unshift inserts an item to the front of an array
         wordArr.unshift({char: document.getElementById(`${currentPosition - newGame.board.getWidth() - 1}`).firstChild.src.replace(".jpg", "").replace("assets/", ""), position: (currentPosition - newGame.board.getWidth() - 1)});
