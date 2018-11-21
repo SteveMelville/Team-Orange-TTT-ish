@@ -166,17 +166,86 @@ function addCountedWord(wordArr, startIndex, endIndex){
 
 //This function scans the right diagonal '/'
 function RightDiagonal(placedLetterPosition){
-    return 0;
+    var currentPosition = placedLetterPosition;
+    var wordArr =[currentPosition];
+    //add letter at current position to wordStr
+    var wordStr = document.getElementById(`${currentPosition}`).firstChild.src.slice(-5).replace(".png", "");
+    //get letters left of initial
+    while(newGame.board.get(`${currentPosition + newGame.board.getWidth() - 1}`) != null && !(document.getElementById(`${currentPosition + newGame.board.getWidth() - 1}`).firstChild.tagName === "BUTTON")){
+        //and new object to the beginning wordArr {char: 'character', position: boardposition}
+        //unshift inserts an item to the front of an array
+        wordArr.unshift((currentPosition + newGame.board.getWidth() - 1));
+        wordStr = document.getElementById(`${currentPosition + newGame.board.getWidth() - 1}`).firstChild.src.slice(-5).replace(".png", "") + wordStr;
+        //move current position
+        currentPosition = currentPosition + newGame.board.getWidth() - 1;
+    }
+    //reset currentPosition
+    currentPosition = placedLetterPosition;
+    //get letters right of initial
+    while(newGame.board.get(`${currentPosition - newGame.board.getWidth() + 1}`) != null && !(document.getElementById(`${currentPosition - newGame.board.getWidth() + 1}`).firstChild.tagName === "BUTTON")){
+        //add new object to the end of wordArr
+        wordArr.push((currentPosition - newGame.board.getWidth() + 1));
+        wordStr = wordStr + document.getElementById(`${currentPosition - newGame.board.getWidth() + 1}`).firstChild.src.slice(-5).replace(".png", "");
+        currentPosition = currentPosition - newGame.board.getWidth() + 1;
+    }
+
+    return checkWords(wordStr, wordArr);
 }
 
 //This function scans the vertical '|'
 function Vertical(placedLetterPosition){
-    return 0;
+    var currentPosition = placedLetterPosition;
+    var wordArr =[currentPosition];
+    //add letter at current position to wordStr
+    var wordStr = document.getElementById(`${currentPosition}`).firstChild.src.slice(-5).replace(".png", "");
+    //get letters left of initial
+    while(newGame.board.get(`${currentPosition - newGame.board.getWidth()}`) != null && !(document.getElementById(`${currentPosition - newGame.board.getWidth()}`).firstChild.tagName === "BUTTON")){
+        //and new object to the beginning wordArr {char: 'character', position: boardposition}
+        //unshift inserts an item to the front of an array
+        wordArr.unshift((currentPosition - newGame.board.getWidth()));
+        wordStr = document.getElementById(`${currentPosition - newGame.board.getWidth()}`).firstChild.src.slice(-5).replace(".png", "") + wordStr;
+        //move current position
+        currentPosition = currentPosition - newGame.board.getWidth();
+    }
+    //reset currentPosition
+    currentPosition = placedLetterPosition;
+    //get letters right of initial
+    while(newGame.board.get(`${currentPosition + newGame.board.getWidth()}`) != null && !(document.getElementById(`${currentPosition + newGame.board.getWidth()}`).firstChild.tagName === "BUTTON")){
+        //add new object to the end of wordArr
+        wordArr.push((currentPosition + newGame.board.getWidth()));
+        wordStr = wordStr + document.getElementById(`${currentPosition + newGame.board.getWidth()}`).firstChild.src.slice(-5).replace(".png", "");
+        currentPosition = currentPosition + newGame.board.getWidth();
+    }
+
+    return checkWords(wordStr, wordArr);
 }
 
 //This function scans the horizontal '-'
 function Horizontal(placedLetterPosition){
-    return 0;
+    var currentPosition = placedLetterPosition;
+    var wordArr =[currentPosition];
+    //add letter at current position to wordStr
+    var wordStr = document.getElementById(`${currentPosition}`).firstChild.src.slice(-5).replace(".png", "");
+    //get letters left of initial
+    while(newGame.board.get(`${currentPosition - 1}`) != null && !(document.getElementById(`${currentPosition - 1}`).firstChild.tagName === "BUTTON")){
+        //and new object to the beginning wordArr {char: 'character', position: boardposition}
+        //unshift inserts an item to the front of an array
+        wordArr.unshift((currentPosition - 1));
+        wordStr = document.getElementById(`${currentPosition - 1}`).firstChild.src.slice(-5).replace(".png", "") + wordStr;
+        //move current position
+        currentPosition = currentPosition - 1;
+    }
+    //reset currentPosition
+    currentPosition = placedLetterPosition;
+    //get letters right of initial
+    while(newGame.board.get(`${currentPosition + 1}`) != null && !(document.getElementById(`${currentPosition + 1}`).firstChild.tagName === "BUTTON")){
+        //add new object to the end of wordArr
+        wordArr.push((currentPosition + newGame.board.getWidth() + 1));
+        wordStr = wordStr + document.getElementById(`${currentPosition + 1}`).firstChild.src.slice(-5).replace(".png", "");
+        currentPosition = currentPosition + 1;
+    }
+
+    return checkWords(wordStr, wordArr);
 }
 
 //This function performs a binary search on an array of strings and returns the index of the string
