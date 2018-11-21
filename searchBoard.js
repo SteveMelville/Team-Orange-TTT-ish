@@ -78,13 +78,13 @@ function leftDiagonal(placedLetterPosition){
 //get points if needed
 //AAAAA given AAA is a word gives three points
 function checkWords(wordStr, wordArr){
-    var tempStr = wordStr;
-    var tempArr = wordArr;
+    var tempStr = wordStr.slice(0);
+    var tempArr = wordArr.slice(0);
     var words = newGame.dictionary.getDictionary();
     var points = 0;
     for(word in words){
         var index = wordStr.indexOf(`${words[word].getName()}`);
-        tempArr = wordArr;
+        tempArr = wordArr.slice(0);
         console.log("beforewhile: " + wordStr)
         while(index > -1 && wordCounted(tempArr, index, (index + words[word].getName().length - 1)) == false){
             points += words[word].getPoint();
@@ -97,9 +97,9 @@ function checkWords(wordStr, wordArr){
             index = wordStr.indexOf(`${words[word].getName()}`);
         }
         //check backwards
-        wordStr = tempStr;
+        wordStr = tempStr.slice(0);
         wordStr = wordStr.split("").reverse().join("");
-        tempArr = wordArr;
+        tempArr = wordArr.slice(0);
         tempArr.reverse();
         
         index = wordStr.indexOf(`${words[word].getName()}`);
@@ -111,9 +111,9 @@ function checkWords(wordStr, wordArr){
                 tempArr.shift();
             }
             index = wordStr.indexOf(`${words[word].getName()}`);
+            wordStr = tempStr.slice(0);
         }
     }
-    wordStr = tempStr;
     return points;
 }
 
