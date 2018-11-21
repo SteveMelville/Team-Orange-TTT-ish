@@ -90,7 +90,7 @@ function checkWords(wordStr, wordArr){
             points += words[word].getPoint();
             addCountedWord(tempArr, index, (index + words[word].getName().length - 1));
             wordStr = wordStr.substring((index + 1));
-            for(var i = 0; i < index; i++){
+            for(var i = 0; i <= index; i++){
                 tempArr.shift();
             }
             console.log("afterwhile: " + wordStr)
@@ -107,7 +107,7 @@ function checkWords(wordStr, wordArr){
             points += words[word].getPoint();
             addCountedWord(tempArr, index, (index + words[word].getName().length - 1));
             wordStr = wordStr.substring((index + 1));
-            for(var i = 0; i < index; i++){
+            for(var i = 0; i <= index; i++){
                 tempArr.shift();
             }
             index = wordStr.indexOf(`${words[word].getName()}`);
