@@ -111,8 +111,8 @@ function checkWords(wordStr, wordArr){
                 tempArr.shift();
             }
             index = wordStr.indexOf(`${words[word].getName()}`);
-            wordStr = tempStr.slice(0);
         }
+        wordStr = tempStr.slice(0);
     }
     return points;
 }
