@@ -84,6 +84,7 @@ function checkWords(wordStr, wordArr){
     var points = 0;
     for(word in words){
         var index = wordStr.indexOf(`${words[word].getName()}`);
+        tempArr = wordArr;
         console.log("beforewhile: " + wordStr)
         while(index > -1 && wordCounted(tempArr, index, (index + words[word].getName().length - 1)) == false){
             points += words[word].getPoint();
@@ -98,7 +99,9 @@ function checkWords(wordStr, wordArr){
         //check backwards
         wordStr = tempStr;
         wordStr = wordStr.split("").reverse().join("");
+        tempArr = wordArr;
         tempArr.reverse();
+        
         index = wordStr.indexOf(`${words[word].getName()}`);
         while(index > -1 && wordCounted(tempArr, index, (index + words[word].getName().length - 1)) == false){
             points += words[word].getPoint();
@@ -147,8 +150,8 @@ function wordCounted(wordArr, startIndex, endIndex){
 //This adds a word to the list of counted words
 function addCountedWord(wordArr, startIndex, endIndex){
     var value = wordArr[startIndex];
-    for (var i = 1; i <= endIndex; i++){
-        value = value + '-' + wordArr[startIndex + i];
+    for (var i = startIndex + 1; i <= endIndex; i++){
+        value = value + '-' + wordArr[i];
     }
     newGame.countedWords.push(value);
     newGame.countedWords.sort();
