@@ -5,8 +5,8 @@ class Dictionary{
 		//for testing
 		this.addWord("XXX", 1);
 		this.addWord("OOO", 1);
-		this.addWord("OX", 1);
-		this.addWord("XO", 1);
+		/*this.addWord("OX", 1);
+		this.addWord("XO", 1);*/
 	}
 	//gets a string and an intiger returns nothing
 	addWord(name , points){
