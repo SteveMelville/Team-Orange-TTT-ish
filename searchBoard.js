@@ -44,6 +44,7 @@ function scanBoard(newGame, placedLetterPosition){
     //give points to player that made the move
     newGame.players[newGame.getTurn()-1].setScore((newGame.players[newGame.getTurn()-1].getScore() + points))
     console.log(`${newGame.players[newGame.getTurn()-1].getScore()}`);
+    console.log(newGame.countedWords);
 }
 
 //This function scans the left diagonal '\'
@@ -109,9 +110,12 @@ function wordCounted(wordArr, startIndex, endIndex){
     if(startIndex == -1){
         return true;
     }
+    if(wordArr.length < endIndex - 1){
+        return true;
+    }
     var value = wordArr[startIndex];
-    for (var i = 1; i <= endIndex; i++){
-        value = value + '-' + wordArr[startIndex + i];
+    for (var i = startIndex + 1; i <= endIndex; i++){
+        value = value + '-' + wordArr[i];
     }
     ///TODO implement binary search function (array to search, value to find)
     if(binarySearch(newGame.countedWords, value) != -1){
@@ -166,8 +170,8 @@ function Horizontal(placedLetterPosition){
 function binarySearch(array, value){
     var maxIndex = array.length-1;
     var minIndex = 0;
-     while(minIndex<maxIndex){
-        var mid = (maxIndex + minIndex)/2;
+     while(minIndex<=maxIndex){
+        var mid = (maxIndex + minIndex)/2 | 0;
         if(array[mid] > value){
             maxIndex = mid - 1;
         }
