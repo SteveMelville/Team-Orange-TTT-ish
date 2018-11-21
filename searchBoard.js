@@ -43,7 +43,7 @@ function scanBoard(newGame, placedLetterPosition){
     points += Horizontal(placedLetterPosition);
     //give points to player that made the move
     newGame.players[newGame.getTurn()-1].setScore((newGame.players[newGame.getTurn()-1].getScore() + points))
-    console.log("Player" + `${newGame.getTurn() - 1}` + " score: " + `${newGame.players[newGame.getTurn()-1].getScore()}`);
+    console.log("Player " + `${newGame.getTurn()}` + " score: " + `${newGame.players[newGame.getTurn()-1].getScore()}`);
     console.log(newGame.countedWords);
 }
 
