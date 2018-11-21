@@ -106,6 +106,9 @@ function checkWords(wordStr, wordArr){
 //This function checks to see if a word was counted
 function wordCounted(wordArr, startIndex, endIndex){
     var flag = new Boolean(false);
+    if(startIndex == -1){
+        return flag;
+    }
     var value = wordArr[startIndex];
     for (var i = 1; i <= endIndex; i++){
         value = value + '-' + wordArr[startIndex + i];
