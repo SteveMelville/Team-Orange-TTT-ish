@@ -82,7 +82,7 @@ function checkWords(wordStr, wordArr){
     var points = 0;
     for(word in words){
         var index = wordStr.indexOf(`${words[word].getName()}`);
-        while(index > -1 || wordCounted(wordArr, index, (index + words[word].getName().length - 1)) == false){
+        while(index > -1 && wordCounted(wordArr, index, (index + words[word].getName().length - 1)) == false){
             points += words[word].getPoint();
             addCountedWord(wordArr, index, (index + words[word].getName().length - 1));
             wordStr = wordStr.substring((index + 1));
@@ -92,7 +92,7 @@ function checkWords(wordStr, wordArr){
         wordStr = tempStr;
         wordStr = wordStr.split("").reverse().join("");
         index = wordStr.indexOf(`${words[word].getName()}`);
-        while(index > -1 || wordCounted(wordArr, index, (index + words[word].getName().length - 1)) == false){
+        while(index > -1 && wordCounted(wordArr, index, (index + words[word].getName().length - 1)) == false){
             points += words[word].getPoint();
             addCountedWord(wordArr, index, (index + words[word].getName().length - 1));
             wordStr = wordStr.substring((index + 1));
@@ -107,7 +107,7 @@ function checkWords(wordStr, wordArr){
 function wordCounted(wordArr, startIndex, endIndex){
     var flag = new Boolean(false);
     if(startIndex == -1){
-        return flag;
+        return true;
     }
     var value = wordArr[startIndex];
     for (var i = 1; i <= endIndex; i++){
