@@ -44,7 +44,6 @@ function scanBoard(newGame, placedLetterPosition){
     //give points to player that made the move
     newGame.players[newGame.getTurn()-1].setScore((newGame.players[newGame.getTurn()-1].getScore() + points))
     console.log("Player " + `${newGame.getTurn()}` + " score: " + `${newGame.players[newGame.getTurn()-1].getScore()}`);
-    console.log(newGame.countedWords);
 }
 
 //This function scans the left diagonal '\'
@@ -85,7 +84,6 @@ function checkWords(wordStr, wordArr){
     for(word in words){
         var index = wordStr.indexOf(`${words[word].getName()}`);
         tempArr = wordArr.slice(0);
-        console.log("beforewhile: " + wordStr)
         while(index > -1 && wordCounted(tempArr, index, (index + words[word].getName().length - 1)) == false){
             points += words[word].getPoint();
             addCountedWord(tempArr, index, (index + words[word].getName().length - 1));
@@ -93,7 +91,6 @@ function checkWords(wordStr, wordArr){
             for(var i = 0; i <= index; i++){
                 tempArr.shift();
             }
-            console.log("afterwhile: " + wordStr)
             index = wordStr.indexOf(`${words[word].getName()}`);
         }
         //check backwards
