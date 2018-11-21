@@ -237,7 +237,7 @@ function Horizontal(placedLetterPosition){
     //get letters right of initial
     while(newGame.board.get(`${currentPosition + 1}`) != null && !(document.getElementById(`${currentPosition + 1}`).firstChild.tagName === "BUTTON")){
         //add new object to the end of wordArr
-        wordArr.push((currentPosition + newGame.board.getWidth() + 1));
+        wordArr.push((currentPosition + 1));
         wordStr = wordStr + document.getElementById(`${currentPosition + 1}`).firstChild.src.slice(-5).replace(".png", "");
         currentPosition = currentPosition + 1;
     }
