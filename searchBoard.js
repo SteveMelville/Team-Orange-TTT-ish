@@ -79,24 +79,34 @@ function leftDiagonal(placedLetterPosition){
 //AAAAA given AAA is a word gives three points
 function checkWords(wordStr, wordArr){
     var tempStr = wordStr;
+    var tempArr = wordArr;
     var words = newGame.dictionary.getDictionary();
     var points = 0;
     for(word in words){
         var index = wordStr.indexOf(`${words[word].getName()}`);
-        while(index > -1 && wordCounted(wordArr, index, (index + words[word].getName().length - 1)) == false){
+        console.log("beforewhile: " + wordStr)
+        while(index > -1 && wordCounted(tempArr, index, (index + words[word].getName().length - 1)) == false){
             points += words[word].getPoint();
-            addCountedWord(wordArr, index, (index + words[word].getName().length - 1));
+            addCountedWord(tempArr, index, (index + words[word].getName().length - 1));
             wordStr = wordStr.substring((index + 1));
+            for(var i = 0; i < index; i++){
+                tempArr.shift();
+            }
+            console.log("afterwhile: " + wordStr)
             index = wordStr.indexOf(`${words[word].getName()}`);
         }
         //check backwards
         wordStr = tempStr;
         wordStr = wordStr.split("").reverse().join("");
+        tempArr.reverse();
         index = wordStr.indexOf(`${words[word].getName()}`);
-        while(index > -1 && wordCounted(wordArr, index, (index + words[word].getName().length - 1)) == false){
+        while(index > -1 && wordCounted(tempArr, index, (index + words[word].getName().length - 1)) == false){
             points += words[word].getPoint();
-            addCountedWord(wordArr, index, (index + words[word].getName().length - 1));
+            addCountedWord(tempArr, index, (index + words[word].getName().length - 1));
             wordStr = wordStr.substring((index + 1));
+            for(var i = 0; i < index; i++){
+                tempArr.shift();
+            }
             index = wordStr.indexOf(`${words[word].getName()}`);
         }
     }
