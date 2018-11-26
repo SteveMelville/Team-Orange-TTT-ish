@@ -65,7 +65,6 @@ class Board{
         this.width = w + 2;
         this.height = h + 2;
         this.boardArray = [];
-        this.boardHTML = "";
         this.boardAddress = document.getElementById("board");
         
         for(var j = 0; j < this.height; j++){
@@ -81,29 +80,7 @@ class Board{
     }
 
    
-    printBoard(){
-        var id = 0;
-        for(var i = 0; i < this.height; i++){
-            this.boardHTML += "<tr>\n";
-            for(var j = 0; j < this.width; j++){
-                id = i * this.width + j;
-                this.boardHTML += "<td id = '" + id + "'>";
-                
-                switch(this.boardArray[id]){
-                    case 0: this.boardHTML += "<button type='button' onclick='pushButton(" + id + ")'>" + blank + "</button>";
-                            break;
-                    case 1: this.boardHTML += player1;
-                            break;
-                    default: break;
-                }
-                
-                this.boardHTML += "</td>\n";
-            }
 
-            this.boardHTML += "</tr>\n";
-        }
-        this.boardAddress.innerHTML = this.boardHTML;
-    }
     
     set(id, player){
         this.boardArray[id] = player;
