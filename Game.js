@@ -54,9 +54,9 @@ class game{
 	}
 			    
 	removePlayer(id){
-		for(int i=0;i<players.length();i++){
+		for(var i=0;i<players.length();i++){
 			if(players[i].getID()==id){
-				this.players..splice(i,1);
+				this.players.splice(i,1);
 				return ;
 			}
 		}
