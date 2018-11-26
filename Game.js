@@ -124,19 +124,19 @@ class game{
 			boardHTML += "<td id = '" + id + "'>";
 
 			switch(this.board.boardArray[id]){
-			    case 0: this.boardHTML += "<button type='button' onclick='pushButton(" + id + ")'>" + blank + "</button>";
+			    case 0: boardHTML += "<button type='button' onclick='pushButton(" + id + ")'>" + blank + "</button>";
 				    break;
-			    case 1: this.boardHTML += player1;
+			    case 1: boardHTML += player1;
 				    break;
 			    default: break;
 			}
 
-			this.boardHTML += "</td>\n";
+			boardHTML += "</td>\n";
 		    }
 
-		    this.boardHTML += "</tr>\n";
+		    boardHTML += "</tr>\n";
 		}
-		this.boardAddress.innerHTML = this.boardHTML;
+		this.board.boardAddress.innerHTML = boardHTML;
     	}
 }
 
