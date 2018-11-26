@@ -46,6 +46,7 @@ button {
 .center{
 	text-align: center;
     	top: 150px;
+	margin-bottom: 150px;
 	position: relative;
     	background-color: #f4af26;
     	z-index: 0;
