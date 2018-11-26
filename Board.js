@@ -65,7 +65,6 @@ class Board{
         this.width = w + 2;
         this.height = h + 2;
         this.boardArray = [];
-        this.boardAddress = document.getElementById("board");
         
         for(var j = 0; j < this.height; j++){
             for(var i = 0; i < this.width; i++){
