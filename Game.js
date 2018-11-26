@@ -113,10 +113,35 @@ class game{
 		var item = document.getElementById("leader");
 		item.innerHTML = leaderBoard;
 	}
+	
+	printBoard(){
+		var id = 0;
+		var boardHTML = "";
+		for(var i = 0; i < this.height; i++){
+		    boardHTML += "<tr>\n";
+		    for(var j = 0; j < this.width; j++){
+			id = i * this.width + j;
+			boardHTML += "<td id = '" + id + "'>";
+
+			switch(this.board.boardArray[id]){
+			    case 0: this.boardHTML += "<button type='button' onclick='pushButton(" + id + ")'>" + blank + "</button>";
+				    break;
+			    case 1: this.boardHTML += player1;
+				    break;
+			    default: break;
+			}
+
+			this.boardHTML += "</td>\n";
+		    }
+
+		    this.boardHTML += "</tr>\n";
+		}
+		this.boardAddress.innerHTML = this.boardHTML;
+    	}
 }
 
 var newGame = new game(3,3);
-newGame.board.printBoard();
+newGame.printBoard();
 newGame.printLeaderboard();
 	
 function pushButton(id){
