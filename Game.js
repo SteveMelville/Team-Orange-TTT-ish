@@ -126,5 +126,5 @@ function pushButton(id){
 	scanBoard(newGame, id);
 	newGame.board.set(id, newGame.getTurn());
 	newGame.updateTurn();
-	newGame.printLeaderoard();
+	newGame.printLeaderboard();
 }
