@@ -29,6 +29,11 @@ const testX = "<img src='assets/testX.png'>";
 const testO = "<img src='assets/testO.png'>";
 const blank = ""; //"<img src='assets/testBlank.png'>";
                                       
+const leader1 = "<tr id='player";
+const leader2 = "'>";
+const leader3 = "</tr>";
+const leader4 = "<td id='player";
+const leader5 = "</td>";
 
 var player1 = testX;
 var player2 = testO;
