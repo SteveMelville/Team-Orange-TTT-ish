@@ -87,6 +87,7 @@ class game{
 			leaderBoard += leader3;
 			leaderBoard += i + "id";
 			leaderBoard += leader2;
+			leaderBoard += i;
 			leaderBoard += leader4;
 			
 			leaderBoard += leader3;
@@ -99,6 +100,12 @@ class game{
 			leaderBoard += i + "name";
 			leaderBoard += leader2;
 			leaderBoard += this.players[i].getNickname();
+			leaderBoard += leader4;
+			
+			leaderBoard += leader3;
+			leaderBoard += i + "score";
+			leaderBoard += leader2;
+			leaderBoard += this.players[i].getScore();
 			leaderBoard += leader4;
 			
 			leaderBoard += leader5;
