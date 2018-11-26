@@ -41,7 +41,7 @@ class game{
 	}
 	getFirstPlacePlayer(){
 		winner = this.players[0]
-		for(i=1;i<this.players.length;i++){
+		for(i=1;i < this.players.length;i++){
 			if(this.players[i].getScore>winner.getScore){
 				winner=this.players[i];
 			}
@@ -54,7 +54,7 @@ class game{
 	}
 			    
 	removePlayer(id){
-		for(int i=0;i<players.length();i++){
+		for(var i = 0;i < this.players.length; i++){
 			if(players[i].getID()==id){
 				this.players..splice(i,1);
 				return ;
