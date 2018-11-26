@@ -136,7 +136,9 @@ class game{
 
 		    boardHTML += "</tr>\n";
 		}
-		this.board.boardAddress.innerHTML = boardHTML;
+		
+        	var boardAddress = document.getElementById("board");
+		boardAddress.innerHTML = boardHTML;
     	}
 }
 
