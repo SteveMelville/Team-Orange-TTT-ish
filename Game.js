@@ -85,18 +85,20 @@ class game{
 			leaderBoard += leader2;
 			
 			leaderBoard += leader3;
-			leaderBoard += i;
+			leaderBoard += i + "id";
 			leaderBoard += leader2;
 			leaderBoard += leader4;
 			
 			leaderBoard += leader3;
+			leaderBoard += i + "image";
 			leaderBoard += leader2;
-			leaderBoard += this.players[i].getImage;
+			leaderBoard += this.players[i].getImage();
 			leaderBoard += leader4;
 			
 			leaderBoard += leader3;
+			leaderBoard += i + "name";
 			leaderBoard += leader2;
-			leaderBoard += this.players[i].getNickname;
+			leaderBoard += this.players[i].getNickname();
 			leaderBoard += leader4;
 			
 			leaderBoard += leader5;
