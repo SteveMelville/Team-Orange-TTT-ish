@@ -52,6 +52,15 @@ button {
    	color: #003333;
 }
 
+.leaderboard {
+	position: fixed;
+	top: 200px;
+	left: 60px;
+	color: black;
+	background-color: white;
+	z-index: -1;
+}
+
 #board {
 	margin: auto;
 	display: inline-block;
