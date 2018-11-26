@@ -31,9 +31,9 @@ const blank = ""; //"<img src='assets/testBlank.png'>";
                                       
 const leader1 = "<tr id='player";
 const leader2 = "'>";
-const leader3 = "</tr>";
-const leader4 = "<td id='player";
-const leader5 = "</td>";
+const leader3 = "<td id='player";
+const leader4 = "</td>";
+const leader5 = "</tr>";
 
 var player1 = testX;
 var player2 = testO;
