@@ -61,6 +61,11 @@ button {
 	z-index: -1;
 }
 
+#leader{
+	color: black;
+	background-color: white;
+}
+
 #board {
 	margin: auto;
 	display: inline-block;
