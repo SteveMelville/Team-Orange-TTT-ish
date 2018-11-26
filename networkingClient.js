@@ -1,12 +1,20 @@
 
 class connection{
 	//connects the computer to the server
-	constructor(io){
-		this.socket = io;
-		this.socket.on('rescaleBoard',function(x,y){
-			var newBoard2 = new board(x,y);
-			newBoard2.printBoard();
+	constructor(){
+		this.socket = io()
+	
+		this.socket.on('playerconnect',function(pn){
+			console.log("you are player"+pn);
+			this.PlayerNumber = pn;
 		});
+		this.socket.on('msg',function(msg){
+			alert(msg);
+		});
+	}
+	messageNext(msg){
+		this.socket.emit('msgNext',msg);
+
 	}
 	//updates server information
 	updateServer(){}
@@ -16,10 +24,7 @@ class connection{
 	passTurn(){}
 	
 	
-	
-	sendBoardSize(x,y){
-		this.socket.emit('rescaleBoard',x,y);	
-	}
+
 }
 
 

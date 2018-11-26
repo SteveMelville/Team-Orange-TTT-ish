@@ -2,12 +2,15 @@ body {
 	background-color: #f4af26;
 }
 
-#boardDiv {
-	top: 30%;
-	left: 40%;
-	position: fixed;
-	background-color: white;
-	z-index: 10;
+img {
+	width: 37px;
+	height: 37px;
+}
+
+button {
+	width: 37px;
+	height: 37px;
+	background-image: url("assets/testBlank.png");
 }
 
 #header {
@@ -17,6 +20,7 @@ body {
 	height: 100px;
 	position: fixed;
 	background-color: white;
+	opacity: 0.5;
 	color: black;
 	z-index: 3;
 }
@@ -31,4 +35,29 @@ body {
 	background-color: white;
 	text-align: center;
 	padding: 4px;
+}
+
+/*#boardDiv {
+	background-color: white;
+	z-index: 10;
+}*/
+
+
+.center{
+	text-align: center;
+    	top: 150px;
+	position: relative;
+    	background-color: #f4af26;
+    	z-index: 0;
+   	color: #003333;
+}
+
+#board {
+	margin: auto;
+	display: inline-block;
+	background-color: white;
+}
+
+.article{
+
 }
