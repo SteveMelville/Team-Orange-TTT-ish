@@ -87,7 +87,7 @@ class game{
 			leaderBoard += leader3;
 			leaderBoard += i + "id";
 			leaderBoard += leader2;
-			leaderBoard += i;
+			leaderBoard += i + 1;
 			leaderBoard += leader4;
 			
 			leaderBoard += leader3;
