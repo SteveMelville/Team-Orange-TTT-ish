@@ -57,6 +57,7 @@ class game{
 		for(var i = 0;i < this.players.length; i++){
 			if(players[i].getID()==id){
 				this.players.splice(i,1);
+				this.numPlayers--;
 				return ;
 			}
 		}
@@ -75,16 +76,46 @@ class game{
 			this.turn = 1;
 		}
 	}
+	
+	printLeaderboard(){
+		var leaderBoard = "";
+		for(var i = 0; i < this.numPlayers; i++){
+			leaderBoard += leader1;
+			leaderBoard += i;
+			leaderBoard += leader2;
+			
+			leaderBoard += leader3;
+			leaderBoard += i;
+			leaderBoard += leader2;
+			leaderBoard += leader4;
+			
+			leaderBoard += leader3;
+			leaderBoard += leader2;
+			leaderBoard += this.players[i].getImage;
+			leaderBoard += leader4;
+			
+			leaderBoard += leader3;
+			leaderBoard += leader2;
+			leaderBoard += this.players[i].getNickname;
+			leaderBoard += leader4;
+			
+			leaderBoard += leader5;
+		}
+		var item = document.getElementById("leader");
+		item.innerHTML = leaderBoard;
+	}
 }
 
 var newGame = new game(15,15);
 newGame.board.printBoard();
+newGame.printLeaderboard();
 	
 function pushButton(id){
-    var item = document.getElementById(id);
-    
-    item.innerHTML = newGame.players[newGame.getTurn() - 1].getImage();
-    scanBoard(newGame, id);
-    newGame.board.set(id, newGame.getTurn());
-    newGame.updateTurn();
+	var item = document.getElementById(id);
+
+	item.innerHTML = newGame.players[newGame.getTurn() - 1].getImage();
+	scanBoard(newGame, id);
+	newGame.board.set(id, newGame.getTurn());
+	newGame.updateTurn();
+	newGame.printLeaderoard();
 }
