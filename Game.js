@@ -117,10 +117,10 @@ class game{
 	printBoard(){
 		var id = 0;
 		var boardHTML = "";
-		for(var i = 0; i < this.height; i++){
+		for(var i = 0; i < this.board.height; i++){
 		    boardHTML += "<tr>\n";
-		    for(var j = 0; j < this.width; j++){
-			id = i * this.width + j;
+		    for(var j = 0; j < this.board.width; j++){
+			id = i * this.board.width + j;
 			boardHTML += "<td id = '" + id + "'>";
 
 			switch(this.board.boardArray[id]){
