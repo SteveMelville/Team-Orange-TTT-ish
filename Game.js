@@ -17,11 +17,21 @@ class game{
 		this.addPlayer("bob", letterE);*/
 		var player = 1
 	}
-	getDictionary(){}//returns a dictionary	
-	getBoard(){}//returns a board
-	getPlayers(){}//returns a list of players
-	getWinPoints(){}//returns an integer corisponding to the win condition
-	setWinPoints(condition){}
+	getDictionary(){
+		return this.dictionary;
+	}//returns a dictionary	
+	getBoard(){
+		return this.board;
+	}//returns a board
+	getPlayers(){
+		return this.players;
+	}//returns a list of players
+	getWinPoints(){
+		return this.winPoints;
+	}//returns an integer corisponding to the win condition
+	setWinPoints(points){
+		this.PointssToWin=points;
+	}
 	checkWin(player){
 		if(player.getScore()>=PointsToWin){
 			return true;
@@ -44,6 +54,13 @@ class game{
 	}
 			    
 	removePlayer(id){
+		for(int i=0;i<players.length();i++){
+			if(players[i].getID()==id){
+				this.players..splice(i,1);
+				return ;
+			}
+		}
+		//player not found
 			
 	}
 		
