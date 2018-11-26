@@ -10,11 +10,11 @@ class game{
 		
 		this.addPlayer("bob", testX);
 		this.addPlayer("bob", testO);
-		this.addPlayer("bob", letterA);
+		/*this.addPlayer("bob", letterA);
 		this.addPlayer("bob", letterB);
 		this.addPlayer("bob", letterC);
 		this.addPlayer("bob", letterD);
-		this.addPlayer("bob", letterE);
+		this.addPlayer("bob", letterE);*/
 		var player = 1
 	}
 	getDictionary(){
@@ -115,7 +115,7 @@ class game{
 	}
 }
 
-var newGame = new game(15,15);
+var newGame = new game(3,3);
 newGame.board.printBoard();
 newGame.printLeaderboard();
 	
