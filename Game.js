@@ -4,7 +4,7 @@ class game{
 		this.board = new Board(width, height);
 		this.players = [];
 		this.numPlayers = 0;		
-		this.PointsToWin = 10;
+		this.PointsToWin = 1;
 		this.turn = 1;
 		this.countedWords = [];
 		
@@ -151,7 +151,14 @@ function pushButton(id){
 
 	item.innerHTML = newGame.players[newGame.getTurn() - 1].getImage();
 	scanBoard(newGame, id);
+	var win = new Boolean(false)
+	win = newGame.checkWin(newGame.players[newGame.getTurn() - 1]);
 	newGame.board.set(id, newGame.getTurn());
 	newGame.updateTurn();
 	newGame.printLeaderboard();
+	
+	if (win){
+		alert("you have won the game");
+	}
+	
 }
