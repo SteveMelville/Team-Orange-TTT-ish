@@ -39,7 +39,7 @@ class game{
 		this.PointssToWin=points;
 	}
 	checkWin(player){
-		if(player.getScore()>=PointsToWin){
+		if(player.getScore()>=this.PointsToWin){
 			return true;
 			var buttons = document.getElementsByTagName("TD").contains("BUTTON")
 			for(e in buttons){
