@@ -42,7 +42,7 @@ class game{
 		if(player.getScore()>=this.PointsToWin){
 			
 			var boardState = document.getElementById("board");
-			var buttons = board.getElementsByTagName("TD").contains(document.getElemntsByTagName("BUTTON")[0]);
+			var buttons = board.getElementsByTagName("TD").contains(document.getElementsByTagName("BUTTON")[0]);
 			for(e in buttons){
 				buttons[e].innerHTML = blank;
 			}
