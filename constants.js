@@ -1,4 +1,4 @@
-const images = ["<img src='assets/Orange.png'>",
+const images = ["<img src='assets/Orange~.png'>",
                 "<img src='assets/A.png'>",
                 "<img src='assets/B.png'>",
                 "<img src='assets/C.png'>",
