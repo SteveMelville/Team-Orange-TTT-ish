@@ -41,7 +41,8 @@ class game{
 	checkWin(player){
 		if(player.getScore()>=this.PointsToWin){
 			
-			var buttons = document.getElementsByTagName("TD").contains("BUTTON");
+			var boardState = document.getElementById("board");
+			var buttons = board.getElementsByTagName("TD").contains("BUTTON");
 			for(e in buttons){
 				buttons[e].innerHTML = blank;
 			}
