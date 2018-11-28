@@ -41,7 +41,7 @@ class game{
 	checkWin(player){
 		if(player.getScore()>=this.PointsToWin){
 			
-			var boardState = document.getElementById("board");
+			/*var boardState = document.getElementById("board");
 			var buttons = board.getElementsByTagName("TD");
 			var e = 0;
 			for(e in buttons){
@@ -49,7 +49,7 @@ class game{
 					buttons[e].innerHTML = blank;
 				}
 				alert(buttons[e].id);
-			}
+			}*/
 			return true;
 		}else{
 			return false;
