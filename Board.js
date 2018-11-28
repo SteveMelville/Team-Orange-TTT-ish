@@ -1,29 +1,32 @@
-const letterA = "<img src='assets/A.png'>";
-const letterB = "<img src='assets/B.png'>";
-const letterC = "<img src='assets/C.png'>";
-const letterD = "<img src='assets/D.png'>";
-const letterE = "<img src='assets/E.png'>";
-const letterF = "<img src='assets/F.png'>";
-const letterG = "<img src='assets/.png'>";
-const letterH = "<img src='assets/.png'>";
-const letterI = "<img src='assets/.png'>";
-const letterJ = "<img src='assets/.png'>";
-const letterK = "<img src='assets/.png'>";
-const letterL = "<img src='assets/.png'>";
-const letterM = "<img src='assets/.png'>";
-const letterN = "<img src='assets/.png'>";
-const letterO = "<img src='assets/.png'>";
-const letterP = "<img src='assets/.png'>";
-const letterQ = "<img src='assets/.png'>";
-const letterR = "<img src='assets/.png'>";
-const letterS = "<img src='assets/.png'>";
-const letterT = "<img src='assets/.png'>";
-const letterU = "<img src='assets/.png'>";
-const letterV = "<img src='assets/.png'>";
-const letterW = "<img src='assets/.png'>";
-const letterX = "<img src='assets/.png'>";
-const letterY = "<img src='assets/.png'>";
-const letterZ = "<img src='assets/.png'>";
+const images = ["<img src='assets/Orange.png'>",
+                "<img src='assets/A.png'>",
+                "<img src='assets/B.png'>",
+                "<img src='assets/C.png'>",
+                "<img src='assets/D.png'>",
+                "<img src='assets/E.png'>",
+                "<img src='assets/F.png'>",
+                "<img src='assets/G.png'>",
+                "<img src='assets/H.png'>",
+                "<img src='assets/I.png'>",
+                "<img src='assets/J.png'>",
+                "<img src='assets/K.png'>",
+                "<img src='assets/L.png'>",
+                "<img src='assets/M.png'>",
+                "<img src='assets/N.png'>",
+                "<img src='assets/O.png'>",
+                "<img src='assets/P.png'>",
+                "<img src='assets/Q.png'>",
+                "<img src='assets/R.png'>",
+                "<img src='assets/S.png'>",
+                "<img src='assets/T.png'>",
+                "<img src='assets/U.png'>",
+                "<img src='assets/V.png'>",
+                "<img src='assets/W.png'>",
+                "<img src='assets/X.png'>",
+                "<img src='assets/Y.png'>",
+                "<img src='assets/Z.png'>",
+                "<img src='assets/Smile.png'>"];
+//"<img src='assets/.png'>"
 
 const testX = "<img src='assets/testX.png'>";
 const testO = "<img src='assets/testO.png'>";
