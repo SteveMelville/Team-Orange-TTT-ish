@@ -2,6 +2,7 @@ class game{
 	constructor(width, height){
 		this.dictionary = new Dictionary();
 		this.board = new Board(width, height);
+		this.squaresPushed = 0;
 		this.players = [];
 		this.numPlayers = 0;		
 		this.PointsToWin = 10;
@@ -153,7 +154,8 @@ newGame.printLeaderboard();
 	
 function pushButton(id){
 	var item = document.getElementById(id);
-
+	
+	newGame.squaresPushed++;
 	item.innerHTML = newGame.players[newGame.getTurn() - 1].getImage();
 	scanBoard(newGame, id);
 	newGame.board.set(id, newGame.getTurn());
