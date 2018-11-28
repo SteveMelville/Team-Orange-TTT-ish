@@ -11,8 +11,8 @@ class game{
 		
 		this.addPlayer("bob", testX);
 		this.addPlayer("bob", testO);
-		this.addPlayer("bob", images[1]);
-		this.addPlayer("bob", images[2]);
+		this.addPlayer("bob", images[0]);
+		/*this.addPlayer("bob", images[2]);
 		this.addPlayer("bob", images[3]);
 		this.addPlayer("bob", images[4]);
 		this.addPlayer("bob", images[5]);
@@ -20,7 +20,7 @@ class game{
 		this.addPlayer("bob", images[7]);
 		this.addPlayer("bob", images[8]);
 		this.addPlayer("bob", images[9]);
-		this.addPlayer("bob", images[27]);
+		this.addPlayer("bob", images[27]);*/
 		var player = 1
 	}
 	getDictionary(){
@@ -148,7 +148,7 @@ class game{
     	}
 	
 	<!--Work in progress. Function to output a win condition-->
-	winner(){
+	gameOver(){
 		var numSquares = this.board.height * this.board.width;
 		
 		if(numSquares == this.squaresPushed)
@@ -167,6 +167,7 @@ function pushButton(id){
 	item.innerHTML = newGame.players[newGame.getTurn() - 1].getImage();
 	scanBoard(newGame, id);
 	newGame.board.set(id, newGame.getTurn());
-	newGame.updateTurn();
 	newGame.printLeaderboard();
+	newGame.gameOver();
+	newGame.updateTurn();
 }
