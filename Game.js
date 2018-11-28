@@ -146,6 +146,14 @@ class game{
         	var boardAddress = document.getElementById("board");
 		boardAddress.innerHTML = boardHTML;
     	}
+	
+	<!--Work in progress. Function to output a win condition-->
+	winner(){
+		var numSquares = this.board.height * this.board.width;
+		
+		if(numSquares == this.squaresPushed)
+			alert("Game is over!");
+	      }
 }
 
 var newGame = new game(3,3);
