@@ -88,3 +88,8 @@ class Board{
 function test(message){
     window.alert(message); 
 }
+
+
+module.exports={
+	Board: Board
+}
