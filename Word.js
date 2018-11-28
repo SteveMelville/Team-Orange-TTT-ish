@@ -1,5 +1,9 @@
 //a false word class for use in testing the dictionary
 class Word{
+	constructor(name, points){
+		this.name = name;
+		this.points = points
+	}
 	setName(name){
 		this.name=name;
 	}

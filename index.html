@@ -2,28 +2,47 @@
 <head>
 <title>Website Title</title>
 <link rel="stylesheet" href="mainCss.css">
+<link rel ="icon" type="image/png" href="assets/Orange.png"/>
 </head>
 <body>
 
   
-  <div id="header">
-    
-  </div>
-  
-  <div class="article" class="center" >
-      <table id = "board" align="right">
+	<div id="header">
+	  <!----------------------------------------
+	    <input type="number" id="x">
+		<input type="number" id="y">
+		<button type="button" name="send" onclick="conn.sendBoardSize($('#x').val(),$('#y').val())" value="send">
+	
+	
+	------------------------------------->
+	  </div>
 
-      </table>
-  </div>
-  
-  
-  <div id="footer">
-    Copyright Team Orange &copy;
-  </div>
-  
-  <script src="Board.js"></script>
-  <script src="Word.js"></script>
-  <script src="dictionary.js"></script>
+	  <div class="center" >
+	      <table id = "board">
 
+	      </table>
+	  </div>
+	  
+	  <div class="leaderboard">
+		  <table id = "leader">
+			  
+		  </table>
+	  </div>
+  
+  
+	  <div id="footer">
+	    Copyright Team Orange &copy;
+	  </div>
+
+	  <script src="Board.js"></script>
+	  <script src="Word.js"></script>
+	  <script src="dictionary.js"></script>
+	  <script src="Player.js"></script>
+	  <script src="Game.js"></script>
+	  <script src="searchBoard.js"></script>
+<!--	  <script src="networkingClient.js"></script>
+	  <script src="/socket.io/socket.io.js"></script>
+	  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+	  <script>var conn = new connection(io());</script>-->
 </body>
 </html>

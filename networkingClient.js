@@ -1,6 +1,3 @@
-//-----------------------------------------------------------
-//                 client side                
-//-----------------------------------------------------------
 
 class connection{
 	//connects the computer to the server
@@ -17,6 +14,7 @@ class connection{
 	}
 	messageNext(msg){
 		this.socket.emit('msgNext',msg);
+
 	}
 	//updates server information
 	updateServer(){}
@@ -26,6 +24,7 @@ class connection{
 	passTurn(){}
 	
 	
+
 }
 
 

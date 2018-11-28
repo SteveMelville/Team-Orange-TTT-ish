@@ -1,11 +1,62 @@
-const player1 = "<img src='assets/testX.png'>";
-const player2 = "<img src='assets/testO.png'>";
-const blank = "<img src='assets/testBlank.png'>";
-const numPlayers = 2;
+const images = ["<img src='assets/Orange.png'>",
+                "<img src='assets/A.png'>",
+                "<img src='assets/B.png'>",
+                "<img src='assets/C.png'>",
+                "<img src='assets/D.png'>",
+                "<img src='assets/E.png'>",
+                "<img src='assets/F.png'>",
+                "<img src='assets/G.png'>",
+                "<img src='assets/H.png'>",
+                "<img src='assets/I.png'>",
+                "<img src='assets/J.png'>",
+                "<img src='assets/K.png'>",
+                "<img src='assets/L.png'>",
+                "<img src='assets/M.png'>",
+                "<img src='assets/N.png'>",
+                "<img src='assets/O.png'>",
+                "<img src='assets/P.png'>",
+                "<img src='assets/Q.png'>",
+                "<img src='assets/R.png'>",
+                "<img src='assets/S.png'>",
+                "<img src='assets/T.png'>",
+                "<img src='assets/U.png'>",
+                "<img src='assets/V.png'>",
+                "<img src='assets/W.png'>",
+                "<img src='assets/X.png'>",
+                "<img src='assets/Y.png'>",
+                "<img src='assets/Z.png'>",
+                "<img src='assets/Smile.png'>"];
+//"<img src='assets/.png'>"
 
-var turn = 0;
+const testX = "<img src='assets/testX.png'>";
+const testO = "<img src='assets/testO.png'>";
+const blank = ""; //"<img src='assets/testBlank.png'>";
+                                      
+const leader1 = "<tr id='player";
+const leader2 = "'>";
+const leader3 = "<td id='player";
+const leader4 = "</td>";
+const leader5 = "</tr>";
 
-class board{
+var player1 = testX;
+var player2 = testO;
+var player3 = letterA;
+var player4 = letterB;
+var player5 = letterC;
+var player6 = letterD;
+var player7 = letterE;
+var player8 = letterF;
+var player9 = letterG;
+var player10 = letterH;
+var player11 = letterI;
+var player12 = letterJ;
+var player13 = letterK;
+var player14 = letterL;
+var player15 = letterM;
+
+
+
+class Board{
     
     //var width;
     //var height;
@@ -17,8 +68,6 @@ class board{
         this.width = w + 2;
         this.height = h + 2;
         this.boardArray = [];
-        this.boardHTML = "";
-        this.boardAddress = document.getElementById("board");
         
         for(var j = 0; j < this.height; j++){
             for(var i = 0; i < this.width; i++){
@@ -33,63 +82,29 @@ class board{
     }
 
    
-    printBoard(){
-        var id = 0;
-        for(var i = 0; i < this.height; i++){
-            this.boardHTML += "<tr>\n";
-            for(var j = 0; j < this.width; j++){
-                id = i * this.width + j;
-                this.boardHTML += "<td id = '" + id + "'>";
-                
-                switch(this.boardArray[id]){
-                    case 0: this.boardHTML += "<button type='button' onclick='pushButton(" + id + ")'>" + blank + "</button>";
-                            break;
-                    case 1: this.boardHTML += player1;
-                            break;
-                    default: break;
-                }
-                
-                this.boardHTML += "</td>\n";
-            }
 
-            this.boardHTML += "</tr>\n";
-        }
-        this.boardAddress.innerHTML = this.boardHTML;
+    
+    set(id, player){
+        this.boardArray[id] = player;
     }
     
-    set(id){
-        var item = document.getElementById(id);
-        item.innerHTML = player1;
-    }
-    
-    get(x, y){
-        if(x > this.width || y > this.height){
+    get(id){
+        /*if(x > this.width - 1 || y > this.height - 1 || y < 0 || x < 0){
             return null;
-        }
-        return this.boardArray[(this.width * y) + x];
+        }*/
+        return this.boardArray[id];
+    }
+  
+    getWidth(){
+        return this.width; 
+    }
+  
+    getHeight(){
+        return this.height; 
     }
 }
 
-function pushButton(id){
-    var item = document.getElementById(id);
-    
-    switch(turn){
-        case 0: item.innerHTML = player1;
-                break;
-        case 1: item.innerHTML = player2;
-                break;
-        
-    }
-    if(turn < numPlayers - 1){
-        turn++;
-    }
-    else{
-        turn = 0;
-    }
-}
 
-const newBoard = new board(11,11);
-newBoard.printBoard();
 
 
 function test(message){

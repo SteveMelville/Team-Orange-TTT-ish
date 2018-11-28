@@ -13,7 +13,9 @@ var server = http.createServer(function (req, res) {
 	if (url=="/"){
 		url="/index.html";
 	}
+
 	if (url.indexOf('favicon.ico')!=-1){
+
 		return;
 	}
 	//write the head
@@ -96,3 +98,4 @@ function findNextSocket(playerNum){
 		}
 	}return -1
 }
+

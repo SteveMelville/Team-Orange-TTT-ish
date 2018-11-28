@@ -2,6 +2,17 @@ body {
 	background-color: #f4af26;
 }
 
+img {
+	width: 37px;
+	height: 37px;
+}
+
+button {
+	width: 37px;
+	height: 37px;
+	background-image: url("assets/testBlank.png");
+}
+
 #header {
 	top: 0px;
 	left: 0px;
@@ -9,8 +20,9 @@ body {
 	height: 100px;
 	position: fixed;
 	background-color: white;
+	opacity: 0.5;
 	color: black;
-	z-index: 3;
+	z-index:6;
 }
 
 #footer {
@@ -33,25 +45,34 @@ body {
 
 .center{
 	text-align: center;
-	margin: auto;
-	display: inline-block;
+    	top: 150px;
+	margin-bottom: 150px;
+	position: relative;
+    	background-color: #f4af26;
+    	z-index: 5;
+   	color: #003333;
+}
+
+.leaderboard {
+	position: fixed;
+	top: 200px;
+	left: 60px;
+	color: black;
+	background-color: white;
+	z-index: 7;
+}
+
+#leader{
+	color: black;
+	background-color: white;
 }
 
 #board {
 	margin: auto;
+	display: inline-block;
+	background-color: white;
 }
 
 .article{
-	width: auto;
-    	top: 150px;
-	position: relative;
-    	background-color: white;
-    	padding-left: 20px;
-    	padding: 20px;
-    	z-index: 0;
-   	color: #003333;
-	clear: left;
-	padding-bottom: 100px;
-	margin: auto;
-	float: left;
+
 }
