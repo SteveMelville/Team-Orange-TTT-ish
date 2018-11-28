@@ -5,7 +5,7 @@ class game{
 		this.squaresPushed = 0;
 		this.players = [];
 		this.numPlayers = 0;		
-		this.PointsToWin = 10;
+		this.PointsToWin = 1;
 		this.turn = 1;
 		this.countedWords = [];
 		
@@ -41,6 +41,10 @@ class game{
 	checkWin(player){
 		if(player.getScore()>=PointsToWin){
 			return true;
+			var buttons = document.getElementsByTagName("TD").contains("BUTTON")
+			for(e in buttons){
+				buttons[e].innerHTML = blank;
+			}
 		}else{
 			return false;
 		}
@@ -169,5 +173,6 @@ function pushButton(id){
 	newGame.board.set(id, newGame.getTurn());
 	newGame.printLeaderboard();
 	newGame.gameOver();
+	newGame.checkWin(newGame.players[newGame.getTurn() - 1])
 	newGame.updateTurn();
 }
