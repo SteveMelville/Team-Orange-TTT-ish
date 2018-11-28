@@ -22,7 +22,7 @@ button {
 	background-color: white;
 	opacity: 0.5;
 	color: black;
-	z-index: 3;
+	z-index:6;
 }
 
 #footer {
@@ -46,10 +46,25 @@ button {
 .center{
 	text-align: center;
     	top: 150px;
+	margin-bottom: 150px;
 	position: relative;
     	background-color: #f4af26;
-    	z-index: 0;
+    	z-index: 5;
    	color: #003333;
+}
+
+.leaderboard {
+	position: fixed;
+	top: 200px;
+	left: 60px;
+	color: black;
+	background-color: white;
+	z-index: 7;
+}
+
+#leader{
+	color: black;
+	background-color: white;
 }
 
 #board {

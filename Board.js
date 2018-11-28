@@ -1,34 +1,42 @@
-const letterA = "<img src='assets/A.png'>";
-const letterB = "<img src='assets/B.png'>";
-const letterC = "<img src='assets/C.png'>";
-const letterD = "<img src='assets/D.png'>";
-const letterE = "<img src='assets/E.png'>";
-const letterF = "<img src='assets/F.png'>";
-const letterG = "<img src='assets/.png'>";
-const letterH = "<img src='assets/.png'>";
-const letterI = "<img src='assets/.png'>";
-const letterJ = "<img src='assets/.png'>";
-const letterK = "<img src='assets/.png'>";
-const letterL = "<img src='assets/.png'>";
-const letterM = "<img src='assets/.png'>";
-const letterN = "<img src='assets/.png'>";
-const letterO = "<img src='assets/.png'>";
-const letterP = "<img src='assets/.png'>";
-const letterQ = "<img src='assets/.png'>";
-const letterR = "<img src='assets/.png'>";
-const letterS = "<img src='assets/.png'>";
-const letterT = "<img src='assets/.png'>";
-const letterU = "<img src='assets/.png'>";
-const letterV = "<img src='assets/.png'>";
-const letterW = "<img src='assets/.png'>";
-const letterX = "<img src='assets/.png'>";
-const letterY = "<img src='assets/.png'>";
-const letterZ = "<img src='assets/.png'>";
+const images = ["<img src='assets/Orange.png'>",
+                "<img src='assets/A.png'>",
+                "<img src='assets/B.png'>",
+                "<img src='assets/C.png'>",
+                "<img src='assets/D.png'>",
+                "<img src='assets/E.png'>",
+                "<img src='assets/F.png'>",
+                "<img src='assets/G.png'>",
+                "<img src='assets/H.png'>",
+                "<img src='assets/I.png'>",
+                "<img src='assets/J.png'>",
+                "<img src='assets/K.png'>",
+                "<img src='assets/L.png'>",
+                "<img src='assets/M.png'>",
+                "<img src='assets/N.png'>",
+                "<img src='assets/O.png'>",
+                "<img src='assets/P.png'>",
+                "<img src='assets/Q.png'>",
+                "<img src='assets/R.png'>",
+                "<img src='assets/S.png'>",
+                "<img src='assets/T.png'>",
+                "<img src='assets/U.png'>",
+                "<img src='assets/V.png'>",
+                "<img src='assets/W.png'>",
+                "<img src='assets/X.png'>",
+                "<img src='assets/Y.png'>",
+                "<img src='assets/Z.png'>",
+                "<img src='assets/Smile.png'>"];
+//"<img src='assets/.png'>"
 
 const testX = "<img src='assets/testX.png'>";
 const testO = "<img src='assets/testO.png'>";
 const blank = ""; //"<img src='assets/testBlank.png'>";
                                       
+const leader1 = "<tr id='player";
+const leader2 = "'>";
+const leader3 = "<td id='player";
+const leader4 = "</td>";
+const leader5 = "</tr>";
 
 var player1 = testX;
 var player2 = testO;
@@ -60,8 +68,6 @@ class Board{
         this.width = w + 2;
         this.height = h + 2;
         this.boardArray = [];
-        this.boardHTML = "";
-        this.boardAddress = document.getElementById("board");
         
         for(var j = 0; j < this.height; j++){
             for(var i = 0; i < this.width; i++){
@@ -76,29 +82,7 @@ class Board{
     }
 
    
-    printBoard(){
-        var id = 0;
-        for(var i = 0; i < this.height; i++){
-            this.boardHTML += "<tr>\n";
-            for(var j = 0; j < this.width; j++){
-                id = i * this.width + j;
-                this.boardHTML += "<td id = '" + id + "'>";
-                
-                switch(this.boardArray[id]){
-                    case 0: this.boardHTML += "<button type='button' onclick='pushButton(" + id + ")'>" + blank + "</button>";
-                            break;
-                    case 1: this.boardHTML += player1;
-                            break;
-                    default: break;
-                }
-                
-                this.boardHTML += "</td>\n";
-            }
 
-            this.boardHTML += "</tr>\n";
-        }
-        this.boardAddress.innerHTML = this.boardHTML;
-    }
     
     set(id, player){
         this.boardArray[id] = player;
