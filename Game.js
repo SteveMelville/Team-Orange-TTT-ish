@@ -2,6 +2,7 @@ class game{
 	constructor(width, height){
 		this.dictionary = new Dictionary();
 		this.board = new Board(width, height);
+		this.squaresPushed = 0;
 		this.players = [];
 		this.numPlayers = 0;		
 		this.PointsToWin = 10;
@@ -10,11 +11,16 @@ class game{
 		
 		this.addPlayer("bob", testX);
 		this.addPlayer("bob", testO);
-		/*this.addPlayer("bob", images[1]);
+		this.addPlayer("bob", images[1]);
 		this.addPlayer("bob", images[2]);
 		this.addPlayer("bob", images[3]);
 		this.addPlayer("bob", images[4]);
-		this.addPlayer("bob", images[5]);*/
+		this.addPlayer("bob", images[5]);
+		this.addPlayer("bob", images[6]);
+		this.addPlayer("bob", images[7]);
+		this.addPlayer("bob", images[8]);
+		this.addPlayer("bob", images[9]);
+		this.addPlayer("bob", images[27]);
 		var player = 1
 	}
 	getDictionary(){
@@ -148,7 +154,8 @@ newGame.printLeaderboard();
 	
 function pushButton(id){
 	var item = document.getElementById(id);
-
+	
+	newGame.squaresPushed++;
 	item.innerHTML = newGame.players[newGame.getTurn() - 1].getImage();
 	scanBoard(newGame, id);
 	newGame.board.set(id, newGame.getTurn());
