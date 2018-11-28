@@ -30,7 +30,7 @@ const images = ["<img src='assets/Orange.png'>",
 
 const testX = "<img src='assets/testX.png'>";
 const testO = "<img src='assets/testO.png'>";
-const blank = ""; //"<img src='assets/testBlank.png'>";
+const blank = "<img src='assets/testBlank.png'>";
                                       
 const leader1 = "<tr id='player";
 const leader2 = "'>";
