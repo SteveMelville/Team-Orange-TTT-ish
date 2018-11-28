@@ -5,14 +5,14 @@ class game{
 		this.squaresPushed = 0;
 		this.players = [];
 		this.numPlayers = 0;		
-		this.PointsToWin = 10;
+		this.PointsToWin = 1;
 		this.turn = 1;
 		this.countedWords = [];
 		
 		this.addPlayer("bob", testX);
 		this.addPlayer("bob", testO);
-		this.addPlayer("bob", images[1]);
-		this.addPlayer("bob", images[2]);
+		this.addPlayer("bob", images[0]);
+		/*this.addPlayer("bob", images[2]);
 		this.addPlayer("bob", images[3]);
 		this.addPlayer("bob", images[4]);
 		this.addPlayer("bob", images[5]);
@@ -20,7 +20,7 @@ class game{
 		this.addPlayer("bob", images[7]);
 		this.addPlayer("bob", images[8]);
 		this.addPlayer("bob", images[9]);
-		this.addPlayer("bob", images[27]);
+		this.addPlayer("bob", images[27]);*/
 		var player = 1
 	}
 	getDictionary(){
@@ -39,7 +39,12 @@ class game{
 		this.PointssToWin=points;
 	}
 	checkWin(player){
-		if(player.getScore()>=PointsToWin){
+		if(player.getScore()>=this.PointsToWin){
+			
+			var buttons = document.getElementsByTagName("TD").contains("BUTTON");
+			for(e in buttons){
+				buttons[e].innerHTML = blank;
+			}
 			return true;
 		}else{
 			return false;
@@ -130,7 +135,7 @@ class game{
 			boardHTML += "<td id = '" + id + "'>";
 
 			switch(this.board.boardArray[id]){
-			    case 0: boardHTML += "<button type='button' onclick='pushButton(" + id + ")'>" + blank + "</button>";
+			    case 0: boardHTML += "<button type='button' onclick='pushButton(" + id + ")'></button>";
 				    break;
 			    case 1: boardHTML += player1;
 				    break;
@@ -146,6 +151,14 @@ class game{
         	var boardAddress = document.getElementById("board");
 		boardAddress.innerHTML = boardHTML;
     	}
+	
+	<!--Work in progress. Function to output a win condition-->
+	gameOver(){
+		var numSquares = this.board.height * this.board.width;
+		
+		if(numSquares == this.squaresPushed)
+			alert("Game is over!");
+	      }
 }
 
 var newGame = new game(3,3);
@@ -159,6 +172,8 @@ function pushButton(id){
 	item.innerHTML = newGame.players[newGame.getTurn() - 1].getImage();
 	scanBoard(newGame, id);
 	newGame.board.set(id, newGame.getTurn());
-	newGame.updateTurn();
 	newGame.printLeaderboard();
+	newGame.gameOver();
+	newGame.checkWin(newGame.players[newGame.getTurn() - 1])
+	newGame.updateTurn();
 }
