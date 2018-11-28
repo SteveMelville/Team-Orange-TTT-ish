@@ -43,6 +43,7 @@ class game{
 			
 			var boardState = document.getElementById("board");
 			var buttons = board.getElementsByTagName("TD");
+			var e = 0;
 			for(e in buttons){
 				buttons[e].innerHTML = blank;
 			}
