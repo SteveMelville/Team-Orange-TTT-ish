@@ -1,0 +1,26 @@
+Access needed
+Dictionary
+Board
+Players
+Points
+Game
+
+Needs to do
+Search Board
+Search Dictionary
+Priority Queue/Array for words on board
+Compare board to dictionary and store the words on the board in a Priority Queue/Array
+Assert a click
+Check to see if any word on the board will be a win if added onto once and subvert that move
+
+
+Class SimpleAI
+
+TempARR[];
+
+RunAI();
+Click/AssertClick(boardId);
+searchDictionary(dictionary);
+searchBoard();
+addWord(dictionary[index]);
+Win(points);
