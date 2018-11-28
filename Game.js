@@ -15,6 +15,10 @@ class game{
 		this.addPlayer("bob", images[3]);
 		this.addPlayer("bob", images[4]);
 		this.addPlayer("bob", images[5]);
+		this.addPlayer("bob", images[6]);
+		this.addPlayer("bob", images[7]);
+		this.addPlayer("bob", images[8]);
+		this.addPlayer("bob", images[9]);
 		var player = 1
 	}
 	getDictionary(){
