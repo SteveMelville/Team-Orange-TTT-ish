@@ -38,23 +38,6 @@ const leader3 = "<td id='player";
 const leader4 = "</td>";
 const leader5 = "</tr>";
 
-var player1 = testX;
-var player2 = testO;
-var player3 = letterA;
-var player4 = letterB;
-var player5 = letterC;
-var player6 = letterD;
-var player7 = letterE;
-var player8 = letterF;
-var player9 = letterG;
-var player10 = letterH;
-var player11 = letterI;
-var player12 = letterJ;
-var player13 = letterK;
-var player14 = letterL;
-var player15 = letterM;
-
-
 
 class Board{
     
