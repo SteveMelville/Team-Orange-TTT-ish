@@ -45,7 +45,7 @@ class game{
 			var buttons = board.getElementsByTagName("TD");
 			var e = 0;
 			for(e in buttons){
-				if(this.board.boardArray[buttons[e].id] = 0){
+				if(this.board.boardArray[buttons[e].id - 1] = 0){
 					buttons[e].innerHTML = blank;
 				}
 				alert(buttons[e].id);
