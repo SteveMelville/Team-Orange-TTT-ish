@@ -170,15 +170,15 @@ function pushButton(id){
 	newGame.printLeaderboard();
 	newGame.gameOver();
 	if(newGame.checkWin(newGame.players[newGame.getTurn() - 1])){
-		lockBoard();	
+		lockBoard(newGame);	
 	}	
 	newGame.updateTurn();
 }
 
-function lockBoard(){
+function lockBoard(newGame){
 	for(var i = 0; i < (newGame.board.getWidth() * newGame.board.getHeight()); i++){
-		if (newGame.board.boardArray[i] = 0){
-			var button = document.getElementByID(i);
+		if (newGame.board.boardArray[i] == 0){
+			var button = document.getElementById(i);
 			button.innerHTML = blank;
 		}	
 	}	
