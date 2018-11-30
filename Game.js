@@ -9,9 +9,9 @@ class game{
 		this.turn = 1;
 		this.countedWords = [];
 		
-		this.addPlayer("bob", testX);
-		this.addPlayer("bob", testO);
-		this.addPlayer("bob", images[0]);
+		/*this.addPlayer("bob", testX);*/
+		this.addPlayer("Player1", images[27]);
+		this.addPlayer("Player2", images[0]);
 		/*this.addPlayer("bob", images[2]);
 		this.addPlayer("bob", images[3]);
 		this.addPlayer("bob", images[4]);
