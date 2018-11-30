@@ -1,3 +1,6 @@
+//Team Orange ©2018
+//This file holds the images to be used for the program
+//It is to be used in the future scrabble game.
 const images = ["<img src='assets/Orange~.png'>",
                 "<img src='assets/A.png'>",
                 "<img src='assets/B.png'>",
