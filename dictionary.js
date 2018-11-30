@@ -6,7 +6,7 @@ class Dictionary{
 		this.addWord("XXX", 1);
 		this.addWord("OOO", 1);
 		this.addWord("~~~", 1);
-		thiss.addWord("°°°", 1);
+		this.addWord("°°°", 1);
 	}
 	//gets a string and an intiger returns nothing
 	addWord(name , points){
