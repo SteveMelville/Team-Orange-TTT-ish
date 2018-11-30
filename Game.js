@@ -40,16 +40,6 @@ class game{
 	}
 	checkWin(player){
 		if(player.getScore()>=this.PointsToWin){
-			
-			/*var boardState = document.getElementById("board");
-			var buttons = board.getElementsByTagName("TD");
-			var e = 0;
-			for(e in buttons){
-				if(this.board.boardArray[buttons[e].id - 1] = 0){
-					buttons[e].innerHTML = blank;
-				}
-				alert(buttons[e].id);
-			}*/
 			return true;
 		}else{
 			return false;
@@ -179,6 +169,18 @@ function pushButton(id){
 	newGame.board.set(id, newGame.getTurn());
 	newGame.printLeaderboard();
 	newGame.gameOver();
-	newGame.checkWin(newGame.players[newGame.getTurn() - 1])
+	if(newGame.checkWin(newGame.players[newGame.getTurn() - 1])){
+		lockBoard();	
+	}	
 	newGame.updateTurn();
+}
+
+function lockBoard(){
+	for(var i = 0; i < (newGame.board.getWidth() * newGame.board.getHeight()); i++){
+		if (newGame.board.boardArray[i] = 0){
+			var button = document.getElementByID(i);
+			button.innerHTML = blank;
+		}	
+	}	
+	
 }
