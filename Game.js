@@ -170,7 +170,8 @@ function pushButton(id){
 	newGame.printLeaderboard();
 	newGame.gameOver();
 	if(newGame.checkWin(newGame.players[newGame.getTurn() - 1])){
-		lockBoard(newGame);	
+		lockBoard(newGame);
+		alert(newGame.players[newGame.getTurn() - 1] + ' has won the game!');
 	}	
 	newGame.updateTurn();
 }
