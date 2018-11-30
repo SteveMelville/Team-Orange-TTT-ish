@@ -39,63 +39,68 @@ var server = http.createServer(function (req, res) {
 server.listen(PORT);
 io=io.listen(server);
 
-
-
-
+///////////////////////on connect/////////////////////////////////////
+//clients figures out their username and picture
+//headClient figures out game paramiters
+///////////////////////on game start//////////////////////////////////
+//head client tells server that game is starting
+//server tells all other clients the game is starting
+//all clients tell server their username and picture
+//server tells clients their player number
+//client waits till he has all clients 
+//server starts the game
+///////////////////////on player start turn///////////////////////////
+//server tells player that he is starting
+///////////////////////on player end turn/////////////////////////////
+//player tells server that it has taken it's turn
+//client sends server the updated game state
+//server updates the game state
+//server gives all other clients the updated state
+//clients update their game state
+//next player starts their turn 
+///////////////////////on game over///////////////////////////////////
+//
 
 
 
 
 
 //networking logic stuff
-var users=new Array(MAXPLAYERS);
+var gameState="";
 io.on('connection', function(socket){
-	playerNum=findPlayerNum();
-	if(playerNum==-1){
-		//throw a we are full error
-	}else{
-		users[playerNum]=socket
-		socket.username=playerNum;
+///////////////////////on connect/////////////////////////////////////
+//clients figures out their username and picture
+//headClient figures out game paramiters
+///////////////////////on game start//////////////////////////////////
+//head client tells server that game is starting
+//server tells all other clients the game is starting
+	socket.on('GameStart1',function(state){
+		gameState=state;
+		io.emit('GameStart1',state);
 	}
-	console.log("player"+socket.username+' has connected');
-	socket.emit('playerconnect',socket.username);
-	
-	
-	socket.on('disconnect',function(){
-		users[socket.username]=null;
-		console.log("player"+socket.username+" has disconnected");
-		
-	});
-	socket.on('msgNext',function(msg){
-		nextSocket=findNextSocket(socket.username);
-		console.log(nextSocket.username);
-		nextSocket.emit('msg',msg);
-	});
+//all clients tell server their username and picture
+//server tells clients their player number
+	socket.on('setPlayer',function(username, image){
+		gameState.addPlayer(nickname, image);
+		gameState.
+	}
+//client waits till he has all clients 
+//server starts the game
+///////////////////////on player start turn///////////////////////////
+//server tells player that he is starting
+///////////////////////on player end turn/////////////////////////////
+//player tells server that it has taken it's turn
+//client sends server the updated game state
+//server updates the game state
+//server gives all other clients the updated state
+//clients update their game state
+//next player starts their turn 
+///////////////////////on game over///////////////////////////////////
+//
 	
 	
 	
 	
 });
 
-
-
-//find the first unused player number
-function findPlayerNum(){
-	for(var i=0;i<MAXPLAYERS;i++){
-		if(users[i]==null){
-			return i;
-		}
-	}
-	return -1
-}
-function findNextSocket(playerNum){
-	if(playerNum<MAXPLAYERS){
-		//throw an error
-	}
-	for(var i=playerNum+1;i!=playerNum;i=(i+1)%MAXPLAYERS){
-		if(users[i]!=null){
-			return users[i];
-		}
-	}return -1
-}
 
