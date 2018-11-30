@@ -82,7 +82,7 @@ class Dictionary{
 		for(var i=0;i<this.dict.length;i++){
 			//checks if the name passed to the functions is the same as the name of the current word
 			if(this.dict[i].getName()==name){
-				/returns the index of the word
+				//returns the index of the word
 				return i;
 			}
 		}
