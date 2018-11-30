@@ -36,6 +36,14 @@ class game{
 	getPlayers(){
 		return this.players;
 	}
+	//returns the player with the given player ID
+	getPlayer(id){
+		for(int i=0;i<players.length;i++){
+			if(players[i].getID==id){
+				return players[i];
+			}
+		}
+	}
 	//returns how many points there need to be to win
 	getWinPoints(){
 		return this.winPoints;
@@ -65,6 +73,7 @@ class game{
 	//adds a new player to the game
 	addPlayer(nickname, image){
 		this.players.push(new Player(++this.numPlayers, nickname, image));	
+		return(numPlayers);
 	}
 	//takes a player out of the game((messes up the player ID))
 	removePlayer(id){
