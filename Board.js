@@ -55,7 +55,3 @@ function test(message){
 }
 
 
-module.exports={
-	Board: Board
-}
-
