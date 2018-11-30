@@ -3,16 +3,16 @@ class Player{
   
   //Constructor for the player class that instantiates the id_, nickname_ and image_ to the values passed to it and score_ to a default value
   constructor(id, nickname, image){
-      //Assigns id_ to the id passed to the constructor
+      //Assigns the id passed to the constructor to id_
       this.id_ = id;
     
-      //Assigns nickname_ to the nickname passed to the constructor
+      //Assigns the nickname passed to the constructor to nickname_
       this.nickname_ = nickname;
     
-     //Assigns image_ to the image passed to the constructor
+     //Assigns the image passed to the constructor to image_
       this.image_ = image;
     
-      //Assigns score_ to the 0
+      //Assigns 0 to the score_ 
       this.score_ = 0;
   }
   
