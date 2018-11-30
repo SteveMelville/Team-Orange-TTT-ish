@@ -1,44 +1,58 @@
+//a class that holds the game state and methods that controll the high end game functions
 class game{
 	constructor(width, height){
 		this.dictionary = new Dictionary();
 		this.board = new Board(width, height);
+		this.squaresPushed = 0;
 		this.players = [];
 		this.numPlayers = 0;		
-		this.PointsToWin = 10;
+		this.PointsToWin = 1;
 		this.turn = 1;
 		this.countedWords = [];
 		
 		this.addPlayer("bob", testX);
-		this.addPlayer("bob", testO);
-		/*this.addPlayer("bob", images[1]);
+		this.addPlayer("Player", testO);
+		/*this.addPlayer("Player2", images[0]);
 		this.addPlayer("bob", images[2]);
 		this.addPlayer("bob", images[3]);
 		this.addPlayer("bob", images[4]);
-		this.addPlayer("bob", images[5]);*/
+		this.addPlayer("bob", images[5]);
+		this.addPlayer("bob", images[6]);
+		this.addPlayer("bob", images[7]);
+		this.addPlayer("bob", images[8]);
+		this.addPlayer("bob", images[9]);
+		this.addPlayer("bob", images[27]);*/
 		var player = 1
 	}
+	//returns the game's dictionary
 	getDictionary(){
 		return this.dictionary;
-	}//returns a dictionary	
+	}
+	//returns the game board
 	getBoard(){
 		return this.board;
-	}//returns a board
+	}
+	//returns a list of all the players
 	getPlayers(){
 		return this.players;
-	}//returns a list of players
+	}
+	//returns how many points there need to be to win
 	getWinPoints(){
 		return this.winPoints;
-	}//returns an integer corisponding to the win condition
+	}
+	//sets how many points there need to be to win
 	setWinPoints(points){
 		this.PointssToWin=points;
 	}
+	//returns true if the player has won
 	checkWin(player){
-		if(player.getScore()>=PointsToWin){
+		if(player.getScore()>=this.PointsToWin){
 			return true;
 		}else{
 			return false;
 		}
 	}
+	//returns the player in first place
 	getFirstPlacePlayer(){
 		winner = this.players[0]
 		for(i=1;i < this.players.length;i++){
@@ -48,11 +62,11 @@ class game{
 		}
 		return winner;
 	}
-	
+	//adds a new player to the game
 	addPlayer(nickname, image){
 		this.players.push(new Player(++this.numPlayers, nickname, image));	
 	}
-			    
+	//takes a player out of the game((messes up the player ID))
 	removePlayer(id){
 		for(var i = 0;i < this.players.length; i++){
 			if(players[i].getID()==id){
@@ -78,7 +92,7 @@ class game{
 	}
 	
 	printLeaderboard(){
-		var leaderBoard = "";
+		var leaderBoard = "<tr>	<th>#</th> <th>Image</th> <th>Name</th> <th>Score</th> </tr>";
 		for(var i = 0; i < this.numPlayers; i++){
 			leaderBoard += leader1;
 			leaderBoard += i;
@@ -124,7 +138,7 @@ class game{
 			boardHTML += "<td id = '" + id + "'>";
 
 			switch(this.board.boardArray[id]){
-			    case 0: boardHTML += "<button type='button' onclick='pushButton(" + id + ")'>" + blank + "</button>";
+			    case 0: boardHTML += "<button type='button' onclick='pushButton(" + id + ")'></button>";
 				    break;
 			    case 1: boardHTML += player1;
 				    break;
@@ -140,6 +154,14 @@ class game{
         	var boardAddress = document.getElementById("board");
 		boardAddress.innerHTML = boardHTML;
     	}
+	
+	<!--Work in progress. Function to output a win condition-->
+	gameOver(){
+		var numSquares = this.board.height * this.board.width;
+		
+		if(numSquares == this.squaresPushed)
+			alert("Game is over!");
+	      }
 }
 
 var newGame = new game(3,3);
@@ -148,10 +170,26 @@ newGame.printLeaderboard();
 	
 function pushButton(id){
 	var item = document.getElementById(id);
-
+	
+	newGame.squaresPushed++;
 	item.innerHTML = newGame.players[newGame.getTurn() - 1].getImage();
 	scanBoard(newGame, id);
 	newGame.board.set(id, newGame.getTurn());
-	newGame.updateTurn();
 	newGame.printLeaderboard();
+	newGame.gameOver();
+	if(newGame.checkWin(newGame.players[newGame.getTurn() - 1])){
+		lockBoard(newGame);
+		alert('Player ' + newGame.getTurn() + ' has won the game!');
+	}	
+	newGame.updateTurn();
+}
+
+function lockBoard(newGame){
+	for(var i = 0; i < (newGame.board.getWidth() * newGame.board.getHeight()); i++){
+		if (newGame.board.boardArray[i] == 0){
+			var button = document.getElementById(i);
+			button.innerHTML = blank;
+		}	
+	}	
+	
 }

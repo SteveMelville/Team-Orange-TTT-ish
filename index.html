@@ -1,9 +1,23 @@
+<!-----------------------------------------------------
+Team Orange ©2018. This code belongs to the Team Orange of CS-2450 of Snow College. 
+The members of the team are: Steven Melville, Brandon Isbell, Matthew Snow, Ammon Zerkle and Marcelo Zometa Paniagua
+
+index.html: driver html file. 
+input: none
+output: none
+process: none
+---------------------------------------------------------->
+
+<!-- Head of the file. the mainCss.css and Orange~.png-->
 <html>
 <head>
 <title>Website Title</title>
 <link rel="stylesheet" href="mainCss.css">
-<link rel ="icon" type="image/png" href="assets/Orange.png"/>
+<link rel ="icon" type="image/png" href="assets/Orange~.png"/>
+<meta charset="ANSI">
 </head>
+
+<!-- Body of the file.-->
 <body>
 
   
@@ -17,6 +31,8 @@
 	------------------------------------->
 	  </div>
 
+	<!--Creation of div tags to be used in future, each holding 
+	a table inside-->
 	  <div class="center" >
 	      <table id = "board">
 
@@ -34,6 +50,7 @@
 	    Copyright Team Orange &copy;
 	  </div>
 
+	  <script src="constants.js"></script>
 	  <script src="Board.js"></script>
 	  <script src="Word.js"></script>
 	  <script src="dictionary.js"></script>
@@ -44,5 +61,6 @@
 	  <script src="/socket.io/socket.io.js"></script>
 	  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 	  <script>var conn = new connection(io());</script>-->
+	<noscript>Your computer does not have Javacript available. Please turn it on to enjoy this game</noscript>
 </body>
 </html>

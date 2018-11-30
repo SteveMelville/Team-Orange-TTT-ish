@@ -1,59 +1,3 @@
-const images = ["<img src='assets/Orange.png'>",
-                "<img src='assets/A.png'>",
-                "<img src='assets/B.png'>",
-                "<img src='assets/C.png'>",
-                "<img src='assets/D.png'>",
-                "<img src='assets/E.png'>",
-                "<img src='assets/F.png'>",
-                "<img src='assets/G.png'>",
-                "<img src='assets/H.png'>",
-                "<img src='assets/I.png'>",
-                "<img src='assets/J.png'>",
-                "<img src='assets/K.png'>",
-                "<img src='assets/L.png'>",
-                "<img src='assets/M.png'>",
-                "<img src='assets/N.png'>",
-                "<img src='assets/O.png'>",
-                "<img src='assets/P.png'>",
-                "<img src='assets/Q.png'>",
-                "<img src='assets/R.png'>",
-                "<img src='assets/S.png'>",
-                "<img src='assets/T.png'>",
-                "<img src='assets/U.png'>",
-                "<img src='assets/V.png'>",
-                "<img src='assets/W.png'>",
-                "<img src='assets/X.png'>",
-                "<img src='assets/Y.png'>",
-                "<img src='assets/Z.png'>",
-                "<img src='assets/Smile.png'>"];
-//"<img src='assets/.png'>"
-
-const testX = "<img src='assets/testX.png'>";
-const testO = "<img src='assets/testO.png'>";
-const blank = ""; //"<img src='assets/testBlank.png'>";
-                                      
-const leader1 = "<tr id='player";
-const leader2 = "'>";
-const leader3 = "<td id='player";
-const leader4 = "</td>";
-const leader5 = "</tr>";
-
-var player1 = testX;
-var player2 = testO;
-var player3 = letterA;
-var player4 = letterB;
-var player5 = letterC;
-var player6 = letterD;
-var player7 = letterE;
-var player8 = letterF;
-var player9 = letterG;
-var player10 = letterH;
-var player11 = letterI;
-var player12 = letterJ;
-var player13 = letterK;
-var player14 = letterL;
-var player15 = letterM;
-
 
 
 class Board{
@@ -65,22 +9,21 @@ class Board{
    // var boardAddress;
     
     constructor(w, h){
-        this.width = w + 2;
+        this.width = w + 2 ;
         this.height = h + 2;
         this.boardArray = [];
-        
+    
         for(var j = 0; j < this.height; j++){
-            for(var i = 0; i < this.width; i++){
+	for(var i = 0; i < this.width; i++){
                 if(j == 0 || j == this.height - 1 || i == 0 || i == this.width - 1){
                     this.boardArray.push(null);
                 }
-                else{
+                else{ 
                     this.boardArray.push(0);
-                }
+		}
             }
         }
     }
-
    
 
     
@@ -110,3 +53,5 @@ class Board{
 function test(message){
     window.alert(message); 
 }
+
+
