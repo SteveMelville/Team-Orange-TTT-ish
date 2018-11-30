@@ -25,7 +25,7 @@ const images = ["<img src='assets/Orange~.png'>",
                 "<img src='assets/X.png'>",
                 "<img src='assets/Y.png'>",
                 "<img src='assets/Z.png'>",
-                "<img src='assets/Smile.png'>"];
+                "<img src='assets/Smile°.png'>"];
 //"<img src='assets/.png'>"
 
 const testX = "<img src='assets/testX.png'>";
