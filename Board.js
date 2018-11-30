@@ -21,8 +21,7 @@ class Board{
                     this.boardArray.push(0);
 		}
             }
-        }
-    }
+      }
 
    
 
