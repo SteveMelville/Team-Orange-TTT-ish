@@ -9,13 +9,17 @@ class Board{
    // var boardAddress;
     
     constructor(w, h){
-        this.width = w ;
-        this.height = h;
+        this.width = w + 2 ;
+        this.height = h + 2;
         this.boardArray = [];
         
-        for(var j = 0; j < this.height; j++){
-            for(var i = 0; i < this.width; i++){ 
+	for(var i = 0; i < this.width; i++){
+                if(j == 0 || j == this.height - 1 || i == 0 || i == this.width - 1){
+                    this.boardArray.push(null);
+                }
+                else{ 
                     this.boardArray.push(0);
+		}
             }
         }
     }
