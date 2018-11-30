@@ -1,3 +1,4 @@
+//a class that holds the game state and methods that controll the high end game functions
 class game{
 	constructor(width, height){
 		this.dictionary = new Dictionary();
@@ -23,21 +24,27 @@ class game{
 		this.addPlayer("bob", images[27]);*/
 		var player = 1
 	}
+	//returns the game's dictionary
 	getDictionary(){
 		return this.dictionary;
-	}//returns a dictionary	
+	}
+	//returns the game board
 	getBoard(){
 		return this.board;
-	}//returns a board
+	}
+	//returns a list of all the players
 	getPlayers(){
 		return this.players;
-	}//returns a list of players
+	}
+	//returns how many points there need to be to win
 	getWinPoints(){
 		return this.winPoints;
-	}//returns an integer corisponding to the win condition
+	}
+	//sets how many points there need to be to win
 	setWinPoints(points){
 		this.PointssToWin=points;
 	}
+	//returns true if the player has won
 	checkWin(player){
 		if(player.getScore()>=this.PointsToWin){
 			return true;
@@ -45,6 +52,7 @@ class game{
 			return false;
 		}
 	}
+	//returns the player in first place
 	getFirstPlacePlayer(){
 		winner = this.players[0]
 		for(i=1;i < this.players.length;i++){
@@ -54,11 +62,11 @@ class game{
 		}
 		return winner;
 	}
-	
+	//adds a new player to the game
 	addPlayer(nickname, image){
 		this.players.push(new Player(++this.numPlayers, nickname, image));	
 	}
-			    
+	//takes a player out of the game((messes up the player ID))
 	removePlayer(id){
 		for(var i = 0;i < this.players.length; i++){
 			if(players[i].getID()==id){
