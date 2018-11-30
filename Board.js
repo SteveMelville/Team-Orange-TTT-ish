@@ -1,4 +1,5 @@
 
+
 class Board{
     
     //var width;
@@ -11,7 +12,8 @@ class Board{
         this.width = w + 2 ;
         this.height = h + 2;
         this.boardArray = [];
-        
+    
+        for(var j = 0; j < this.height; j++){
 	for(var i = 0; i < this.width; i++){
                 if(j == 0 || j == this.height - 1 || i == 0 || i == this.width - 1){
                     this.boardArray.push(null);
@@ -20,8 +22,8 @@ class Board{
                     this.boardArray.push(0);
 		}
             }
-      }
-
+        }
+    }
    
 
     
@@ -56,3 +58,4 @@ function test(message){
 module.exports={
 	Board: Board
 }
+
