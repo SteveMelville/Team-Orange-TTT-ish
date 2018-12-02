@@ -1,12 +1,15 @@
 var http = require('http'),
 	io = require('socket.io');
     fs = require('fs');
+
+//var Game=require('./Game.js').game.getPlayer();
 const PORT=3000;
 const MAXPLAYERS=15;	
 //-------------------------------------------------------------------
 //                         server side
 //-------------------------------------------------------------------
 //do the web stuff
+
 var server = http.createServer(function (req, res) {
 	//get the 
 	var url=req.url;
@@ -39,68 +42,46 @@ var server = http.createServer(function (req, res) {
 server.listen(PORT);
 io=io.listen(server);
 
-///////////////////////on connect/////////////////////////////////////
-//clients figures out their username and picture
-//headClient figures out game paramiters
-///////////////////////on game start//////////////////////////////////
-//head client tells server that game is starting
-//server tells all other clients the game is starting
-//all clients tell server their username and picture
-//server tells clients their player number
-//client waits till he has all clients 
-//server starts the game
-///////////////////////on player start turn///////////////////////////
-//server tells player that he is starting
-///////////////////////on player end turn/////////////////////////////
-//player tells server that it has taken it's turn
-//client sends server the updated game state
-//server updates the game state
-//server gives all other clients the updated state
-//clients update their game state
-//next player starts their turn 
-///////////////////////on game over///////////////////////////////////
-//
 
 
-
-
-
-//networking logic stuff
-var gameState="";
+var PlayerNum=0;
 io.on('connection', function(socket){
-///////////////////////on connect/////////////////////////////////////
-//clients figures out their username and picture
-//headClient figures out game paramiters
-///////////////////////on game start//////////////////////////////////
-//head client tells server that game is starting
-//server tells all other clients the game is starting
-	socket.on('GameStart1',function(state){
-		gameState=state;
-		io.emit('GameStart1',state);
-	}
-//all clients tell server their username and picture
-//server tells clients their player number
-	socket.on('setPlayer',function(username, image){
-		gameState.addPlayer(nickname, image);
-		gameState.
-	}
-//client waits till he has all clients 
-//server starts the game
-///////////////////////on player start turn///////////////////////////
-//server tells player that he is starting
-///////////////////////on player end turn/////////////////////////////
-//player tells server that it has taken it's turn
-//client sends server the updated game state
-//server updates the game state
-//server gives all other clients the updated state
-//clients update their game state
-//next player starts their turn 
-///////////////////////on game over///////////////////////////////////
-//
 	
-	
-	
-	
+		socket.on('CreateGame',function(width,height){
+			io.broadcast('Game',width,height);
+		});
+		socket.on('StartGame',function(){
+		//get player 1
+			io.sockets.sockets[PlayerNum++].emit('getPlayer');
+		});
+		socket.on('addPlayer',function(nickname, image){
+			io.broadcast('addPlayer',nickname,image);
+			if(PlayerNum!=io.sockets.sockets.length){
+				io.sockets.sockets[PlayerNum++].emit('getPlayer');
+			}else{
+				io.broadcast('StartGame'
+		});
+		socket.on('setWinPoints',function(points){
+			io.broadcast('setWinPoints');
+		});
+		socket.on('checkWin',function(player){
+			io.broadcast('checkWin',player);
+		});
+		socket.on('removePlayer',function(id){
+			io.broadcast('removePlayer',id);	
+		});
+		socket.on('updateTurn',function(){
+			io.broadcast('updateTurn');
+		});
+		socket.on('gameOver',function(){
+			io.broadcast('gameOver');
+		});
+		socket.on('lockBoard',function(newGame){
+			io.broadcast('lockBoard',newGame);
+		});
+
 });
+
+
 
 
