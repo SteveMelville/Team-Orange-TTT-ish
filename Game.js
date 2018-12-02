@@ -38,7 +38,7 @@ class game{
 	}
 	//returns the player with the given player ID
 	getPlayer(id){
-		for(int i=0;i<players.length;i++){
+		for(var i=0;i<players.length;i++){
 			if(players[i].getID==id){
 				return players[i];
 			}
@@ -72,7 +72,7 @@ class game{
 	}
 	//adds a new player to the game
 	addPlayer(nickname, image){
-		this.players.push(new Player(++this.numPlayers, nickname, image));
+		this.players.push(new Player(++this.numPlayers, nickname, image));	
 	}
 	//takes a player out of the game((messes up the player ID))
 	removePlayer(id){
