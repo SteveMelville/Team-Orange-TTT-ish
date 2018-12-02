@@ -72,8 +72,7 @@ class game{
 	}
 	//adds a new player to the game
 	addPlayer(nickname, image){
-		this.players.push(new Player(++this.numPlayers, nickname, image));	
-		return(numPlayers);
+		this.players.push(new Player(++this.numPlayers, nickname, image));
 	}
 	//takes a player out of the game((messes up the player ID))
 	removePlayer(id){
