@@ -40,17 +40,18 @@ var server = http.createServer(function (req, res) {
 	})
 });
 server.listen(PORT);
-io=io.listen(server);
-
+io=io.listen(server,function(){console.log('test')});
+require('dns').lookup(require('os').hostname(), function (err, add, fam) {
+  console.log('listening on: '+add+":"+PORT);
+})
 
 
 var PlayerNum=1;
 var Users=[];
 io.on('connection', function(socket){
 	//when the client connects
-	console.log('someone connected');
-	console.log(socket.id);
 	Users.push(socket);
+	console.log("someone connected.\nthere are now "+Users.length+" users connected");
 	//when the client disconnects
 	socket.on('disconnect', function(){
 		console.log('someone disconnected');
@@ -66,6 +67,7 @@ io.on('connection', function(socket){
 			Users[0].emit('getPlayer');
 		});
 		socket.on('addPlayer',function(nickname, image){
+			console.log('adding player '+PlayerNum+' with the name of '+nickname);
 			io.emit('addPlayer',nickname,image);
 			if(PlayerNum!=Users.length){
 				console.log('getting player'+PlayerNum);
@@ -81,6 +83,7 @@ io.on('connection', function(socket){
 			io.emit('setWinPoints',points);
 		});
 		socket.on('pushButton',function(id){
+			console.log("a button was pushed");
 			io.emit('pushButton',id);
 		});
 
