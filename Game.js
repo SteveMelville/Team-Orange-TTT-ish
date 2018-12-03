@@ -14,6 +14,7 @@ class game{
 		this.printScrabble();
 		this.printBoard();
 		this.printLeaderboard();
+		this.generateLetters();
 		
 		this.addPlayer("bob", testX);
 		this.addPlayer("Player", testO);
@@ -176,13 +177,15 @@ class game{
 				letterBoard.innerHTML += "<td><button type='button' id = 'letter" + i + "' onclick='changeLetter(letter" + i + ")'></button></td>";
 			}
 			letterBoard.innerHTML += "</tr>";
-			for(var i = 0; i < 7; i++){
-				var id = "letter" + i;
-				this.randomLetter(id);
-			}
 		}
 	}
 	
+	generateLetters(){
+		for(var i = 0; i < 7; i++){
+			var id = "letter" + i;
+			this.randomLetter(id);
+		}
+	}
 	randomLetter(id){
 		var letter = document.getElementById(id);
 		letter.innerHTML = "";
