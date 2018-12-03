@@ -150,14 +150,8 @@ class game{
 		    for(var j = 0; j < this.board.width; j++){
 			id = i * this.board.width + j;
 			boardHTML += "<td id = '" + id + "'>";
-
-			switch(this.board.boardArray[id]){
-			    case 0: boardHTML += "<button type='button' onclick='pushButton(" + id + ")'></button>";
-				    break;
-			    case 1: boardHTML += player1;
-				    break;
-			    default: break;
-			}
+			
+			boardHTML += "<button type='button' onclick='pushButton(" + id + ")'></button>";
 
 			boardHTML += "</td>\n";
 		    }
