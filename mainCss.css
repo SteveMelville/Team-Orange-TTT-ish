@@ -18,10 +18,16 @@ button {
 	background-image: url("assets/testBlank.png");
 }
 
-scrabbles{
+.scrabbles{
 	width: 37px;
 	height: 37px;
 	background-image: none;
+	padding: 0px;
+	margins: 0px;
+}
+
+.scrabbleHolder{
+	
 }
 
 h1{
