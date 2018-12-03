@@ -22,12 +22,19 @@ button {
 	width: 37px;
 	height: 37px;
 	background-image: none;
-	padding: 0px;
-	margins: 0px;
+	margin: auto;
+	display: inline-block;
+	background-color: white;
 }
 
 .scrabbleHolder{
-	
+	text-align: center;
+    	bottom: 70px;
+	margin-bottom: 150px;
+	position: relative;
+    	background-color: #f4af26;
+    	z-index: 5;
+   	color: #003333;
 }
 
 h1{
