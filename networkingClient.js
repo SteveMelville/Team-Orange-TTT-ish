@@ -2,32 +2,24 @@ class connection{
 	//connects the computer to the server
 	constructor(width, height){
 		this.socket = io();
-		socket.on('CreateGame',function(width,height){
-			this.gameState=new Game(width,height);
+		this.socket.on('CreateGame',function(width,height){
+			this.gameState=new game(width,height);
 		});
-		socket.on('StartGame',function(){
-//			this.gameState.StartGame()
+		this.socket.on('StartGame',function(){
+			this.gameState.printBoard();
+			this.gameState.printLeaderboard();
 		});
-		socket.on('setWinPoints',function(points){
+		this.socket.on('setWinPoints',function(points){
 			this.gameState.setWinPoints();
 		});
-		socket.on('checkWin',function(player){
-			this.gameState.checkWin(player);
+		this.socket.on('getPlayer',function(){
+			socket.emit('addPlayer',this.nickname,this.image);
 		});
-		socket.on('addPlayer',function(nickname, image){
+		this.socket.on('addPlayer',function(nickname, image){
 			this.gameState.addPlayer(nickname,image);
 		});
-		socket.on('removePlayer',function(id){
-			this.gameState.removePlayer(id);	
-		});
-		socket.on('updateTurn',function(){
-			this.gameState.updateTurn();
-		});
-		socket.on('gameOver',function(){
+		this.socket.on('gameOver',function(){
 			this.gameState.gameOver();
-		});
-		socket.on('lockBoard',function(newGame){
-			this.gameState.lockBoard(newGame);
 		});
 	}	
 	CreateGame(width,height){
@@ -39,21 +31,30 @@ class connection{
 	setWinPoints(points){
 		this.socket.emit('setWinPoints');
 	}
-	addPlayer(nickname, image){
-		this.socket.emit('addPlayer',nickname,image);
-	}
-	removePlayer(id){
-		this.socket.emit('removePlayer',id);	
-	}
-	updateTurn(){
-		this.socket.emit('updateTurn');
-	}	
-	gameOver(){
-		this.socket.emit('gameOver');
+	SetPlayer(nickname, image){
+		this.nickname=nickname;
+		this.image=image;
 	}
 	lockBoard(newGame){
 		this.socket.emit('lockBoard',newGame);
 	}
+	pushButton(id){
+	var item = document.getElementById(id);
+	
+	newGame.squaresPushed++;
+	item.innerHTML = newGame.players[newGame.getTurn() - 1].getImage();
+	scanBoard(newGame, id);
+	newGame.board.set(id, newGame.getTurn());
+	newGame.printLeaderboard();
+	newGame.gameOver();
+	if(newGame.checkWin(newGame.players[newGame.getTurn() - 1])){
+		lockBoard(newGame);
+		alert('Player ' + newGame.getTurn() + ' has won the game!');
+	}	
+	newGame.updateTurn();
+}
+	
+	
 }
 
 

@@ -46,38 +46,41 @@ io=io.listen(server);
 
 var PlayerNum=0;
 io.on('connection', function(socket){
+	//when the client connects
 	
+	//other  methods that have to be in here
 		socket.on('CreateGame',function(width,height){
-			io.broadcast('Game',width,height);
+			io.emit('CreateGame',width,height);
 		});
 		socket.on('StartGame',function(){
-		//get player 1
-			io.sockets.sockets[PlayerNum++].emit('getPlayer');
+			
 		});
 		socket.on('addPlayer',function(nickname, image){
-			io.broadcast('addPlayer',nickname,image);
+			io.emit('addPlayer',nickname,image);
 			if(PlayerNum!=io.sockets.sockets.length){
 				io.sockets.sockets[PlayerNum++].emit('getPlayer');
 			}else{
-				io.broadcast('StartGame'
+				io.emit('StartGame');
+			}
 		});
+		
 		socket.on('setWinPoints',function(points){
-			io.broadcast('setWinPoints');
+			io.emit('setWinPoints');
 		});
 		socket.on('checkWin',function(player){
-			io.broadcast('checkWin',player);
+			io.emit('checkWin',player);
 		});
 		socket.on('removePlayer',function(id){
-			io.broadcast('removePlayer',id);	
+			io.emit('removePlayer',id);	
 		});
 		socket.on('updateTurn',function(){
-			io.broadcast('updateTurn');
+			io.emit('updateTurn');
 		});
 		socket.on('gameOver',function(){
-			io.broadcast('gameOver');
+			io.emit('gameOver');
 		});
 		socket.on('lockBoard',function(newGame){
-			io.broadcast('lockBoard',newGame);
+			io.emit('lockBoard',newGame);
 		});
 
 });
