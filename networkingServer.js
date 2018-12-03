@@ -45,20 +45,25 @@ io=io.listen(server);
 
 
 var PlayerNum=0;
+var Users=[];
 io.on('connection', function(socket){
 	//when the client connects
-	
+	Users.push(socket);
+	//when the client disconnects
+	socket.on('disconnect', function(){
+		Users.splice(list.indexOf(socket),1);
+	});
 	//other  methods that have to be in here
 		socket.on('CreateGame',function(width,height){
 			io.emit('CreateGame',width,height);
 		});
 		socket.on('StartGame',function(){
-			
+			Users[PlayerNum++].emit('getPlayer');
 		});
 		socket.on('addPlayer',function(nickname, image){
 			io.emit('addPlayer',nickname,image);
-			if(PlayerNum!=io.sockets.sockets.length){
-				io.sockets.sockets[PlayerNum++].emit('getPlayer');
+			if(PlayerNum!=Users.length){
+				users[PlayerNum++].emit('getPlayer');
 			}else{
 				io.emit('StartGame');
 			}
