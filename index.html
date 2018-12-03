@@ -20,14 +20,16 @@ process: none
 <!-- Body of the file.-->
 <body>
 	<div id="header">
+
 		<h1>Team Orange Games</h1>
 	  <!----------------------------------------
-	    <input type="number" id="x">
-		<input type="number" id="y">
-		<button type="button" name="send" onclick="conn.sendBoardSize($('#x').val(),$('#y').val())" value="send">
+
+	    <input type="text" placeholder='name' id="x">
+		<input type="text" placeholder='image' id="y">
+		<button type="button" name="send" onclick="conn.SetPlayer($('#x').val(),$('#y').val())" value="send">-->
+
 	
 	
-	------------------------------------->
 	  </div>
 
 	<!--Creation of div tags to be used in future, each holding 
@@ -62,10 +64,10 @@ process: none
 	  <script src="Player.js"></script>
 	  <script src="Game.js"></script>
 	  <script src="searchBoard.js"></script>
-<!--	  <script src="networkingClient.js"></script>
+	  <script src="networkingClient.js"></script>
 	  <script src="/socket.io/socket.io.js"></script>
 	  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-	  <script>var conn = new connection(io());</script>-->
+	  <script>var conn = new connection();</script>
 	<noscript>Your computer does not have Javacript available. Please turn it on to enjoy this game</noscript>
 </body>
 </html>

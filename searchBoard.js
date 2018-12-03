@@ -37,17 +37,17 @@ If you have any questions and/or suggestions please let me know
 //This function scans the board for words made by placing a letter in a given position
 function scanBoard(newGame, placedLetterPosition){
     var points = 0
-    points += leftDiagonal(placedLetterPosition);
-    points += RightDiagonal(placedLetterPosition);
-    points += Vertical(placedLetterPosition);
-    points += Horizontal(placedLetterPosition);
+    points += leftDiagonal(newGame, placedLetterPosition);
+    points += RightDiagonal(newGame,placedLetterPosition);
+    points += Vertical(newGame,placedLetterPosition);
+    points += Horizontal(newGame,placedLetterPosition);
     //give points to player that made the move
     newGame.players[newGame.getTurn()-1].setScore((newGame.players[newGame.getTurn()-1].getScore() + points))
     console.log("Player " + `${newGame.getTurn()}` + " score: " + `${newGame.players[newGame.getTurn()-1].getScore()}`);
 }
 
 //This function scans the left diagonal '\'
-function leftDiagonal(placedLetterPosition){
+function leftDiagonal(newGame,placedLetterPosition){
     var currentPosition = placedLetterPosition;
     var wordArr =[currentPosition];
     //add letter at current position to wordStr
@@ -71,12 +71,12 @@ function leftDiagonal(placedLetterPosition){
         currentPosition = currentPosition + newGame.board.getWidth() + 1;
     }
 
-    return checkWords(wordStr, wordArr);
+    return checkWords(newGame, wordStr, wordArr);
 }
 
 //get points if needed
 //AAAAA given AAA is a word gives three points
-function checkWords(wordStr, wordArr){
+function checkWords(newGame, wordStr, wordArr){
     var tempStr = wordStr.slice(0);
     var tempArr = wordArr.slice(0);
     var words = newGame.dictionary.getDictionary();
@@ -84,9 +84,9 @@ function checkWords(wordStr, wordArr){
     for(word in words){
         var index = wordStr.indexOf(`${words[word].getName()}`);
         tempArr = wordArr.slice(0);
-        while(index > -1 && wordCounted(tempArr, index, (index + words[word].getName().length - 1)) == false){
+        while(index > -1 && wordCounted(newGame,tempArr, index, (index + words[word].getName().length - 1)) == false){
             points += words[word].getPoint();
-            addCountedWord(tempArr, index, (index + words[word].getName().length - 1));
+            addCountedWord(newGame,tempArr, index, (index + words[word].getName().length - 1));
             wordStr = wordStr.substring((index + 1));
             for(var i = 0; i <= index; i++){
                 tempArr.shift();
@@ -100,9 +100,9 @@ function checkWords(wordStr, wordArr){
         tempArr.reverse();
         
         index = wordStr.indexOf(`${words[word].getName()}`);
-        while(index > -1 && wordCounted(tempArr, index, (index + words[word].getName().length - 1)) == false){
+        while(index > -1 && wordCounted(newGame,tempArr, index, (index + words[word].getName().length - 1)) == false){
             points += words[word].getPoint();
-            addCountedWord(tempArr, index, (index + words[word].getName().length - 1));
+            addCountedWord(newGame,tempArr, index, (index + words[word].getName().length - 1));
             wordStr = wordStr.substring((index + 1));
             for(var i = 0; i <= index; i++){
                 tempArr.shift();
@@ -115,7 +115,7 @@ function checkWords(wordStr, wordArr){
 }
 
 //This function checks to see if a word was counted
-function wordCounted(wordArr, startIndex, endIndex){
+function wordCounted(newGame,wordArr, startIndex, endIndex){
     var flag = new Boolean(false);
     if(startIndex == -1){
         return true;
@@ -145,7 +145,7 @@ function wordCounted(wordArr, startIndex, endIndex){
 }
 
 //This adds a word to the list of counted words
-function addCountedWord(wordArr, startIndex, endIndex){
+function addCountedWord(newGame, wordArr, startIndex, endIndex){
     var value = wordArr[startIndex];
     for (var i = startIndex + 1; i <= endIndex; i++){
         value = value + '-' + wordArr[i];
@@ -162,7 +162,7 @@ function addCountedWord(wordArr, startIndex, endIndex){
 }
 
 //This function scans the right diagonal '/'
-function RightDiagonal(placedLetterPosition){
+function RightDiagonal(newGame,placedLetterPosition){
     var currentPosition = placedLetterPosition;
     var wordArr =[currentPosition];
     //add letter at current position to wordStr
@@ -186,11 +186,11 @@ function RightDiagonal(placedLetterPosition){
         currentPosition = currentPosition - newGame.board.getWidth() + 1;
     }
 
-    return checkWords(wordStr, wordArr);
+    return checkWords(newGame,wordStr, wordArr);
 }
 
 //This function scans the vertical '|'
-function Vertical(placedLetterPosition){
+function Vertical(newGame,placedLetterPosition){
     var currentPosition = placedLetterPosition;
     var wordArr =[currentPosition];
     //add letter at current position to wordStr
@@ -214,11 +214,11 @@ function Vertical(placedLetterPosition){
         currentPosition = currentPosition + newGame.board.getWidth();
     }
 
-    return checkWords(wordStr, wordArr);
+    return checkWords(newGame,wordStr, wordArr);
 }
 
 //This function scans the horizontal '-'
-function Horizontal(placedLetterPosition){
+function Horizontal(newGame,placedLetterPosition){
     var currentPosition = placedLetterPosition;
     var wordArr =[currentPosition];
     //add letter at current position to wordStr
@@ -242,7 +242,7 @@ function Horizontal(placedLetterPosition){
         currentPosition = currentPosition + 1;
     }
 
-    return checkWords(wordStr, wordArr);
+    return checkWords(newGame,wordStr, wordArr);
 }
 
 //This function performs a binary search on an array of strings and returns the index of the string
@@ -272,10 +272,10 @@ function binarySearch(array, value){
     var End = 4;
     countedWords.addWord("2-3-4");
     countedWords.addWord("4-3-2");
-    if(wordCounted(wordArray, Start, End) == false){
+    if(wordCounted(newGame,wordArray, Start, End) == false){
         console.log("wordCounted produced an incorrect result")
     }
-    if(wordCounted(wordArray, (Start + 1), End) == true){
+    if(wordCounted(newGame,wordArray, (Start + 1), End) == true){
         console.log("wordCounted produced an incorrect result")
     }
 })();

@@ -1,12 +1,15 @@
 var http = require('http'),
 	io = require('socket.io');
     fs = require('fs');
+
+//var Game=require('./Game.js').game.getPlayer();
 const PORT=3000;
 const MAXPLAYERS=15;	
 //-------------------------------------------------------------------
 //                         server side
 //-------------------------------------------------------------------
 //do the web stuff
+
 var server = http.createServer(function (req, res) {
 	//get the 
 	var url=req.url;
@@ -37,65 +40,55 @@ var server = http.createServer(function (req, res) {
 	})
 });
 server.listen(PORT);
-io=io.listen(server);
+io=io.listen(server,function(){console.log('test')});
+require('dns').lookup(require('os').hostname(), function (err, add, fam) {
+  console.log('listening on: '+add+":"+PORT);
+})
 
 
-
-
-
-
-
-
-
-//networking logic stuff
-var users=new Array(MAXPLAYERS);
+var PlayerNum=1;
+var Users=[];
 io.on('connection', function(socket){
-	playerNum=findPlayerNum();
-	if(playerNum==-1){
-		//throw a we are full error
-	}else{
-		users[playerNum]=socket
-		socket.username=playerNum;
-	}
-	console.log("player"+socket.username+' has connected');
-	socket.emit('playerconnect',socket.username);
-	
-	
-	socket.on('disconnect',function(){
-		users[socket.username]=null;
-		console.log("player"+socket.username+" has disconnected");
+	//when the client connects
+	Users.push(socket);
+	console.log("someone connected.\nthere are now "+Users.length+" users connected");
+	//when the client disconnects
+	socket.on('disconnect', function(){
+		console.log('someone disconnected');
+		Users.splice(Users.indexOf(socket),1);
+	});
+	//other  methods that have to be in here
+		socket.on('CreateGame',function(width,height){
+			console.log('creating game');
+			io.emit('CreateGame',width,height);
+		});
+		socket.on('StartGame',function(){
+			console.log('getting player0');
+			Users[0].emit('getPlayer',1);
+		});
+		socket.on('addPlayer',function(nickname, image){
+			console.log('adding player '+PlayerNum+' with the name of '+nickname);
+			io.emit('addPlayer',nickname,image);
+			if(PlayerNum!=Users.length){
+				console.log('getting player'+PlayerNum);
+				Users[PlayerNum].emit('getPlayer',PlayerNum+1);
+				PlayerNum++;
+			}else{
+				console.log('starting game');
+				io.emit('StartGame');
+			}
+		});
 		
-	});
-	socket.on('msgNext',function(msg){
-		nextSocket=findNextSocket(socket.username);
-		console.log(nextSocket.username);
-		nextSocket.emit('msg',msg);
-	});
-	
-	
-	
-	
+		socket.on('setWinPoints',function(points){
+			io.emit('setWinPoints',points);
+		});
+		socket.on('pushButton',function(id){
+			console.log("a button was pushed");
+			io.emit('pushButton',id);
+		});
+
 });
 
 
 
-//find the first unused player number
-function findPlayerNum(){
-	for(var i=0;i<MAXPLAYERS;i++){
-		if(users[i]==null){
-			return i;
-		}
-	}
-	return -1
-}
-function findNextSocket(playerNum){
-	if(playerNum<MAXPLAYERS){
-		//throw an error
-	}
-	for(var i=playerNum+1;i!=playerNum;i=(i+1)%MAXPLAYERS){
-		if(users[i]!=null){
-			return users[i];
-		}
-	}return -1
-}
 
