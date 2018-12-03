@@ -1,6 +1,6 @@
 //a class that holds the game state and methods that controll the high end game functions
 class game{
-	constructor(width, height){
+	constructor(width, height, scrabble){
 		this.dictionary = new Dictionary();
 		this.board = new Board(width, height);
 		this.squaresPushed = 0;
@@ -9,6 +9,7 @@ class game{
 		this.PointsToWin = 1;
 		this.turn = 1;
 		this.countedWords = [];
+		this.isScrabble;
 		
 		this.addPlayer("bob", testX);
 		this.addPlayer("Player", testO);
