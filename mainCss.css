@@ -38,6 +38,7 @@ button {
     	background-color: #f4af26;
     	z-index: 5;
    	color: #003333;
+	position: fixed;
 }
 
 h1{
