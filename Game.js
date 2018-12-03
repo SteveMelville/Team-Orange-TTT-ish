@@ -55,7 +55,7 @@ class game{
 	}
 	//sets how many points there need to be to win
 	setWinPoints(points){
-		this.PointssToWin=points;
+		this.PointsToWin=points;
 	}
 	//returns true if the player has won
 	checkWin(player){
