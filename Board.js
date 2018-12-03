@@ -1,5 +1,6 @@
 
-
+//Object to hold the board in game.
+//It constructs the board using an array, and it allows setters and getters for the height and width of the board.
 class Board{
     
     //var width;
@@ -7,7 +8,7 @@ class Board{
     //var boardArray;
     //var boardHTML;
    // var boardAddress;
-    
+    		
     constructor(w, h){
         this.width = w + 2 ;
         this.height = h + 2;
