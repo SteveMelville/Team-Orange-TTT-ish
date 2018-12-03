@@ -10,8 +10,8 @@ class game{
 		this.turn = 1;
 		this.countedWords = [];
 		
-		this.addPlayer("bob", testX);
-		this.addPlayer("Player", testO);
+		//this.addPlayer("bob", testX);
+		//this.addPlayer("Player", testO);
 		/*this.addPlayer("Player2", images[0]);
 		this.addPlayer("bob", images[2]);
 		this.addPlayer("bob", images[3]);
@@ -170,27 +170,27 @@ class game{
 		if(numSquares == this.squaresPushed)
 			alert("Game is over!");
 	      }
+	pushButton(id){
+		var item = document.getElementById(id);
+	
+		this.squaresPushed++;
+		item.innerHTML = this.players[this.getTurn() - 1].getImage();
+		scanBoard(this, id);
+		this.board.set(id, this.getTurn());
+		this.printLeaderboard();
+		this.gameOver();
+		if(this.checkWin(this.players[this.getTurn() - 1])){
+			lockBoard(this);
+			alert('Player ' + this.getTurn() + ' has won the game!');
+		}	
+		this.updateTurn();
+	}
 }
 
-var newGame = new game(3,3);
-newGame.printBoard();
-newGame.printLeaderboard();
+//var newGame = new game(3,3);
+//newGame.printBoard();
+//newGame.printLeaderboard();
 	
-function pushButton(id){
-	var item = document.getElementById(id);
-	
-	newGame.squaresPushed++;
-	item.innerHTML = newGame.players[newGame.getTurn() - 1].getImage();
-	scanBoard(newGame, id);
-	newGame.board.set(id, newGame.getTurn());
-	newGame.printLeaderboard();
-	newGame.gameOver();
-	if(newGame.checkWin(newGame.players[newGame.getTurn() - 1])){
-		lockBoard(newGame);
-		alert('Player ' + newGame.getTurn() + ' has won the game!');
-	}	
-	newGame.updateTurn();
-}
 
 function lockBoard(newGame){
 	for(var i = 0; i < (newGame.board.getWidth() * newGame.board.getHeight()); i++){

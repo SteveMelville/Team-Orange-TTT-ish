@@ -39,7 +39,7 @@ class connection{
 	}
 	SetPlayer(nickname, image){
 		this.socket.nickname=nickname;
-		this.socket.image=image;
+		this.socket.image= "<img src='assets/"+image+".png'>";
 	}
 	pushButton(id){
 		this.socket.emit('pushButton',id);
