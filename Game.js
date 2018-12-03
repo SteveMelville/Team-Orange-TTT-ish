@@ -172,7 +172,7 @@ class game{
 		if(this.isScrabble){
 			var letterBoard = document.getElementById("scrabble");
 			letterBoard.innerHTML += "<tr>";
-			for(var i = 0; i < 7; i++){
+			for(var i = 1; i < 8; i++){
 				letterBoard.innerHTML = "<td><button type='button' id = 'letter" + i + "' onclick='changeLetter(letter" + i + ")'></button></td>";
 			}
 			letterBoard.innerHTML += "</tr>";
