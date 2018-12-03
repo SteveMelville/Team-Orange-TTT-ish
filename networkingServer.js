@@ -64,14 +64,14 @@ io.on('connection', function(socket){
 		});
 		socket.on('StartGame',function(){
 			console.log('getting player0');
-			Users[0].emit('getPlayer');
+			Users[0].emit('getPlayer',1);
 		});
 		socket.on('addPlayer',function(nickname, image){
 			console.log('adding player '+PlayerNum+' with the name of '+nickname);
 			io.emit('addPlayer',nickname,image);
 			if(PlayerNum!=Users.length){
 				console.log('getting player'+PlayerNum);
-				Users[PlayerNum].emit('getPlayer');
+				Users[PlayerNum].emit('getPlayer',PlayerNum+1);
 				PlayerNum++;
 			}else{
 				console.log('starting game');

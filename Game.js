@@ -163,7 +163,7 @@ class game{
 		boardAddress.innerHTML = boardHTML;
     	}
 	
-	<!--Work in progress. Function to output a win condition-->
+//	<!--Work in progress. Function to output a win condition-->
 	gameOver(){
 		var numSquares = this.board.height * this.board.width;
 		

@@ -15,9 +15,10 @@ class connection{
 			console.log('setting the points to win to ' + points);
 			this.gameState.setWinPoints(points);
 		});
-		this.socket.on('getPlayer',function(){
-			console.log('getting player');
+		this.socket.on('getPlayer',function(PN){
+			console.log('getting player'+PN);
 			this.emit('addPlayer',this.nickname,this.image);
+			this.PlayerNumber=PN
 		});
 		this.socket.on('addPlayer',function(nickname, image){
 			console.log('adding player ' + nickname +' with the image of ' + image);
@@ -25,6 +26,9 @@ class connection{
 		});
 		this.socket.on('pushButton',function(id){
 			this.gameState.pushButton(id);
+			if(this.gamestate.getTurn==this.PlayerNumber){
+				alert('it is now your turn');
+			}
 		});
 
 	}	
@@ -42,7 +46,9 @@ class connection{
 		this.socket.image= "<img src='assets/"+image+".png'>";
 	}
 	pushButton(id){
-		this.socket.emit('pushButton',id);
+		if(this.socket.gameState.getTurn()==this.socket.PlayerNumber){
+			this.socket.emit('pushButton',id);
+		}
 	}
 	
 	
