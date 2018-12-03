@@ -197,7 +197,7 @@ class game{
 	      }
 }
 
-var newGame = new game(3,3,TRUE);
+var newGame = new game(3,3,true);
 	
 function pushButton(id){
 	var item = document.getElementById(id);
