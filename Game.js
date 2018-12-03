@@ -174,7 +174,7 @@ class game{
 			var letterBoard = document.getElementById("scrabble");
 			letterBoard.innerHTML += "<tr>";
 			for(var i = 1; i < 8; i++){
-				letterBoard.innerHTML += "<td><button type='button' id = 'letter" + i + "' onclick='changeLetter(letter" + i + ")'></button></td>";
+				letterBoard.innerHTML += "<td><button type='button' class = 'scrabbles' id = 'letter" + i + "' onclick='changeLetter(letter" + i + ")'></button></td>";
 			}
 			letterBoard.innerHTML += "</tr>";
 		}
