@@ -18,6 +18,12 @@ button {
 	background-image: url("assets/testBlank.png");
 }
 
+scrabbles{
+	width: 37px;
+	height: 37px;
+	background-image: none;
+}
+
 h1{
 	text-align: center;
 }
