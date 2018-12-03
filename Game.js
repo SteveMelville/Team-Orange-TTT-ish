@@ -12,6 +12,8 @@ class game{
 		this.isScrabble = scrabble;
 		
 		this.printScrabble();
+		this.printBoard();
+		this.printLeaderboard();
 		
 		this.addPlayer("bob", testX);
 		this.addPlayer("Player", testO);
@@ -168,9 +170,22 @@ class game{
 	
 	printScrabble(){
 		if(this.isScrabble){
-			var letters = document.getElementById("scrabble");
-			
+			var letterBoard = document.getElementById("scrabble");
+			letterBoard.innerHTML += "<tr>";
+			for(var i = 0; i < 7; i++){
+				letterBoard.innerHTML = "<td><button type='button' onclick='changeLetter(letter" + i + ")'></button></td>";
+			}
+			letterBoard.innerHTML += "</tr>";
+			for(var i = 0; i < 7; i++){
+				var id = "letter" + i;
+				this.randomLetter(id);
+			}
 		}
+	}
+	
+	randomLetter(id){
+		var letter = document.getElementById(id);
+		letter.innerHTML = Math.floor(images[Math.random() * Math.floor(26) + 1]);
 	}
 	
 	//Work in progress. Function to output a win condition
@@ -183,8 +198,6 @@ class game{
 }
 
 var newGame = new game(3,3,TRUE);
-newGame.printBoard();
-newGame.printLeaderboard();
 	
 function pushButton(id){
 	var item = document.getElementById(id);
