@@ -18,6 +18,10 @@ button {
 	background-image: url("assets/testBlank.png");
 }
 
+h1{
+	text-align: center;
+}
+
 #header {
 	top: 0px;
 	left: 0px;
