@@ -16,8 +16,8 @@ class game{
 		this.printLeaderboard();
 		this.generateLetters();
 		
-		//this.addPlayer("bob", testX);
-		//this.addPlayer("Player", testO);
+		this.addPlayer("bob", testX);
+		this.addPlayer("Player", testO);
 		/*this.addPlayer("Player2", images[0]);
 		this.addPlayer("bob", images[2]);
 		this.addPlayer("bob", images[3]);
@@ -150,10 +150,8 @@ class game{
 		    for(var j = 0; j < this.board.width; j++){
 			id = i * this.board.width + j;
 			boardHTML += "<td id = '" + id + "'>";
-
 			
 			boardHTML += "<button type='button' onclick='pushButton(" + id + ")'></button>";
-
 
 			boardHTML += "</td>\n";
 		    }
@@ -165,15 +163,15 @@ class game{
 		boardAddress.innerHTML = boardHTML;
     	}
 	
-
 	printScrabble(){
 		if(this.isScrabble){
-			var letterBoard = document.getElementById("scrabble");
-			letterBoard.innerHTML += "<tr>";
+			var letters = document.getElementById("scrabble");
+			var letterBoard += "<tr>";
 			for(var i = 1; i < 8; i++){
-				letterBoard.innerHTML += "<td><button type='button' class = 'scrabbles' id = 'letter" + i + "' onclick='changeLetter(letter" + i + ")'></button></td>";
+				letterBoard += "<td><button type='button' class = 'scrabbles' id = 'letter" + i + "' onclick='changeLetter(letter" + i + ")'></button></td>";
 			}
-			letterBoard.innerHTML += "</tr>";
+			letterBoard += "</tr>";
+			letters.innerHTML = letterBoard;
 		}
 	}
 	
@@ -190,34 +188,31 @@ class game{
 	}
 	
 	//Work in progress. Function to output a win condition
-
 	gameOver(){
 		var numSquares = this.board.height * this.board.width;
 		
 		if(numSquares == this.squaresPushed)
 			alert("Game is over!");
 	      }
-	pushButton(id){
-		var item = document.getElementById(id);
-	
-		this.squaresPushed++;
-		item.innerHTML = this.players[this.getTurn() - 1].getImage();
-		scanBoard(this, id);
-		this.board.set(id, this.getTurn());
-		this.printLeaderboard();
-		this.gameOver();
-		if(this.checkWin(this.players[this.getTurn() - 1])){
-			lockBoard(this);
-			alert('Player ' + this.getTurn() + ' has won the game!');
-		}	
-		this.updateTurn();
-	}
 }
 
-
 var newGame = new game(3,3,true);
-
 	
+function pushButton(id){
+	var item = document.getElementById(id);
+	
+	newGame.squaresPushed++;
+	item.innerHTML = newGame.players[newGame.getTurn() - 1].getImage();
+	scanBoard(newGame, id);
+	newGame.board.set(id, newGame.getTurn());
+	newGame.printLeaderboard();
+	newGame.gameOver();
+	if(newGame.checkWin(newGame.players[newGame.getTurn() - 1])){
+		lockBoard(newGame);
+		alert('Player ' + newGame.getTurn() + ' has won the game!');
+	}	
+	newGame.updateTurn();
+}
 
 function lockBoard(newGame){
 	for(var i = 0; i < (newGame.board.getWidth() * newGame.board.getHeight()); i++){
