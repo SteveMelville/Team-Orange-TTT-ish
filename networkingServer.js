@@ -44,48 +44,44 @@ io=io.listen(server);
 
 
 
-var PlayerNum=0;
+var PlayerNum=1;
 var Users=[];
 io.on('connection', function(socket){
 	//when the client connects
+	console.log('someone connected');
+	console.log(socket.id);
 	Users.push(socket);
 	//when the client disconnects
 	socket.on('disconnect', function(){
-		Users.splice(list.indexOf(socket),1);
+		console.log('someone disconnected');
+		Users.splice(Users.indexOf(socket),1);
 	});
 	//other  methods that have to be in here
 		socket.on('CreateGame',function(width,height){
+			console.log('creating game');
 			io.emit('CreateGame',width,height);
 		});
 		socket.on('StartGame',function(){
-			Users[PlayerNum++].emit('getPlayer');
+			console.log('getting player0');
+			Users[0].emit('getPlayer');
 		});
 		socket.on('addPlayer',function(nickname, image){
 			io.emit('addPlayer',nickname,image);
 			if(PlayerNum!=Users.length){
-				users[PlayerNum++].emit('getPlayer');
+				console.log('getting player'+PlayerNum);
+				Users[PlayerNum].emit('getPlayer');
+				PlayerNum++;
 			}else{
+				console.log('starting game');
 				io.emit('StartGame');
 			}
 		});
 		
 		socket.on('setWinPoints',function(points){
-			io.emit('setWinPoints');
+			io.emit('setWinPoints',points);
 		});
-		socket.on('checkWin',function(player){
-			io.emit('checkWin',player);
-		});
-		socket.on('removePlayer',function(id){
-			io.emit('removePlayer',id);	
-		});
-		socket.on('updateTurn',function(){
-			io.emit('updateTurn');
-		});
-		socket.on('gameOver',function(){
-			io.emit('gameOver');
-		});
-		socket.on('lockBoard',function(newGame){
-			io.emit('lockBoard',newGame);
+		socket.on('pushButton',function(id){
+			io.emit('pushButton',id);
 		});
 
 });

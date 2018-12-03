@@ -50,7 +50,7 @@ class game{
 	}
 	//sets how many points there need to be to win
 	setWinPoints(points){
-		this.PointssToWin=points;
+		this.PointsToWin=points;
 	}
 	//returns true if the player has won
 	checkWin(player){
@@ -146,7 +146,7 @@ class game{
 			boardHTML += "<td id = '" + id + "'>";
 
 			switch(this.board.boardArray[id]){
-			    case 0: boardHTML += "<button type='button' onclick='pushButton(" + id + ")'></button>";
+			    case 0: boardHTML += "<button type='button' onclick='conn.pushButton(" + id + ")'></button>";
 				    break;
 			    case 1: boardHTML += player1;
 				    break;
