@@ -22,6 +22,9 @@ button {
 	width: 37px;
 	height: 37px;
 	background-image: none;
+}
+
+#scrabble{
 	margin: auto;
 	display: inline-block;
 	background-color: white;
