@@ -9,7 +9,9 @@ class game{
 		this.PointsToWin = 1;
 		this.turn = 1;
 		this.countedWords = [];
-		this.isScrabble;
+		this.isScrabble = scrabble;
+		
+		this.printScrabble();
 		
 		this.addPlayer("bob", testX);
 		this.addPlayer("Player", testO);
@@ -164,7 +166,14 @@ class game{
 		boardAddress.innerHTML = boardHTML;
     	}
 	
-	<!--Work in progress. Function to output a win condition-->
+	printScrabble(){
+		if(this.isScrabble){
+			var letters = document.getElementById("scrabble");
+			
+		}
+	}
+	
+	//Work in progress. Function to output a win condition
 	gameOver(){
 		var numSquares = this.board.height * this.board.width;
 		
@@ -173,7 +182,7 @@ class game{
 	      }
 }
 
-var newGame = new game(3,3);
+var newGame = new game(3,3,TRUE);
 newGame.printBoard();
 newGame.printLeaderboard();
 	
