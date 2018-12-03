@@ -181,7 +181,7 @@ class game{
 	}
 	
 	generateLetters(){
-		for(var i = 0; i < 7; i++){
+		for(var i = 1; i < 8; i++){
 			var id = "letter" + i;
 			this.randomLetter(id);
 		}
