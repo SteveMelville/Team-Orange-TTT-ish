@@ -26,7 +26,7 @@ class connection{
 		});
 		this.socket.on('pushButton',function(id){
 			this.gameState.pushButton(id);
-			if(this.gamestate.getTurn==this.PlayerNumber){
+			if(this.gameState.getTurn()==this.PlayerNumber){
 				alert('it is now your turn');
 			}
 		});
