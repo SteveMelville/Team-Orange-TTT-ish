@@ -1,6 +1,6 @@
 //a class that holds the game state and methods that controll the high end game functions
 class game{
-	constructor(width, height){
+	constructor(width, height, scrabble){
 		this.dictionary = new Dictionary();
 		this.board = new Board(width, height);
 		this.squaresPushed = 0;
@@ -9,6 +9,12 @@ class game{
 		this.PointsToWin = 1;
 		this.turn = 1;
 		this.countedWords = [];
+		this.isScrabble = scrabble;
+		
+		this.printScrabble();
+		this.printBoard();
+		this.printLeaderboard();
+		this.generateLetters();
 		
 		//this.addPlayer("bob", testX);
 		//this.addPlayer("Player", testO);
@@ -145,13 +151,9 @@ class game{
 			id = i * this.board.width + j;
 			boardHTML += "<td id = '" + id + "'>";
 
-			switch(this.board.boardArray[id]){
-			    case 0: boardHTML += "<button type='button' onclick='conn.pushButton(" + id + ")'></button>";
-				    break;
-			    case 1: boardHTML += player1;
-				    break;
-			    default: break;
-			}
+			
+			boardHTML += "<button type='button' onclick='pushButton(" + id + ")'></button>";
+
 
 			boardHTML += "</td>\n";
 		    }
@@ -163,7 +165,32 @@ class game{
 		boardAddress.innerHTML = boardHTML;
     	}
 	
-//	<!--Work in progress. Function to output a win condition-->
+
+	printScrabble(){
+		if(this.isScrabble){
+			var letterBoard = document.getElementById("scrabble");
+			letterBoard.innerHTML += "<tr>";
+			for(var i = 1; i < 8; i++){
+				letterBoard.innerHTML += "<td><button type='button' class = 'scrabbles' id = 'letter" + i + "' onclick='changeLetter(letter" + i + ")'></button></td>";
+			}
+			letterBoard.innerHTML += "</tr>";
+		}
+	}
+	
+	generateLetters(){
+		for(var i = 1; i < 8; i++){
+			var id = "letter" + i;
+			this.randomLetter(id);
+		}
+	}
+	randomLetter(id){
+		var letter = document.getElementById(id);
+		letter.innerHTML = "";
+		letter.innerHTML += images[Math.floor(Math.random() * Math.floor(26)) + 1];
+	}
+	
+	//Work in progress. Function to output a win condition
+
 	gameOver(){
 		var numSquares = this.board.height * this.board.width;
 		
@@ -187,9 +214,9 @@ class game{
 	}
 }
 
-//var newGame = new game(3,3);
-//newGame.printBoard();
-//newGame.printLeaderboard();
+
+var newGame = new game(3,3,true);
+
 	
 
 function lockBoard(newGame){

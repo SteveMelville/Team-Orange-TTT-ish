@@ -18,6 +18,31 @@ button {
 	background-image: url("assets/testBlank.png");
 }
 
+.scrabbles{
+	width: 37px;
+	height: 37px;
+	background-image: none;
+}
+
+#scrabble{
+
+}
+
+.scrabbleHolder{
+	text-align: center;
+    	bottom: 70px;
+	margin-bottom: 150px;
+	position: relative;
+    	background-color: #f4af26;
+    	z-index: 5;
+   	color: #003333;
+	position: fixed;
+}
+
+h1{
+	text-align: center;
+}
+
 #header {
 	top: 0px;
 	left: 0px;
@@ -76,6 +101,10 @@ button {
 	margin: auto;
 	display: inline-block;
 	background-color: white;
+}
+
+header{
+	text-align: center;
 }
 
 .article{

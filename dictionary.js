@@ -1,9 +1,8 @@
 //a clas thatt holds a word array and methods to work with it
 //created by matthew Snow
-
-
 class Dictionary{
-	//
+	
+	//creates a default dictionary
 	constructor(){
 		this.dict = [];
 		//for testing
@@ -11,6 +10,7 @@ class Dictionary{
 		this.addWord("OOO", 1);
 		this.addWord("~~~", 1);
 	}
+	
 	//adds a word to the dictionary
 	addWord(name , points){
 		if(typeof name!="string"){
@@ -24,6 +24,7 @@ class Dictionary{
 			this.dict.push(word);
 		}
 	}
+	
 	//removes given word from the dictionary
 	removeWord(word){
 		if(typeof word!="string"){
@@ -37,6 +38,7 @@ class Dictionary{
 			}
 		}
 	}
+	
 	//returns true if the word exists in the dictionary
 	wordExists(word){
 		if(typeof word!="string"){
@@ -45,7 +47,8 @@ class Dictionary{
 			return(this._getWordPos(word)!=-1);
 		}
 	}
-	//returrns the number of points assigned to the word
+	
+	//returns the number of points assigned to the word
 	getWordPoints(word){
 		if(typeof word!="string"){
 			//throw an error
@@ -58,10 +61,12 @@ class Dictionary{
 			}
 		}
 	}
-	//returns the whole word array
+	
+	//returns the whole word array/Dictionary
 	getDictionary(){
 		return this.dict;
 	}
+	
 	//gets where in the array the given word is
 	_getWordPos(name){
 		for(var i=0;i<this.dict.length;i++){
