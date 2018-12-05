@@ -108,7 +108,7 @@ class game{
 	}
 	
 	printLeaderboard(){
-		var leaderBoard = "<tr>	<th>#</th> <th>Image</th> <th>Name</th> <th>Score</th> </tr>";
+		var leaderBoard = "<tr>	<th>#</th> <th>Image</th> <th>Name</th> <th>Score</th> <th>Turn</th></tr>";
 		for(var i = 0; i < this.numPlayers; i++){
 			leaderBoard += leader1;
 			leaderBoard += i;
