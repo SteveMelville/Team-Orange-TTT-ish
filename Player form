@@ -1,0 +1,5 @@
+<form class="Player">
+      Nickname:<br> <input name="nameUser" class="required" type="text" value=""><br>
+      Comment: <br><input name="commentUser" class="required" type="" value=""><br> 
+      <div class="userInput"></div>         
+</form>
