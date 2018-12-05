@@ -138,6 +138,14 @@ class game{
 			leaderBoard += this.players[i].getScore();
 			leaderBoard += leader4;
 			
+			leaderBoard += leader3;
+			leaderBoard += i + "turn";
+			leaderBoard += leader2;
+			if(i == this.getTurn()){
+				leaderBoard += "@";
+			}
+			leaderBoard += leader4;
+			
 			leaderBoard += leader5;
 		}
 		var item = document.getElementById("leader");
