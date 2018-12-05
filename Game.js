@@ -184,7 +184,7 @@ class game{
 	}
 	
 	changeLetter(id){
-		this.players[id + 1000].setImage(images[id + 1000]);
+		this.players[this.getTurn()].setImage(images[id + 1000]);
 		this.randomLetter(id);
 		this.printLeaderboard();
 	}
@@ -192,7 +192,7 @@ class game{
 	generateLetters(){
 		if(this.isScrabble){
 			for(var i = 1; i < 8; i++){
-				var id = "letter" + i;
+				var id = i - 1000;
 				this.randomLetter(id);
 			}
 		}
