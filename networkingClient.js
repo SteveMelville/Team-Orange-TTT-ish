@@ -17,7 +17,10 @@ class connection{
 		});
 		this.socket.on('getPlayer',function(PN){
 			console.log('getting player'+PN);
-			this.emit('addPlayer',this.nickname,this.image);
+			images[PN]
+			
+			
+			this.emit('addPlayer',this.nickname,images[PN]);
 			this.PlayerNumber=PN
 		});
 		this.socket.on('addPlayer',function(nickname, image){
@@ -41,9 +44,8 @@ class connection{
 	setWinPoints(points){
 		this.socket.emit('setWinPoints',points);
 	}
-	SetPlayer(nickname, image){
+	SetPlayer(nickname){
 		this.socket.nickname=nickname;
-		this.socket.image= "<img src='assets/"+image+".png'>";
 	}
 	pushButton(id){
 		if(this.socket.gameState.getTurn()==this.socket.PlayerNumber){
