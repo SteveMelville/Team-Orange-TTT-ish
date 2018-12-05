@@ -228,7 +228,7 @@ class game{
 		item.innerHTML = this.players[this.getTurn() - 1].getImage();
 		scanBoard(this, id);
 		this.board.set(id, this.getTurn());
-		this.printLeaderboard();
+		
 		this.gameOver();
 		if(this.checkWin(this.players[this.getTurn() - 1])){
 			lockBoard(this);
@@ -236,6 +236,7 @@ class game{
 			this.Over=true;
 		}	
 		this.updateTurn();
+		this.printLeaderboard();
 	}
 }
 
