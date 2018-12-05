@@ -18,6 +18,11 @@ button {
 	background-image: url("assets/testBlank.png");
 }
 
+.submit{
+	width: 50px;
+	backround-image: none;
+}
+
 .scrabbles{
 	width: 37px;
 	height: 37px;
