@@ -10,7 +10,7 @@ class game{
 		this.turn = 1;
 		this.countedWords = [];
 		this.Over=false
-		this.isScrabble = scrabble;
+		this.isScrabble = new Boolean(scrabble);
 		
 		this.printScrabble();
 	//	this.printBoard();
