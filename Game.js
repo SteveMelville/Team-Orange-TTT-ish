@@ -190,8 +190,9 @@ class game{
 	}
 	randomLetter(id){
 		var letter = document.getElementById(id);
-		letter.innerHTML = "";
-		letter.innerHTML += images[Math.floor(Math.random() * Math.floor(26)) + 1];
+		var letterStuff = "";
+		letterStuff += images[Math.floor(Math.random() * Math.floor(26)) + 1];
+		letter.innerHTML = letterStuff;
 	}
 	
 	//Work in progress. Function to output a win condition
