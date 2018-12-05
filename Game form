@@ -1,0 +1,8 @@
+<form class="GameForm">
+    Width:<br> <input name="width" class="required" type="text" value=""><br>
+    Height: <br><input name="height" class="required" type="text" value=""><br> 
+    Scrabble: <select name="gameMode">
+    <option value ="YES">True</option>
+    <option value ="No">False</option>
+    <div class="userInput"></div>          
+</form>
