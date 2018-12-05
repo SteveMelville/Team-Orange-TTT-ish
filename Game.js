@@ -141,7 +141,7 @@ class game{
 			leaderBoard += leader3;
 			leaderBoard += i + "turn";
 			leaderBoard += leader2;
-			if(i == this.getTurn()){
+			if(i + 1 == this.getTurn()){
 				leaderBoard += "X";
 			}
 			leaderBoard += leader4;
