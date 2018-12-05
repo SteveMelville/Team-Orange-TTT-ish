@@ -1,5 +1,7 @@
 <form class="Player">
+      <legend>Player settings: </legend>
       Nickname:<br> <input name="nameUser" class="required" type="text" value=""><br>
       Comment: <br><input name="commentUser" class="required" type="" value=""><br> 
       <div class="userInput"></div>         
+      <button onclick="getData()">Submit</button>
 </form>
