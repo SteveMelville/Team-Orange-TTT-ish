@@ -58,9 +58,9 @@ io.on('connection', function(socket){
 		Users.splice(Users.indexOf(socket),1);
 	});
 	//other  methods that have to be in here
-		socket.on('CreateGame',function(width,height){
+		socket.on('CreateGame',function(width,height,points,scrabble){
 			console.log('creating game');
-			io.emit('CreateGame',width,height);
+			io.emit('CreateGame',width,height,points,scrabble);
 		});
 		socket.on('StartGame',function(){
 			console.log('getting player0');

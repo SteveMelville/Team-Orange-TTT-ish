@@ -184,7 +184,7 @@ class game{
 			var letters = document.getElementById("scrabble");
 			var letterBoard = "<tr>";
 			for(var i = 1; i < 8; i++){
-				letterBoard += "<td><button type='button' class = 'scrabbles' id = '" + (i - 1000) + "' onclick='changeLetter(" + (i - 1000) + ")'></button></td>";
+				letterBoard += "<td><button type='button' class = 'scrabbles' id = '" + (i - 1000) + "' onclick='conn.socket.gameState.changeLetter(" + (i - 1000) + ")'></button></td>";
 			}
 			letterBoard += "</tr>";
 			letters.innerHTML = letterBoard;
@@ -192,7 +192,7 @@ class game{
 	}
 	
 	changeLetter(id){
-		this.players[this.getTurn()].setImage(images[id + 1000]);
+		this.players[this.getTurn()-1].setImage(images[id + 1000]);
 		this.randomLetter(id);
 		this.printLeaderboard();
 	}
@@ -258,19 +258,19 @@ function getGame()
 {     
 	formDATA = this.document.querySelector('.GameForm');
                   
-	var width = formDATA[0].value;
-	var height = formDATA[1].value;
-	var pnts = formDATA[0].value;
-	var scrabble = formDATA[0].value;
+	var width = parseInt(formDATA[0].value);
+	var height = parseInt(formDATA[1].value);
+	var pnts = parseInt(formDATA[2].value);
+	var scrabble = formDATA[3].value=="YES";
 	
 	if(width == "" | height =="" | pnts == "")
 	{
 		alert("Please fill in the fields to proceed");
 		return;
 	}
- 	console.log(name_);                                      
-	conn.setplayer(name_);
 	conn.CreateGame(width, height, pnts, scrabble);
+	conn.StartGame();
+	return false;
 }
 function getPlayer()
 	{     
@@ -288,6 +288,7 @@ function getPlayer()
     
 	console.log(name_);                    
 	
-	conn.setplayer(name_);
+	conn.SetPlayer(name_);
+	return false;
 }
 

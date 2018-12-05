@@ -2,9 +2,10 @@ class connection{
 	//connects the computer to the server
 	constructor(width, height){
 		this.socket = io();
-		this.socket.on('CreateGame',function(width,height){
+		this.socket.on('CreateGame',function(width,height,points,scrabble){
 			console.log('creating a new game');
-			this.gameState=new game(width,height,false);
+			this.gameState=new game(width,height,scrabble);
+			this.gameState.setWinPoints(points);
 		});
 		this.socket.on('StartGame',function(){
 			console.log('starting a new game');
@@ -40,8 +41,8 @@ class connection{
 		});
 
 	}	
-	CreateGame(width,height){
-		this.socket.emit('CreateGame',width,height);
+	CreateGame(width,height,points,scrabble){
+		this.socket.emit('CreateGame',width,height,points,scrabble);
 	}
 	StartGame(){
 		this.socket.emit('StartGame')

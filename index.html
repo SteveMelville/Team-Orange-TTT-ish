@@ -53,7 +53,7 @@ process: none
 		  </table>
 	  </div>
 	  
-	 	<form class="PlayerForm" method="post">
+	<form class="PlayerForm" method="post">
 		<!-- creates a form that you can enter or create your nickname you will use for the game. -->
 		<legend>Player settings: </legend>
       
@@ -61,7 +61,7 @@ process: none
       
 		<div class="userInput"></div> 
       
-		<button onclick="getGame()"class="submit">Submit</button>
+		<button onclick="getPlayer()" type="button" class="submit">Submit</button>
 	</form>
 
 	  
@@ -81,19 +81,16 @@ process: none
 		Scrabble: <select name="gameMode">
 		<option value ="YES">True</option>
 		<option value ="No">False</option></select><br>
-		<button onclick="getPlayer()" class="submit">Submit</button>
+		<button onclick="getGame()" type="button" class="submit">Submit</button>
     
 		<div class="userInput"></div>          
 	
 	</form> 
 	
-	
-</form>
   
-  
-	  <div id="footer">
-	    Copyright Team Orange &copy2018;
-	  </div>
+		<div id="footer">
+			Copyright Team Orange &copy2018;
+		</div>
 
 	  <script src="constants.js"></script>
 	  <script src="Board.js"></script>
