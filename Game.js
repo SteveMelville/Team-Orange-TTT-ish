@@ -155,6 +155,7 @@ class game{
 	printBoard(){
 		var id = 0;
 		var boardHTML = "";
+		boardHTML+="first to "+this.PointsToWin+" points wins"; 
 		for(var i = 0; i < this.board.height; i++){
 		    boardHTML += "<tr>\n";
 		    for(var j = 0; j < this.board.width; j++){

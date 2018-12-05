@@ -12,7 +12,7 @@ class connection{
 			this.gameState.printBoard();
 			this.gameState.printLeaderboard();
 			if(this.gameState.getTurn()==this.PlayerNumber){
-				alert('it is now your turn');
+				//alert('it is now your turn');
 			}
 			
 			
@@ -36,7 +36,7 @@ class connection{
 		this.socket.on('pushButton',function(id){
 			this.gameState.pushButton(id);
 			if(this.gameState.getTurn()==this.PlayerNumber&&this.gameState.Over==false){
-				alert('it is now your turn');
+				//alert('it is now your turn');
 			}
 		});
 
