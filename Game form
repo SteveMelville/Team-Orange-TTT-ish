@@ -1,4 +1,5 @@
 <form class="GameForm">
+<!-- creates a form that you can enter the elements you want to use for the game into. -->
     <legend>Game settings</legend>
     Width (min: 3, max: 100):<br> <input name="width" class="required" type="text" value=""><br>
     Height (min: 3, max: 100): <br><input name="height" class="required" type="text" value=""><br> 
