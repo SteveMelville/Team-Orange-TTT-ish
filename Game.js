@@ -11,6 +11,7 @@ class game{
 		this.countedWords = [];
 		this.Over=false
 		this.isScrabble = new Boolean(scrabble);
+		this.scrabbleLetters = [0,0,0,0,0,0,0];
 		
 		this.printScrabble();
 	//	this.printBoard();
@@ -175,11 +176,17 @@ class game{
 			var letters = document.getElementById("scrabble");
 			var letterBoard = "<tr>";
 			for(var i = 1; i < 8; i++){
-				letterBoard += "<td><button type='button' class = 'scrabbles' id = 'letter" + i + "' onclick='changeLetter(letter" + i + ")'></button></td>";
+				letterBoard += "<td><button type='button' class = 'scrabbles' id = '" + (i - 1000) + "' onclick='changeLetter(" + (i - 1000) + ")'></button></td>";
 			}
 			letterBoard += "</tr>";
 			letters.innerHTML = letterBoard;
 		}
+	}
+	
+	changeLetter(id){
+		this.players[id + 1000].setImage(images[id + 1000]);
+		this.randomLetter(id);
+		this.printLeaderboard();
 	}
 	
 	generateLetters(){
@@ -193,7 +200,9 @@ class game{
 	randomLetter(id){
 		var letter = document.getElementById(id);
 		var letterStuff = "";
-		letterStuff += images[Math.floor(Math.random() * Math.floor(26)) + 1];
+		var letterNum = Math.floor(Math.random() * Math.floor(26)) + 1
+		letterStuff += images[letterNum];
+		this.scrabbleLetters[id + 1000] = letterNum;
 		letter.innerHTML = letterStuff;
 	}
 	
