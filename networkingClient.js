@@ -4,7 +4,7 @@ class connection{
 		this.socket = io();
 		this.socket.on('CreateGame',function(width,height){
 			console.log('creating a new game');
-			this.gameState=new game(width,height);
+			this.gameState=new game(width,height,false);
 		});
 		this.socket.on('StartGame',function(){
 			console.log('starting a new game');
