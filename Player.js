@@ -21,7 +21,9 @@ class Player{
   getImage(){
       return this.image_;
   }
-  
+  setImage(image){
+	  this.image_=image;
+  }
   getScore(){
       return this.score_;
   }
