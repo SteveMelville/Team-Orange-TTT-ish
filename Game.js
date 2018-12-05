@@ -253,3 +253,41 @@ function lockBoard(newGame){
 	}	
 	
 }
+
+function getGame()
+{     
+	formDATA = this.document.querySelector('.GameForm');
+                  
+	var width = formDATA[0].value;
+	var height = formDATA[1].value;
+	var pnts = formDATA[0].value;
+	var scrabble = formDATA[0].value;
+	
+	if(width == "" | height =="" | pnts == "")
+	{
+		alert("Please fill in the fields to proceed");
+		return;
+	}
+ 	console.log(name_);                                      
+	conn.setplayer(name_);
+	conn.CreateGame(width, height, pnts, scrabble);
+}
+function getPlayer()
+	{     
+	formDATA = this.document.querySelector('.PlayerForm');
+	
+	console.log(formDATA[0].value);
+                    
+	var name_ = formDATA[0].value;
+             
+	if(name_ == "")
+	{
+		alert("Please fill in the fields to proceed");
+		return;
+	}
+    
+	console.log(name_);                    
+	
+	conn.setplayer(name_);
+}
+

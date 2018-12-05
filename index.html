@@ -53,7 +53,39 @@ process: none
 		  </table>
 	  </div>
 	  
+	 	<form class="PlayerForm" method="post">
+		<!-- creates a form that you can enter or create your nickname you will use for the game. -->
+		<legend>Player settings: </legend>
+      
+		Nickname:<br> <input name="nameUser" class="required" type="text" value=""><br>
+      
+		<div class="userInput"></div> 
+      
+		<button onclick="getGame()"class="submit">Submit</button>
+	</form>
+
 	  
+	  
+	  
+	  
+	<form class="GameForm" method="post">
+		<!-- creates a form that you can enter the elements you want to use for the game into. -->
+		<legend>Game settings</legend>
+    
+		Width (min: 3, max: 100):<br> <input name="width" class="required" type="text" value=""><br>
+    
+		Height (min: 3, max: 100): <br><input name="height" class="required" type="text" value=""><br> 
+    
+		Points to win:<br><input name="pts2win" class="required" type="text" value=""><br>
+    
+		Scrabble: <select name="gameMode">
+		<option value ="YES">True</option>
+		<option value ="No">False</option></select><br>
+		<button onclick="getPlayer()" class="submit">Submit</button>
+    
+		<div class="userInput"></div>          
+	
+	</form> 
 	  	  
 	<form class="PlayerForm">
 		<!-- creates a form that you can enter or create your nickname you will use for the game. -->
