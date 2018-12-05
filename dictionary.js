@@ -7,8 +7,22 @@ class Dictionary{
 		this.dict = [];
 		//for testing
 		this.addWord("XXX", 1);
-		this.addWord("OOO", 1);
 		this.addWord("~~~", 1);
+		this.addWord("AAA", 1);
+		this.addWord("BBB", 1);
+		this.addWord("CCC", 1);
+		this.addWord("DDD", 1);
+		this.addWord("EEE", 1);
+		this.addWord("FFF", 1);
+		this.addWord("GGG", 1);
+		this.addWord("HHH", 1);
+		this.addWord("III", 1);
+		this.addWord("JJJ", 1);
+		this.addWord("KKK", 1);
+		this.addWord("LLL", 1);
+		this.addWord("MMM", 1);
+		this.addWord("NNN", 1);
+		this.addWord("OOO", 1);
 	}
 	
 	//adds a word to the dictionary
