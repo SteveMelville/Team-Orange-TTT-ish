@@ -183,9 +183,11 @@ class game{
 	}
 	
 	generateLetters(){
-		for(var i = 1; i < 8; i++){
-			var id = "letter" + i;
-			this.randomLetter(id);
+		if(this.isScrabble){
+			for(var i = 1; i < 8; i++){
+				var id = "letter" + i;
+				this.randomLetter(id);
+			}
 		}
 	}
 	randomLetter(id){
