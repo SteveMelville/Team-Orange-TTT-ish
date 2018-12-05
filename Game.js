@@ -180,7 +180,7 @@ class game{
     	}
 	
 	printScrabble(){
-		if(this.isScrabble){
+		if(this.isScrabble == true){
 			var letters = document.getElementById("scrabble");
 			var letterBoard = "<tr>";
 			for(var i = 1; i < 8; i++){
@@ -198,7 +198,7 @@ class game{
 	}
 	
 	generateLetters(){
-		if(this.isScrabble){
+		if(this.isScrabble == true){
 			for(var i = 1; i < 8; i++){
 				var id = i - 1000;
 				this.randomLetter(id);
