@@ -210,7 +210,7 @@ class game{
 		var letterStuff = "";
 		var letterNum = Math.floor(Math.random() * Math.floor(26)) + 1;
 		letterStuff += images[letterNum];
-		this.scrabbleLetters[id + 1000] = letterNum;
+		this.scrabbleLetters[id + 999] = letterNum;
 		letter.innerHTML = letterStuff;
 	}
 	
