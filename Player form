@@ -1,4 +1,5 @@
-<form class="Player">
+<form class="PlayerForm">
+<!-- creates a form that you can enter or create your nickname you will use for the game. -->
       <legend>Player settings: </legend>
       Nickname:<br> <input name="nameUser" class="required" type="text" value=""><br>
       Comment: <br><input name="commentUser" class="required" type="" value=""><br> 
