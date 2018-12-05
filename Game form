@@ -2,9 +2,9 @@
     <legend>Game settings</legend>
     Width (min: 3, max: 100):<br> <input name="width" class="required" type="text" value=""><br>
     Height (min: 3, max: 100): <br><input name="height" class="required" type="text" value=""><br> 
+    Points to win:<br><input name="pts2win" class="required" type="text" value=""><br>
     Scrabble: <select name="gameMode">
     <option value ="YES">True</option>
-    <option value ="No">False</option>
-    Points to win:<br><input name="pts2win" class="required" type="text" value=""><br>
+    <option value ="No">False</option><br>
     <div class="userInput"></div>          
 </form>
