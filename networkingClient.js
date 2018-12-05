@@ -10,6 +10,11 @@ class connection{
 			console.log('starting a new game');
 			this.gameState.printBoard();
 			this.gameState.printLeaderboard();
+			if(this.gameState.getTurn()==this.PlayerNumber){
+				alert('it is now your turn');
+			}
+			
+			
 		});
 		this.socket.on('setWinPoints',function(points){
 			console.log('setting the points to win to ' + points);
