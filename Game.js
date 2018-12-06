@@ -185,7 +185,7 @@ class game{
 			var letters = document.getElementById("scrabble");
 			var letterBoard = "<tr>";
 			for(var i = 1; i < 8; i++){
-				letterBoard += "<td><button type='button' class = 'scrabbles' id = '" + (i - 1000) + "' onclick='conn.socket.gameState.changeLetter(" + (i - 1000) + ")'></button></td>";
+				letterBoard += "<td><button type='button' class = 'scrabbles' id = '" + (i - 1000) + "' onclick='conn.changeLetter(this.id )'></button></td>";
 			}
 			letterBoard += "</tr>";
 			letters.innerHTML = letterBoard;
@@ -193,7 +193,7 @@ class game{
 	}
 	
 	changeLetter(id){
-		this.players[this.getTurn()-1].setImage(images[id + 1000]);
+		this.players[this.getTurn()-1].setImage(images[parseInt(id) + 1000]);
 		this.randomLetter(id);
 		this.printLeaderboard();
 	}
@@ -202,7 +202,8 @@ class game{
 		if(this.isScrabble == true){
 			for(var i = 1; i < 8; i++){
 				var id = i - 1000;
-				this.randomLetter(id);
+				console.log(this.randomLetter(id));
+				
 			}
 		}
 	}
@@ -211,8 +212,9 @@ class game{
 		var letterStuff = "";
 		var letterNum = Math.floor(Math.random() * Math.floor(26)) + 1;
 		letterStuff += images[letterNum];
-		this.scrabbleLetters[id + 999] = letterNum;
 		letter.innerHTML = letterStuff;
+		letter.id=(letterNum-1000)
+		return letter.id;
 	}
 	
 	//Work in progress. Function to output a win condition
