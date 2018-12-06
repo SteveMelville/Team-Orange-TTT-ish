@@ -248,7 +248,9 @@ class game{
 				this.players[this.getTurn() - 1].drawn=false;
 			}
 		}else{
-			alert("you have to draw a new tile");
+			if(this.getTurn()==conn.socket.PlayerNumber){
+				alert("you have to draw a new tile");
+			}
 		}
 	}
 }
