@@ -193,9 +193,12 @@ class game{
 	}
 	
 	changeLetter(id){
-		this.players[this.getTurn()-1].setImage(images[parseInt(id) + 1000]);
-		this.randomLetter(id);
-		this.printLeaderboard();
+		if(this.players[this.getTurn()-1].drawn=false|this.players[this.getTurn()-1].drawn==null){
+			this.players[this.getTurn()-1].setImage(images[parseInt(id) + 1000]);
+			this.randomLetter(id);
+			this.printLeaderboard();
+			this.players[this.getTurn()-1].drawn=true;
+		}
 	}
 	
 	generateLetters(){
@@ -225,21 +228,25 @@ class game{
 			alert("Game is over!");
 	      }
 	pushButton(id){
-		var item = document.getElementById(id);
+		if(!this.isScrabble|this.players[this.getTurn() - 1].drawn){
+			var item = document.getElementById(id);
+			
+			this.squaresPushed++;
+			item.innerHTML = this.players[this.getTurn() - 1].getImage();
+			scanBoard(this, id);
+			this.board.set(id, this.getTurn());
 		
-		this.squaresPushed++;
-		item.innerHTML = this.players[this.getTurn() - 1].getImage();
-		scanBoard(this, id);
-		this.board.set(id, this.getTurn());
-		
-		this.gameOver();
-		if(this.checkWin(this.players[this.getTurn() - 1])){
-			lockBoard(this);
-			alert('Player ' + this.getTurn() + ' has won the game!');
-			this.Over=true;
-		}	
-		this.updateTurn();
-		this.printLeaderboard();
+			this.gameOver();
+			if(this.checkWin(this.players[this.getTurn() - 1])){
+				lockBoard(this);
+				alert('Player ' + this.getTurn() + ' has won the game!');
+				this.Over=true;
+			}		
+			this.updateTurn();
+			this.printLeaderboard();
+		}else{
+			alert("you have to draw a new tile");
+		}
 	}
 }
 
