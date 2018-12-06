@@ -5,7 +5,9 @@ class Dictionary{
 	//creates a default dictionary
 	constructor(){
 		this.dict = [];
-		//for testing
+	}
+	DefaultWords(){
+				//for testing
 		this.addWord("XXX", 1);
 		this.addWord("~~~", 1);
 		this.addWord("AAA", 1);
@@ -23,6 +25,17 @@ class Dictionary{
 		this.addWord("MMM", 1);
 		this.addWord("NNN", 1);
 		this.addWord("OOO", 1);
+		this.addWord("PPP", 1);
+		this.addWord("QQQ", 1);
+		this.addWord("RRR", 1);
+		this.addWord("SSS", 1);
+		this.addWord("TTT", 1);
+		this.addWord("UUU", 1);
+		this.addWord("VVV", 1);
+		this.addWord("WWW", 1);
+		this.addWord("XXX", 1);
+		this.addWord("YYY", 1);
+		this.addWord("ZZZ", 1);
 	}
 	
 	//adds a word to the dictionary

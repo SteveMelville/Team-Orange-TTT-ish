@@ -228,7 +228,7 @@ class game{
 			alert("Game is over!");
 	      }
 	pushButton(id){
-		if(!(this.isScrabble)|(this.players[this.getTurn() - 1].drawn)){
+		if((this.isScrabble==false)|(this.players[this.getTurn() - 1].drawn)){
 			var item = document.getElementById(id);
 			
 			this.squaresPushed++;
@@ -248,9 +248,16 @@ class game{
 				this.players[this.getTurn() - 1].drawn=false;
 			}
 		}else{
-			if(this.getTurn()==conn.socket.PlayerNumber){
+			if(this.conn.HasServer&&this.getTurn()==conn.socket.PlayerNumber){
 				alert("you have to draw a new tile");
 			}
+		}
+	}
+	addDictionary(Dict){
+		if(Dict!=-1){
+			this.dictionary=ParseDict(Dict);
+		}else{
+			this.dictionary.DefaultWords();
 		}
 	}
 }
@@ -277,15 +284,29 @@ function getGame()
 	var height = parseInt(formDATA[1].value);
 	var pnts = parseInt(formDATA[2].value);
 	var scrabble = formDATA[3].value=="YES";
-	
+	if(scrabble){
+	var dictionary=formDATA[4].value;
+	}
 	if(width == "" | height =="" | pnts == "")
 	{
 		alert("Please fill in the fields to proceed");
 		return;
 	}
-	conn.CreateGame(width, height, pnts, scrabble);
+	conn.CreateGame(width, height, pnts, scrabble,dictionary);
 	conn.StartGame();
 	return false;
+}
+function ParseDict(str){
+	var dict=new Dictionary();
+	var word=""
+	while(str.search("[ \n]")!=-1){
+		//split the string at the first remaining space or new line charictor
+		word=str.substring(0,str.search("[ \n]"));
+		str=str.substring(str.search("[ \n]")+1);
+		dict.addWord(word.toUpperCase(),1);
+	}
+	dict.addWord(str.toUpperCase(),1);
+	return dict;
 }
 function getPlayer()
 	{     

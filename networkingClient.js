@@ -4,10 +4,11 @@ class connection{
 		try{
 			this.socket = io();
 			this.hasServer=true;
-			this.socket.on('CreateGame',function(width,height,points,scrabble){
+			this.socket.on('CreateGame',function(width,height,points,scrabble,dict){
 				console.log('creating a new game');
 				this.gameState=new game(width,height,scrabble);
 				this.gameState.setWinPoints(points);
+				this.gameState.addDictionary(dict);
 			});
 			this.socket.on('StartGame',function(){
 				console.log('starting a new game');
@@ -54,12 +55,21 @@ class connection{
 			}
 		}
 	}	
-	CreateGame(width,height,points,scrabble){
+	CreateGame(width,height,points,scrabble,dict){
 		if(this.hasServer){
-		this.socket.emit('CreateGame',width,height,points,scrabble);
+			if(scrabble){	
+				this.socket.emit('CreateGame',width,height,points,scrabble,dict);
+			}else{
+				this.socket.emit('CreateGame',width,height,points,scrabble,-1);
+			}
 		}else{
 				this.gameState=new game(width,height,scrabble);
 				this.gameState.setWinPoints(points);
+				if(scrabble){
+					this.gameState.addDictionary(dict);
+				}else{
+					this.gameState.addDictionary(-1);
+				}
 		}
 	}
 	StartGame(){
@@ -79,6 +89,7 @@ class connection{
 			if(this.gameState.getTurn()==this.PlayerNumber){
 				//alert('it is now your turn');
 			}
+			
 		}
 	}	
 	setWinPoints(points){
@@ -117,6 +128,5 @@ class connection{
 		}else{
 			this.gameState.changeLetter(id);
 		}
-	}
-		
+	}	
 }
