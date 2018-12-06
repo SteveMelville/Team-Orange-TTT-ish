@@ -66,6 +66,10 @@ io.on('connection', function(socket){
 			console.log('getting player0');
 			Users[0].emit('getPlayer',1);
 		});
+		socket.on('changeLetter',function(id){
+			console.log('changing players letter to'+id);
+			io.emit('changeLetter',id);
+		});
 		socket.on('addPlayer',function(nickname, image){
 			console.log('adding player '+PlayerNum+' with the name of '+nickname);
 			io.emit('addPlayer',nickname,image);

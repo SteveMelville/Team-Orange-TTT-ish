@@ -3,7 +3,7 @@ class connection{
 	constructor(width, height){
 		try{
 			this.socket = io();
-			this.HasServer=true;
+			this.hasServer=true;
 			this.socket.on('CreateGame',function(width,height,points,scrabble){
 				console.log('creating a new game');
 				this.gameState=new game(width,height,scrabble);
@@ -41,12 +41,17 @@ class connection{
 					//alert('it is now your turn');
 				}
 			});
+			this.socket.on('changeLetter',function(id){
+				this.gameState.players[this.gameState.getTurn()-1].setImage(images[parseInt(id) + 1000]);
+				this.gameState.players[this.gameState.getTurn()-1].drawn=true;
+			});
 		}catch(e){
 			if(e.message=="io is not defined"){
 				this.HasServer=false
 				this.players=new Array();
+			}else{
+				throw e
 			}
-
 		}
 	}	
 	CreateGame(width,height,points,scrabble){
@@ -105,7 +110,10 @@ class connection{
 	}	
 	changeLetter(id){
 		if(this.hasServer){
+			if(this.socket.gameState.getTurn()==this.socket.PlayerNumber){
+			this.socket.emit("changeLetter",id);
 			this.socket.gameState.changeLetter(id);
+		}
 		}else{
 			this.gameState.changeLetter(id);
 		}

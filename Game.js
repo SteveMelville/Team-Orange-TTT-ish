@@ -193,7 +193,7 @@ class game{
 	}
 	
 	changeLetter(id){
-		if(this.players[this.getTurn()-1].drawn=false|this.players[this.getTurn()-1].drawn==null){
+		if(this.players[this.getTurn()-1].drawn==false|this.players[this.getTurn()-1].drawn==null){
 			this.players[this.getTurn()-1].setImage(images[parseInt(id) + 1000]);
 			this.randomLetter(id);
 			this.printLeaderboard();
@@ -228,7 +228,7 @@ class game{
 			alert("Game is over!");
 	      }
 	pushButton(id){
-		if(!this.isScrabble|this.players[this.getTurn() - 1].drawn){
+		if(!(this.isScrabble)|(this.players[this.getTurn() - 1].drawn)){
 			var item = document.getElementById(id);
 			
 			this.squaresPushed++;
@@ -244,6 +244,9 @@ class game{
 			}		
 			this.updateTurn();
 			this.printLeaderboard();
+			if(this.isScrabble){
+				this.players[this.getTurn() - 1].drawn=false;
+			}
 		}else{
 			alert("you have to draw a new tile");
 		}
